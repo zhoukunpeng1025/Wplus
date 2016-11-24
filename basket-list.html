@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>菜篮</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/wuyiwen.css">
+</head>
+<body>
+	<!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+            <div class="left">
+	            <a href="index.html" class="external grayLeft">
+	            	<i class="fa fa-arrow-left" aria-hidden="true"></i>
+	            </a>
+            </div>
+            <div class="center">菜篮</div>
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+          	<div class="page-content" style="padding-top:20px">
+              	<!--菜篮列表-->
+				<div class="list-block">
+				  <ul>
+				    <li class="accordion-item itemBorder1 swipeout" onclick="omitHide()">
+				      <div class="accordion-item-toggle swipeout-content">
+				        <div class="row item-title">
+				        	<div class="col-40">
+					        	<h3 class="basketH3">我</h3>
+					        	<p class="basketTitle">的菜篮</p>
+				        	</div>
+				        	<div class="col-60 itemTitleBoder" id="dataUseLevel"> 
+				        		<div class="row">
+				        			<div class="col-50">虾仁</div>
+				        			<div class="col-50 useLevel">350g</div>
+				        		</div>
+				        		<div class="row">
+				        			<div class="col-50">鸡精</div>
+				        			<div class="col-50 useLevel">1袋</div>
+				        		</div>
+				        		<div class="row" id="basketListOmit">
+				        			<div class="col-50">鸡胸脯肉</div>
+				        			<div class="col-50 useLevel">250g</div>
+				        		</div>
+				        	</div>
+				        </div>
+				      </div>
+				      <!-- 手风琴内容 -->
+				      <div class="row accordion-item-content swipeout-content">
+				        <div class="col-40"></div>
+				        <div class="col-60 itemTitleBoder itemContentText">
+				        	<div class="row">
+				        		<div class="col-50">虾仁</div>
+				        		<div class="col-50 useLevel">350g</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-40"></div>
+				        		<div class="col-50" style="padding-bottom:10px">
+				        			<a href="#" class="button button-round button-big color-red">
+				        				完成
+				        			</a>
+				        		</div>
+				        		<div class="col-10"></div>
+				        	</div>
+				        </div>	
+				      </div>
+				      <!-- 侧滑事件 -->
+				      <div class="swipeout-actions-right">
+				        <a href="#" class="action1">置顶</a>
+				        <a href="#" class="action2 bg-red">完成</a>
+				      </div>
+				    </li>
+				    <li class="item-divider"></li><!--分割-->
+				    <li class="accordion-item itemBorder2 swipeout">
+				      <div class="accordion-item-toggle swipeout-content">
+				        <div class="row item-title">
+				        	<div class="col-40">
+					        	<h3 class="basketH3">张三先生</h3>
+					        	<p class="basketTitle">的菜篮</p>
+				        	</div>
+				        	<div class="col-60 itemTitleBoder" id="dataUseLevel"> 
+				        		<div class="row">
+				        			<div class="col-50">虾仁</div>
+				        			<div class="col-50 useLevel">350g</div>
+				        		</div>
+				        		<div class="row">
+				        			<div class="col-50">鸡精</div>
+				        			<div class="col-50 useLevel">1袋</div>
+				        		</div>
+				        		<div class="row" id="basketListOmit">
+				        			<div class="col-50">鸡胸脯肉</div>
+				        			<div class="col-50 useLevel">250g</div>
+				        		</div>
+				        	</div>
+				        </div>
+				      </div>
+				      <!-- 手风琴内容 -->
+				      <div class="row accordion-item-content swipeout-content">
+				        <div class="col-40">
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-building" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">5 栋 302</div>
+				        	</div>
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-phone" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">15515516690</div>
+				        	</div>
+				        </div>
+				        <div class="col-60 itemTitleBoder itemContentText">
+				        	<div class="row">
+				        		<div class="col-50">虾仁</div>
+				        		<div class="col-50 useLevel">350g</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-40"></div>
+				        		<div class="col-50" style="padding-bottom:10px">
+				        			<a href="#" class="button button-round button-big color-red">
+				        				完成
+				        			</a>
+				        		</div>
+				        		<div class="col-10"></div>
+				        	</div>
+				        </div>	
+				      </div>
+				      <!-- 侧滑事件 -->
+				      <div class="swipeout-actions-right">
+				        <a href="#" class="action1">置顶</a>
+				        <a href="#" class="action2 bg-red">完成</a>
+				      </div>
+				    </li>
+				    <li class="item-divider"></li><!--分割-->
+				    <li class="accordion-item itemBorder3 swipeout">
+				      <div class="accordion-item-toggle swipeout-content">
+				        <div class="row item-title">
+				        	<div class="col-40">
+					        	<h3 class="basketH3">李四女士</h3>
+					        	<p class="basketTitle">的菜篮</p>
+				        	</div>
+				        	<div class="col-60 itemTitleBoder" id="dataUseLevel"> 
+				        		<div class="row">
+				        			<div class="col-50">虾仁</div>
+				        			<div class="col-50 useLevel">350g</div>
+				        		</div>
+				        		<div class="row">
+				        			<div class="col-50">鸡精</div>
+				        			<div class="col-50 useLevel">1袋</div>
+				        		</div>
+				        		<div class="row" id="basketListOmit">
+				        			<div class="col-50">鸡胸脯肉</div>
+				        			<div class="col-50 useLevel">250g</div>
+				        		</div>
+				        	</div>
+				        </div>
+				      </div>
+				      <!-- 手风琴内容 -->
+				      <div class="row accordion-item-content swipeout-content">
+				        <div class="col-40">
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-building" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">5 栋 302</div>
+				        	</div>
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-phone" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">15515516690</div>
+				        	</div>
+				        </div>
+				        <div class="col-60 itemTitleBoder itemContentText">
+				        	<div class="row">
+				        		<div class="col-50">虾仁</div>
+				        		<div class="col-50 useLevel">350g</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-40"></div>
+				        		<div class="col-50" style="padding-bottom:10px">
+				        			<a href="#" class="button button-round button-big color-red">
+				        				完成
+				        			</a>
+				        		</div>
+				        		<div class="col-10"></div>
+				        	</div>
+				        </div>	
+				      </div>
+				      <!-- 侧滑事件 -->
+				      <div class="swipeout-actions-right">
+				        <a href="#" class="action1">置顶</a>
+				        <a href="#" class="action2 bg-red">完成</a>
+				      </div>
+				    </li>
+				    <li class="item-divider"></li><!--分割-->
+				    <li class="accordion-item itemBorder1 swipeout">
+				      <div class="accordion-item-toggle swipeout-content">
+				        <div class="row item-title">
+				        	<div class="col-40">
+					        	<h3 class="basketH3">程思思女士</h3>
+					        	<p class="basketTitle">的菜篮</p>
+				        	</div>
+				        	<div class="col-60 itemTitleBoder" id="dataUseLevel"> 
+				        		<div class="row">
+				        			<div class="col-50">虾仁</div>
+				        			<div class="col-50 useLevel">350g</div>
+				        		</div>
+				        		<div class="row">
+				        			<div class="col-50">鸡精</div>
+				        			<div class="col-50 useLevel">1袋</div>
+				        		</div>
+				        		<div class="row" id="basketListOmit">
+				        			<div class="col-50">鸡胸脯肉</div>
+				        			<div class="col-50 useLevel">250g</div>
+				        		</div>
+				        	</div>
+				        </div>
+				      </div>
+				      <!-- 手风琴内容 -->
+				      <div class="row accordion-item-content swipeout-content">
+				        <div class="col-40">
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-building" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">5 栋 302</div>
+				        	</div>
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-phone" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">15515516690</div>
+				        	</div>
+				        </div>
+				        <div class="col-60 itemTitleBoder itemContentText">
+				        	<div class="row">
+				        		<div class="col-50">虾仁</div>
+				        		<div class="col-50 useLevel">350g</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-40"></div>
+				        		<div class="col-50" style="padding-bottom:10px">
+				        			<a href="#" class="button button-round button-big color-red">
+				        				完成
+				        			</a>
+				        		</div>
+				        		<div class="col-10"></div>
+				        	</div>
+				        </div>	
+				      </div>
+				      <!-- 侧滑事件 -->
+				      <div class="swipeout-actions-right">
+				        <a href="#" class="action1">置顶</a>
+				        <a href="#" class="action2 bg-red">完成</a>
+				      </div>
+				    </li>
+				    <li class="item-divider"></li><!--分割-->
+				    <li class="accordion-item itemBorder2 swipeout">
+				      <div class="accordion-item-toggle swipeout-content">
+				        <div class="row item-title">
+				        	<div class="col-40">
+					        	<h3 class="basketH3">张三先生</h3>
+					        	<p class="basketTitle">的菜篮</p>
+				        	</div>
+				        	<div class="col-60 itemTitleBoder" id="dataUseLevel"> 
+				        		<div class="row">
+				        			<div class="col-50">虾仁</div>
+				        			<div class="col-50 useLevel">350g</div>
+				        		</div>
+				        		<div class="row">
+				        			<div class="col-50">鸡精</div>
+				        			<div class="col-50 useLevel">1袋</div>
+				        		</div>
+				        		<div class="row" id="basketListOmit">
+				        			<div class="col-50">鸡胸脯肉</div>
+				        			<div class="col-50 useLevel">250g</div>
+				        		</div>
+				        	</div>
+				        </div>
+				      </div>
+				      <!-- 手风琴内容 -->
+				      <div class="row accordion-item-content swipeout-content">
+				        <div class="col-40">
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-building" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">5 栋 302</div>
+				        	</div>
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-phone" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">15515516690</div>
+				        	</div>
+				        </div>
+				        <div class="col-60 itemTitleBoder itemContentText">
+				        	<div class="row">
+				        		<div class="col-50">虾仁</div>
+				        		<div class="col-50 useLevel">350g</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-40"></div>
+				        		<div class="col-50" style="padding-bottom:10px">
+				        			<a href="#" class="button button-round button-big color-red">
+				        				完成
+				        			</a>
+				        		</div>
+				        		<div class="col-10"></div>
+				        	</div>
+				        </div>	
+				      </div>
+				      <!-- 侧滑事件 -->
+				      <div class="swipeout-actions-right">
+				        <a href="#" class="action1">置顶</a>
+				        <a href="#" class="action2 bg-red">完成</a>
+				      </div>
+				    </li>
+				    <li class="item-divider"></li><!--分割-->
+				    <li class="accordion-item itemBorder3 swipeout">
+				      <div class="accordion-item-toggle swipeout-content">
+				        <div class="row item-title">
+				        	<div class="col-40">
+					        	<h3 class="basketH3">王五先生</h3>
+					        	<p class="basketTitle">的菜篮</p>
+				        	</div>
+				        	<div class="col-60 itemTitleBoder" id="dataUseLevel"> 
+				        		<div class="row">
+				        			<div class="col-50">虾仁</div>
+				        			<div class="col-50 useLevel">350g</div>
+				        		</div>
+				        		<div class="row">
+				        			<div class="col-50">鸡精</div>
+				        			<div class="col-50 useLevel">1袋</div>
+				        		</div>
+				        		<div class="row" id="basketListOmit">
+				        			<div class="col-50">鸡胸脯肉</div>
+				        			<div class="col-50 useLevel">250g</div>
+				        		</div>
+				        	</div>
+				        </div>
+				      </div>
+				      <!-- 手风琴内容 -->
+				      <div class="row accordion-item-content swipeout-content">
+				        <div class="col-40">
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-building" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">5 栋 302</div>
+				        	</div>
+				        	<div class="row contactWay">
+				        		<div class="col-10"></div>
+				        		<div class="col-20">
+				        			<i class="fa fa-phone" aria-hidden="true"></i>
+				        		</div>
+				        		<div class="col-70">15515516690</div>
+				        	</div>
+				        </div>
+				        <div class="col-60 itemTitleBoder itemContentText">
+				        	<div class="row">
+				        		<div class="col-50">虾仁</div>
+				        		<div class="col-50 useLevel">350g</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-50">鸡精</div>
+				        		<div class="col-50 useLevel">1袋</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-40"></div>
+				        		<div class="col-50" style="padding-bottom:10px">
+				        			<a href="#" class="button button-round button-big color-red">
+				        				完成
+				        			</a>
+				        		</div>
+				        		<div class="col-10"></div>
+				        	</div>
+				        </div>	
+				      </div>
+				      <!-- 侧滑事件 -->
+				      <div class="swipeout-actions-right">
+				        <a href="#" class="action1">置顶</a>
+				        <a href="#" class="action2 bg-red">完成</a>
+				      </div>
+				    </li>
+				  </ul>
+				</div>
+			</div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+</body>
+
+	<!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.2.js"></script>
+    <script type="text/javascript">
+    	/*function omitHide(){
+    		var par = document.getElementById("dataUseLevel");
+    		console.log(par);
+    		var omit = document.getElementById("basketListOmit");
+    		par.removeChild(omit);
+    	}*/
+    </script>
+</html>
