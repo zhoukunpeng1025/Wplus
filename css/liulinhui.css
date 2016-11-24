@@ -1,0 +1,120 @@
+/*标题样式*/
+.navCss{
+	background-color: #ea4027;
+	color: white;
+
+}
+.whiteColor{
+	color: white;
+}
+/*工具栏样式*/
+.tab-link{
+	line-height: 15px;
+	padding: 0 10px;
+}
+.redColor{
+	color: #ea4027;
+}
+.greyColor{
+	color: #959595;
+}
+.font20{
+	font-size: 20px;
+	line-height: 16px;
+}
+.font18{
+	font-size: 18px;
+}
+.font16{
+	font-size: 16px;
+}
+.font11{
+	font-size: 11px;
+}
+.textCenter{
+	text-align: center;
+}
+/*边框颜色样式*/
+.itemBorder1{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #ff6f87
+}
+.itemBorder2{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #aff7ff
+}
+.itemBorder3{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #ffd861
+}
+.textRight{
+	float: right;
+}
+.floatRight{
+	float: right;
+}
+.floatLeft{
+	float: left;
+}
+/*.inputCss{
+	display: block;
+	width: 100%;
+	height: 100%;*/
+
+}
+.content-block{
+	/*margin-top: -10px;*/
+}
+/*等级显示样式*/
+.textLv1{
+	background-color:#ffd861;
+	border: 2px solid #ffd861;
+	color: white;
+	font-size: 13px;
+}
+.textLv2{
+	background-color: #ff6f87;
+	border: 2px solid #ff6f87;
+	color: white;
+	font-size: 13px;
+}
+/*卡片样式*/
+.cardCss1{
+	margin-top: -4px;
+	padding-bottom: 4%;
+}
+.cardCss2{
+	margin-top: -4px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+/*直播作者信息div样式*/
+.carddivCss{
+	margin-top: 5%;
+}
+/*评论列表样式*/
+.ulCss{
+	list-style-type: none;
+	line-height: 25px;
+	margin-left: -3%;
+}
+/*start按钮样式*/
+#buttonRedcolor{
+	color: white;
+	background-color: #ea4027;
+}
+.redCss{
+	background-color: #ea4027;
+	border: 5px solid #ea4027;
+	color: white;
+}
+.whiteColor{
+	color: white;
+}
+/*发评论*/
+.talkCss{
+	padding-bottom: 4%;
+}
