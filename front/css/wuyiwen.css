@@ -1,0 +1,312 @@
+/*body{
+	text-align: center;
+}*/
+/*不等袋*/
+/*底栏*/
+.tab-link{
+line-height: 15px;
+padding: 0 10px;
+}
+.redColor{
+color: #ea4027;
+}
+.greyColor{
+color: #959595;
+}
+.font20{
+font-size: 20px;
+line-height: 16px;
+}
+.font16{
+font-size: 16px;
+}
+.font11{
+font-size: 11px;
+}
+#rightPlus:link{
+	color: white;
+}
+#rightPlus:visited{
+	color: white;
+}
+.requestTime{
+	padding-left: 15%;
+	color: #959595;
+	font-size: 12px;
+}
+#building{
+	text-align: center;
+	margin-bottom: 2px;
+}
+/*菜篮列表页*/
+/*菜篮列表边框颜色*/
+.itemBorder1{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #ff6f87
+}
+.itemBorder2{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #aff7ff
+}
+.itemBorder3{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #ffd861
+}
+/*菜篮列表title样式*/
+.basketH3{
+	padding-left: 15px;
+}
+.basketTitle{
+	padding-left: 65px;
+}
+.itemTitleBoder{
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #959595
+}
+.itemTitleBoder div{
+	padding-top: 5px;
+	padding-left: 12px;
+	padding-bottom: 2px;
+}
+/*手风琴内容文本*/
+.itemContentText{
+	font-size: 16px;
+}
+.useLevel{
+	color: #959595
+}
+/*联系方式样式：住址、电话*/
+.contactWay{
+	padding-top: 20px;
+	color: #959595;
+}
+/*菜谱分类页*/
+/*幻灯*/
+@charset "utf-8";
+.swiper-container{
+	width:100%;	
+	-webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+}
+.swiper-wrapper{
+		margin-top:10px;
+	}
+.swiper-slide{
+	width:80%;
+	 -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.swiper-slide-active {
+
+}
+.swiper-slide .main-img{
+	width:80%;
+	margin:0 auto;
+	display:block;
+}
+@media screen and (min-height: 481px) {
+	.swiper-wrapper{
+		margin-top:20px;
+	}
+}
+@media screen and (min-height: 569px) {
+	.swiper-wrapper{
+		margin-top:40px;
+	}
+}
+.category{
+	width: 80%;
+	margin: 0 auto;
+	background: white;
+}
+.catTitle{
+	height: 30px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+.topLeft,.topRight,.bottomLeft,.bottomRight{
+	width: 48%;
+	padding: 0 2px;
+	float: left;
+}
+.smallImg{
+	width: 50%;
+}
+
+.tagAssorts{
+	padding-top: 5%;
+	padding-bottom: 6%;
+}
+.hotTag{
+	font-size: 100%;
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-left-color: #ea4027;
+	text-align: center;
+}
+.hotTags{
+	padding-top: 4%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.hotTags div a{
+	color: #212121;
+}
+/*mune-list*/
+.lookAll{
+	margin-top: 2%;
+	padding-bottom: 2%;
+	border-top-style: solid;
+	border-top-color: #959595;
+	border-top-width: 1px;
+}
+.littleTag{
+	color: #959595;
+}
+.littleTag a:link{
+	color:#959595;
+}
+.littleTag a:active{
+	color:#ea4027;
+}
+.lookBtn{
+	padding-top:6%;
+}
+
+/*menu-content页*/
+.contentTitle{
+	text-align: center;
+}
+.ppp{
+	font-size: 18px;
+	color: #959595;
+	padding-left: 20px;
+}
+.level{
+	color: #ea4027;
+}
+.orderNum{
+	color: #959595;
+	font-size: 20px;
+}
+.pickerInner img{
+	padding-left: 26%;
+}
+.pickerInner p{
+	font-size: 10px;
+	text-align: center;
+}
+#picker1:link{
+	color: #212121;
+}
+#picker1:visited{
+	color: #212121;
+}
+#thumbs:link{
+	color: #212121;
+}
+#thumbs:visited{
+	color: #212121;
+}
+#heart:link{
+	color: #212121;
+}
+#heart:visited{
+	color: #212121;
+}
+#cancel a:link{
+	color: #212121;
+}
+#cancel a:visited{
+	color: #212121;
+}
+.stepContent{
+	padding-top:2%;
+	padding-left:1%;
+}
+.menuImg{
+	padding-left: 11%;
+	padding-top: 2%;
+	padding-bottom: 5%;
+}
+/*计时按钮*/
+#timeKeep{
+	color: white;
+	background-color: #ea4027;
+	font-size: 60%;
+	text-align: center;
+	width: 30%;
+	margin-top: 5%;
+	margin-right: 10%;
+	float: right;
+}
+/*生成订单页make-order*/
+#makeOrderTil{
+	color: #ea4027;
+}
+/*.marginChange{
+	margin: 10px 0;
+}*/
+/*.textRight{
+	text-align: right;
+}*/
+.rightBtn{
+	padding-left: 10%;
+}
+.btnGroup{
+	background: white;
+	min-height: 50px;
+	height: auto;
+	padding-top: 20px;
+}
+.selfBuy,.otherBuy{
+	width: 85%;
+	margin: 0 auto;
+}
+.otherBuy{
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 29px;
+	background: #ea4027;
+	line-height: 29px;
+	text-align: center;
+	float: right;
+}
+.selfBuy{
+	color: #ea4027;
+	border-color: #ea4027;
+	float: left;
+}
+#daiBuyContent{
+	margin-left: -40%;
+}
+/*所有的链接样式*/
+.menuAsLink:link{
+	color: #212121;
+}
+.menuAsLink:visited{
+	color: #212121;
+}
+.grayLeft:link{
+	color: #212121;
+}
+.grayLeft:visited{
+	color: #212121;
+}
+.redLeft:link{
+	color: #212121;
+}
+.redLeft:visited{
+	color: #212121;
+}
