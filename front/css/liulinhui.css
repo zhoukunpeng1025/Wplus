@@ -1,0 +1,124 @@
+/*标题样式*/
+.navCss{
+  background-color: #ea4027;
+  color: white;
+
+}
+.whiteColor{
+  color: white;
+}
+/*工具栏样式*/
+.tab-link{
+  line-height: 15px;
+  padding: 0 10px;
+}
+.redColor{
+  color: #ea4027;
+}
+.greyColor{
+  color: #959595;
+}
+.font20{
+  font-size: 20px;
+  line-height: 16px;
+}
+.font18{
+  font-size: 18px;
+}
+.font16{
+  font-size: 16px;
+}
+.font11{
+  font-size: 11px;
+}
+.font13{
+  font-size: 13px;
+}
+.textCenter{
+  text-align: center;
+}
+.textRight{
+  text-align: right;
+}
+.floatRight{
+  float: right;
+}
+.floatLeft{
+  float: left;
+}
+/*等级显示样式*/
+.textLv1{
+  background-color:#ffd861;
+  /*border: 2px solid #ffd861;*/
+  color: white;
+  font-size:13px;
+}
+.textLv2{
+  background-color: #ff6f87;
+  color: white;
+  font-size:12px;
+}
+/*直播作者信息div样式*/
+.carddivCss{
+  margin-top: 5%;
+}
+/*评论列表样式*/
+.ulCss{
+  list-style-type: none;
+  line-height: 25px;
+  margin-left: -7%;
+}
+/*start按钮样式*/
+#buttonRedcolor{
+  color: white;
+  background-color: #ea4027;
+}
+.whiteColor{
+  color: white;
+}
+/*发评论*/
+.talkCss{
+  padding-bottom: -4%;
+}
+.imgCenter{
+  margin:0 auto;
+}
+/*直播间卡片样式*/
+.cardCss{
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+    margin: -5px auto;
+}
+.cardDis{
+  margin: 2% auto;
+  padding:0px 0.8%;
+}
+.rowCss{
+  margin: auto 1.5%;
+}
+.cardScreen{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.textUp{
+   margin-top: -3%;
+}
+.cardCss1{
+  margin-top: -4px;
+  padding-bottom: 4%;
+}
+.cardCss2{
+  /*margin-top: -4px;
+  margin-left: 0px;
+  margin-right: 0px;*/
+  margin: auto 0px;
+}
+.planeCss{
+	margin-right: -5%;
+}
+.fanColor{
+  color: #959595;
+  background-color:#ECECEC;
+  border:solid 1px #ECECEC;
+}
