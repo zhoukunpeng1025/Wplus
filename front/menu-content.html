@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <!-- Path to Framework7 color related styles, iOS Theme -->
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/my-app.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/wuyiwen.css">
   </head>
@@ -167,14 +165,20 @@
                 </div>
                 <div class="col-5"></div>
               </div>
-              <p class="ppp">做法 ： </p>
+              <div class="row">
+                <div class="col-40"><p class="ppp">做法 ： </p></div>
+                <div class="col-50">
+                  <p style="padding-top:5%;"><a href="menu-steps.html" class="external grayLink">(点击切换大图模式)</a></p>
+                </div>
+                <div class="col-10"></div>
+              </div>
               <div class="row">
                 <div class="col-5"></div>
                 <div class="col-5 orderNum">1</div>
                 <div class="col-90 stepContent">
                   把白菜帮斜刀片成大片状以备使用；
                 </div>
-                <img src="images/menucontent1.jpg" width="80%" class="menuImg">
+                <a href="menu-steps.html" class="external menuImgA"><img src="images/menucontent1.jpg" width="80%" class="menuImg"></a>
               </div>
               <div class="row">
                 <div class="col-5"></div>
@@ -182,7 +186,7 @@
                 <div class="col-90 stepContent">
                   泡红椒切碎、泡姜葱蒜切末，豆瓣酱剁细备用；
                 </div>
-                <img src="images/menucontent1.jpg" width="80%" class="menuImg">
+                <a href="menu-steps.html" class="external menuImgA"><img src="images/menucontent1.jpg" width="80%" class="menuImg"></a>
               </div>
               <div class="row">
                 <div class="col-5"></div>
@@ -191,7 +195,7 @@
                   小火慢炖10分钟；
                   <a href="#" class="button button-round button-fill " id="timeKeep">开始计时</a>
                 </div>
-                <img src="images/menucontent1.jpg" width="80%" class="menuImg">
+                <a href="menu-steps.html" class="external menuImgA"><img src="images/menucontent1.jpg" width="80%" class="menuImg"></a>
               </div>
               <div class="row">
                 <div class="col-5"></div>
@@ -199,7 +203,7 @@
                 <div class="col-90 stepContent">
                   泡红椒切碎、泡姜葱蒜切末，豆瓣酱剁细备用；
                 </div>
-                <img src="images/menucontent1.jpg" width="80%" class="menuImg">
+                <a href="menu-steps.html" class="external menuImgA"><img src="images/menucontent1.jpg" width="80%" class="menuImg"></a>
               </div>
               <div class="row">
                 <div class="col-5"></div>
@@ -208,9 +212,8 @@
                   泡红椒切碎、泡姜葱蒜切末，豆瓣酱剁细备用；盖上锅盖焖5分钟再出锅，完成！
                   <a href="#" class="button button-round button-fill " id="timeKeep">开始计时</a>
                 </div>
-                <img src="images/menucontent1.jpg" width="80%" class="menuImg">
-              </div>
-              
+                <a href="menu-steps.html" class="external menuImgA"><img src="images/menucontent1.jpg" width="80%" class="menuImg"></a>
+              </div>              
             </div>  
           </div>
         </div>
@@ -291,8 +294,8 @@
         var imgWidth = $(".contentImg").width();
         $(".contentImg").height(imgWidth*0.5);
 
-        var menuImg = $(".menuImg").width();
-        $(".menuImg").height(menuImg*0.6);
+        var menuImg = $(".menuImgA .menuImg").width();
+        $(".menuImgA .menuImg").height(menuImg*0.6);
         //实现点赞收藏效果
         $("#thumbs").click(function(){
           var icon = $("#thumbs i").attr("class");

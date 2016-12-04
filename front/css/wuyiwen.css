@@ -1,7 +1,8 @@
-/*body{
-	text-align: center;
-}*/
 /*不等袋*/
+.requestH3{
+	padding-left: 16%;
+	color: #D32F2F;
+}
 /*底栏*/
 .tab-link{
 line-height: 15px;
@@ -57,7 +58,7 @@ font-size: 11px;
 }
 /*菜篮列表title样式*/
 .basketH3{
-	padding-left: 15px;
+	padding-left: 16%;
 }
 .basketTitle{
 	padding-left: 65px;
@@ -230,9 +231,20 @@ font-size: 11px;
 #cancel a:visited{
 	color: #212121;
 }
+.grayLink{
+	float: right;
+}
+.grayLink:link{
+	color: #959595;
+}
+.grayLink:visited{
+	color: #959595;
+}
 .stepContent{
 	padding-top:2%;
 	padding-left:1%;
+	padding-right: 1%;
+	text-align: left;
 }
 .menuImg{
 	padding-left: 11%;
@@ -254,12 +266,6 @@ font-size: 11px;
 #makeOrderTil{
 	color: #ea4027;
 }
-/*.marginChange{
-	margin: 10px 0;
-}*/
-/*.textRight{
-	text-align: right;
-}*/
 .rightBtn{
 	padding-left: 10%;
 }
@@ -309,4 +315,36 @@ font-size: 11px;
 }
 .redLeft:visited{
 	color: #212121;
+}
+/*menu-step.html*/
+.stepImgs{
+	padding-top: 2%;
+}
+.stepsKeepTime{
+	opacity:0.6;
+}
+.textCenter{
+	text-align: center;
+}
+.twentyFont{
+	font-size: 1.5em;
+	font-weight: bold;
+	border-bottom: solid 2px #ea4027;
+}
+.fourteenFont{
+	font-size: 0.8em;
+}
+
+/*修改内容*/
+.contentBtn{
+	width: 50%;
+	height: 100%;
+	line-height: 44px;
+	margin: 0; 
+	color: #ffffff;
+	border: none;
+	padding: 0;
+	-moz-border-radius: 0;      /* Gecko browsers */
+    -webkit-border-radius: 0;   /* Webkit browsers */
+    border-radius: 0;            /* W3C syntax */
 }
