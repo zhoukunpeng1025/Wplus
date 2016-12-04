@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("input").blur(function(){
+	var timer = setInterval(function(){
 		var signBtn = $(".signBtn");
 		if ($("#mobile").val()!="") {
 			signBtn.attr("disabled",false);
@@ -13,5 +13,5 @@ $(document).ready(function(){
 				"background" : "#ccc"
 			});
 		}
-	});
+	},500);
 });

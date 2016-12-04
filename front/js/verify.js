@@ -14,9 +14,9 @@ $(document).ready(function(){
 		}
 	},1000);
 
-	$("input").blur(function(){
+	var timer2 = setInterval(function(){
 		var signBtn = $(".signBtn");
-		if ($("#nick").val()!="" && $("#password").val()!="") {
+		if ($("#PIN").val()!="") {
 			signBtn.attr("disabled",false);
 			signBtn.css({
 				"background" : "#ea4027"
@@ -28,7 +28,7 @@ $(document).ready(function(){
 				"background" : "#ccc"
 			});
 		}
-	});
+	},500);
 
 	// var timer2 = setInterval(function(){
 	// 	var pin = $("#PIN");
