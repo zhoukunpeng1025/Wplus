@@ -9,12 +9,12 @@
 .slogan{
 	display: block;
 	position: absolute;
-	top: 35%;
-	width: 100%;
+	top: 30%;
+	width: 95%;
 }
 .logo{
-	padding-top: 130%;
-	width: 30%;
+	margin-top: 100%;
+	width: 20%;
 }
 
 /**
@@ -55,11 +55,9 @@
 	font-size: 20px;
 }
 
-/* 注册登录页输入框动效，有bug，暂时不实现 */
-
+/* 以下为注册登录动效，暂时不实现 */
 /* input */
-/*
-.input {
+/*.input {
 	position: relative;
 	z-index: 1;
 	display: inline-block;
@@ -78,7 +76,8 @@
 	border: none;
 	border-radius: 0;
 	color: #aaa;
-	-webkit-appearance: none;
+	-webkit-appearance: none; 
+}
 
 .input__field:focus {
 	outline: none;
@@ -105,11 +104,10 @@
 	display: block;
 	padding: 1.6em 0;
 	width: 100%;
-}
-*/
+}*/
+
 /* Haruki */
-/*
-.input--haruki {
+/*.input--haruki {
 	margin: 4em 1em 0.1em;
 }
 
@@ -216,6 +214,9 @@
 	padding: 0 10px;
 	text-align: center;
 }
+.searchBlock{
+	width: 90%;
+}
 
 /*改变搜索栏的placeholder颜色*/
 /*input::input-placeholder{
@@ -313,6 +314,36 @@ padding-bottom: 10px;
 padding: 15px 10px;
 }
 
+/**
+*添加菜谱页
+*/
+.noMargin{
+	margin: 0;
+}
+.menuLabel{
+	margin: 10px 0 0 10px;
+	font-size: 13px;
+}
+.stepImg{
+	text-align: center;
+}
+.stepImg img{
+	width: 100%;
+}
+.addStepBtn{
+	width: 100%;
+	text-align: center;
+}
+.addStepBtn:hover{
+	background: transparent;
+}
+.noBorder{
+	border: none;
+}
+.addAndRemove{
+	margin-top: 9px;
+	text-align: center;
+}
 
 /*********
 *字体颜色
@@ -325,6 +356,9 @@ padding: 15px 10px;
 }
 .whiteColor{
 	color: #ffffff;
+}
+.blackColor{
+	color: #000;
 }
 /*********
 *字体大小
