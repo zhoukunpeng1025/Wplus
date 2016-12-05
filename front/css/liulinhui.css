@@ -122,3 +122,20 @@
   background-color:#ECECEC;
   border:solid 1px #ECECEC;
 }
+/*导航栏渐变半透明效果*/
+.transparentNav{
+	background: #000000 ;
+	/*设置半透明*/
+	opacity:0.5 !important;
+	filter:alpha(opacity=30) !important;
+  -webkit-filter:alpha(opacity=30) !important;
+	/*代表从上到下，从黑到白的渐变*/
+	background: -webkit-linear-gradient(top,#000000 0,#ffffff 100%) !important;
+	background: -moz-linear-gradient(top,#000000 0,#ffffff 100%) !important;
+	background: -o-linear-gradient(top,#000000 0,#ffffff 100%) !important;
+	background: linear-gradient(to bottom,#000000 0,#ffffff 100%) !important;
+}
+.navWhite{
+  color:#FFFFFF;
+}
+
