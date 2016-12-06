@@ -1,0 +1,33 @@
+.tutorialicon {
+  font-size: 250px;
+  line-height: 170px;
+}
+.tutorialicon img{
+  position: relative;
+  top: -100px;
+  max-width: 400px;
+  width: 100%;
+}
+
+/*.tutorial-close-btn {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  color: #f07a68;
+}
+*/
+.welcomescreen-container .welcomescreen-text a{
+  color: #fff;
+  text-decoration: underline;
+}
+
+.tutorial-close-btn {
+  background: #f07a68;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=main.css.map */
