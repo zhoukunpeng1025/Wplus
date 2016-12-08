@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 管理员列表</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/back/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/style.css?v=4.1.0" rel="stylesheet">
+    <style type="text/css">
+    .page{
+        list-style: none;
+        float: left;
+        border: solid 1px #959595;
+        margin: 0 1%;
+    }
+    </style>
+</head>
+
+<body class="gray-bg">
+<div class="panel blank-panel">
+    <!-- 选项卡头部 -->
+    <!-- 选项卡内容 -->
+    <div class="wrapper wrapper-content animated fadeInRight panel-body">
+        <div class="tab-content">
+          <div class="row tab-pane active" id="tab-4">
+            <volist name="adminUsers" id="d">
+                <div class="col-sm-4">
+                    <div class="contact-box">
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <img alt="image" class="img-circle m-t-xs img-responsive headimg" src="__PUBLIC__/{$d.headimg}">
+                                <div class="m-t-xs font-bold">{$d.position}</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <ul class="list-unstyled"> 
+                                <li><h4>用户名：{$d.username}</h4></li> 
+                                <li><h4>真实姓名：{$d.realname}</h4></li> 
+                                <li><h4>性别：{$d.sex}</h4></li> 
+                            </ul>
+                            <address>
+                                E-mail:{$d.email}<br>
+                                <abbr title="Phone">Tel:</abbr> {$d.phonenum}
+                            </address>
+                            <div class="row" style="float:right; width: 156px;; width: 156px;">
+                                <a href="__MODULE__/Admin/edit?id={$d.id}" type="button" class="btn  btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> 编辑</a> 
+                                <a href="__MODULE__/Admin/delete?id={$d.id}" type="button" class="btn  btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> 删除</a> 
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </volist>
+          </div> 
+        </div> 
+    </div>
+    <div class="row">
+        <!--分页--> 
+        <div class="col-sm-8 col-md-8 col-lg-8"></div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <ul class="pagination pagination-lg">
+                <li>{$page}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <!-- 全局js -->
+    <script src="__PUBLIC__/back/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/back/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/back/js/content.js?v=1.0.0"></script>
+    <script>
+        $(document).ready(function () {
+            $('.contact-box').each(function () {
+                animationHover(this, 'pulse');
+            });
+
+            var headimg = $(".headimg").width();
+            $(".headimg").height(headimg);
+
+        });
+        // $(window).resize(function(){
+        //     var headimg = $(".headimg").width();
+        //     $(".headimg").height(headimg);
+        // }
+    </script>
+</body>
+
+</html>
