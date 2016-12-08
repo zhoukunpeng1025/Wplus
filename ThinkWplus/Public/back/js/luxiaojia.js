@@ -5,10 +5,10 @@ $(document).ready(function(){
 		var formGroup = $("<div class='form-group'>"+
 							"<div class='col-sm-2'></div>"+
 							"<div class='col-sm-5'>"+
-								"<input type='text' class='form-control' name='form-control' placeholder='食材'>"+
+								"<input type='text' class='form-control' name='foodname[]' placeholder='食材'>"+
 							"</div>"+
 							"<div class='col-sm-4'>"+
-								"<input type='text' class='form-control' name='form-control' placeholder='数量'>"+
+								"<input type='text' class='form-control' name='foodnum[]' placeholder='数量'>"+
 							"</div>"+
 							"<div class='addAndRemove remove'>"+
 								"<span class='glyphicon glyphicon-remove'></span>"+
@@ -23,7 +23,7 @@ $(document).ready(function(){
 		var formGroup = $("<div class='form-group'>"+
                             "<div class='col-sm-2'></div>"+
                             "<div class='col-sm-9'>"+
-                                "<textarea name='' id='' rows='3' class='form-control' placeholder='步骤'></textarea>"+
+                                "<textarea name='text[]' id='' rows='3' class='form-control' placeholder='步骤'></textarea>"+
                             "</div>"+
                             "<div class='addAndRemove remove'>"+
                                 "<span class='glyphicon glyphicon-remove'></span>"+
@@ -37,16 +37,16 @@ $(document).ready(function(){
 		var formGroup = $("<div class='form-group'>"+
                             "<div class='col-sm-2'></div>"+
                             "<div class='col-sm-5'>"+
-                                "<select class='form-control'>"+
+                                "<select class='form-control' name='step[]'>"+
                                     "<option>请选择</option>"+
-                                    "<option>步骤1</option>"+
-                                    "<option>步骤2</option>"+
-                                    "<option>步骤3</option>"+
-                                    "<option>步骤4</option>"+
+                                    "<option value='1'>步骤1</option>"+
+                                    "<option value='2'>步骤2</option>"+
+                                    "<option value='3'>步骤3</option>"+
+                                    "<option value='4'>步骤4</option>"+
                                 "</select>"+
                             "</div>"+
                             "<div class='col-sm-4'>"+
-                                "<input type='text' class='form-control' name='form-control' placeholder='时间'>"+
+                                "<input type='text' class='form-control' name='time[]' placeholder='时间'>"+
                             "</div>"+
                             "<div class='addAndRemove remove'>"+
                                 "<span class='glyphicon glyphicon-remove'></span>"+
