@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频管理列表</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/back/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+<body>
+    <!-- 图片管理 -->
+    <form action="__MODULE__/Work/videoBatchDelete" method="post">
+    <div class="row tab-pane" style="margin-top:1%;">
+        <div class="container">
+            <div class="row" style="padding:1% 0;border-bottom:solid 1px #E0E0E0;">
+                <div class="col-sm-8">
+                    <h2>视频管理</h2>
+                </div>
+            </div>
+            <volist name="video" id="vl">
+            <div class="" style="float:left; padding-top:1%;">
+                <div style="margin-left: 10px;">
+                    <div>
+                        <label><input type="checkbox" name="id[]" id="userCheckbox" value="{$vl.id}"></label>
+                        <a href="__MODULE__/Work/video/id/{$vl.id}"><img src="{$vl.path}" width="200px"/></a>
+                    </div>
+                    <div class="" style="text-align: center; padding-top:1%;">
+                        <button type="button " class="btn btn-danger">
+                            <a href="__MODULE__/Work/videoDelete/id/{$vl.id}" style="color: #fff;">删除</a>     
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </volist>
+        </div>
+    </div>
+    <div class="row" style="padding-top:1%;border-top:solid 1px #E0E0E0;margin-top:1%;">
+        <!--分页和添加-->
+        <div class="col-sm-1 col-sm-1 col-lg-1"></div>
+        <div class="col-sm-7 col-sm-7 col-lg-7">
+            <div class="input-group pull-left form">
+                <button type="submit" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>批量删除     
+                </button>
+            </div>  
+        </div> 
+        <div class="col-sm-4 col-sm-4 col-lg-4">
+            <ul class="pagination pagination-lg">
+                <li class="disabled"><a href="#">&laquo;</a></li> 
+                <li class="active"><a href="#">1</a></li> 
+                <li><a href="#">2</a></li> 
+                <li><a href="#">3</a></li> 
+                <li><a href="#">4</a></li> 
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">&raquo;</a></li> 
+            </ul>
+        </div>
+    </div>
+    </form>
+    <!-- 全局js -->
+    <script src="__PUBLIC__/back/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/back/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/back/js/content.js?v=1.0.0"></script>
+</body>
+</html>

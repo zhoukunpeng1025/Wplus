@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频内容</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/back/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+<body>
+<volist name="video" id="vl">
+	<div class="container" >
+		<h2 style="padding:1% 0;border-bottom:solid 1px #E0E0E0;">视频</h2>
+		<div class="row clearfix">
+			<div class="col-sm-12 column">
+				<img src="{$vl.path}" width="70%" style="padding-left:15%;">
+			</div>
+			<div class="col-sm-12 column" style="padding-top:2%;">
+				<div class="col-sm-2">发布人：{$vl.author}</div>
+				<div class="col-sm-2">发布时间：{$vl.time}</div>
+			</div>
+		</div>
+		<div class="row clearfix" style="padding:1% 0;">
+			<div class="col-sm-9 column"></div>
+			<div class="col-sm-3 column">
+				<button type="button " class="btn btn-danger">
+                    <a href="__MODULE__/Work/videoDelete/id/{$vl.id}" style="color: #fff;">删除</a>     
+                </button>
+			</div>			
+		</div>
+	</div>
+</volist>
+	<!-- 全局js -->
+    <script src="__PUBLIC__/back/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/back/js/bootstrap.min.js?v=3.3.6"></script>
+</body>
+</html>

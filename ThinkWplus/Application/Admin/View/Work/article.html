@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章内容</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/back/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/style.css?v=4.1.0" rel="stylesheet">
+    <style type="text/css">
+	    p{
+	    	text-indent:2em;
+	    	font-size: 16px;
+	    }
+	    form{
+	    	color:  #3F51B5;
+	    }
+    </style>
+</head>
+<body>
+	<div class="container" style="margin-top:2%">
+		<volist name="article" id="vl">
+			<div class="row clearfix">
+				<div class="col-sm-12 column">
+					<h1 style="text-align:center;">
+						{$vl.title}
+					</h1>
+					<div class="col-sm-12 column">
+						<div class="col-sm-6"></div>
+						<div class="col-sm-6">
+							<div class="col-sm-4">作者：{$vl.author}</div>
+							<div class="col-sm-4">发布日期：{$vl.time}</div>
+							<div class="col-sm-4">查看次数：{$vl.amount}</div>
+						</div>
+					</div>
+					<div>
+						 {$vl.content}
+					</div>
+				</div>
+			</div>
+			<div class="row clearfix" style="border-top:solid 1px #959595;border-bottom:solid 1px #959595;padding:1% 0;">
+				<form action="" method="">
+					<div class="form-group row">
+		                <label class="col-sm-2 control-label">是否推荐：</label>
+						<div class="col-sm-10">
+		                    <label class="checkbox-inline i-checks" style="padding-right:1%;">
+		                        <input type="checkbox" value="option1">推荐到轮播图
+		                    </label>
+		                    <label class="checkbox-inline i-checks" style="padding-right:1%;">
+		                        <input type="checkbox" value="option2">推荐到热点
+		                    </label>
+		                    <label class="checkbox-inline i-checks" style="padding-right:1%;">
+		                        <input type="checkbox" value="option3">不推荐
+		                    </label>
+		                </div>
+		            </div>
+		            <div class="row">
+		            	<div class="col-sm-10"></div>
+		            	<div class="col-sm-2">
+		            		<button type="button " class="btn btn-danger">
+			                  	<a href="__MODULE__/Work/articleDelete/id/{$vl.id}">删除</a>     
+			                </button>
+		            	</div>
+		            </div>
+				</form>
+			</div>
+			<div class="row clearfix">
+			<!-- 上一篇下一篇 -->
+			<div class="row clearfix">
+				<ul class="pager"> 
+				   <li class="previous"><a href="#">&larr; 上一篇：老罗说虾话</a></li> 
+				   <li class="next"><a href="#">下一篇：你知道怎么吃笋吗？ &rarr;</a></li> 
+				</ul>
+			</div>
+		</volist>
+	</div>
+
+
+	<!-- 全局js -->
+    <script src="__PUBLIC__/back/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/back/js/bootstrap.min.js?v=3.3.6"></script>
+</body>
+</html>
