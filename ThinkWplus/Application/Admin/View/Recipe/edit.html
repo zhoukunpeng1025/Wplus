@@ -47,42 +47,41 @@
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
-                            <volist name="vo['food']" id="fo">
-                            <div class="form-group">
-                            <if condition="$fo eq $vo['food'][0]">
-                                <label class="col-sm-2 control-label">用料</label>
-
-                                <div class="col-sm-5">
-                                    <input type="text" class="form-control" placeholder="食材" name="foodname[]" value="{$fo.foodname}">
-                                </div>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" placeholder="数量" name="foodnum[]" value="{$fo.foodnum}">
-                                </div>
-                                <div class="addAndRemove" id="addFood">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                </div>
-                            <else />
-                                <div class="col-sm-2"></div>
-
-                                <div class="col-sm-5">
-                                    <input type="text" class="form-control" placeholder="食材" name="foodname[]" value="{$fo.foodname}">
-                                </div>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" placeholder="数量" name="foodnum[]" value="{$fo.foodnum}">
-                                </div>
-                                <div class="addAndRemove remove">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </div>
-                            </if>
-                            </div>
-                            </volist>
+                            
+                            <?php
+                                for($i = 0; $i<count($vo['foodname']); $i++) {
+                                    echo '<div class="form-group">';
+                                    if($i == 0){
+                                        echo '<label class="col-sm-2 control-label">用料</label>';
+                                    } else{
+                                        echo '<div class="col-sm-2"></div>';
+                                    }
+                                    echo '<div class="col-sm-5">
+                                            <input type="text" class="form-control" placeholder="食材" name="foodname[]" value="'.$vo["foodname"][$i].'">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" placeholder="数量" name="foodnum[]" value="'.$vo["foodnum"][$i].'">
+                                        </div>';
+                                    if($i == 0){
+                                        echo '<div class="addAndRemove" id="addFood">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </div>';
+                                    } else{
+                                        echo '<div class="addAndRemove remove">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </div>';
+                                    }
+                                    echo '</div>';
+                                }
+                            ?>
+                            
                             <div class="hr-line-dashed"></div>
                             <volist name="vo['step']" id="st">
                             <div class="form-group row">
                             <if condition="$st eq $vo['step'][0]">
                                 <label class="col-sm-2 control-label">做法</label>
                                 <div class="col-sm-9">
-                                    <textarea name="text[]" id="" rows="3" class="form-control" placeholder="步骤">{$st.text}</textarea>
+                                    <textarea name="step[]" id="" rows="3" class="form-control" placeholder="步骤">{$st}</textarea>
                                 </div>
                                 <div class="addAndRemove" id="addProcedure">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -90,7 +89,7 @@
                             <else />
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-9">
-                                    <textarea name="text[]" id="" rows="3" class="form-control" placeholder="步骤">{$st.text}</textarea>
+                                    <textarea name="step[]" id="" rows="3" class="form-control" placeholder="步骤">{$st}</textarea>
                                 </div>
                                 <div class="addAndRemove remove">
                                     <span class="glyphicon glyphicon-remove"></span>
@@ -99,24 +98,32 @@
                             </div>
                             </volist>
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">闹钟</label>
-                                <div class="col-sm-5">
-                                    <select class="form-control" name="step[]">
-                                        <option>请选择</option>
-                                        <option value="1">步骤1</option>
-                                        <option value="2">步骤2</option>
-                                        <option value="3">步骤3</option>
-                                        <option value="4">步骤4</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="time[]" placeholder="时间">
-                                </div>
-                                <div class="addAndRemove" id="addClock">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                </div>
-                            </div>
+                            <?php
+                                for($i = 0; $i<count($vo['clocknum']); $i++) {
+                                    echo '<div class="form-group">';
+                                    if($i == 0){
+                                        echo '<label class="col-sm-2 control-label">闹钟</label>';
+                                    } else{
+                                        echo '<div class="col-sm-2"></div>';
+                                    }
+                                    echo '<div class="col-sm-5">
+                                            <input type="text" class="form-control" placeholder="第几步，请输入数字" name="clocknum[]" value="'.$vo["clocknum"][$i].'">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" name="clocktime[]" placeholder="时间" value="'.$vo["clocktime"][$i].'">
+                                        </div>';
+                                    if($i == 0){
+                                        echo '<div class="addAndRemove" id="addClock">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </div>';
+                                    } else{
+                                        echo '<div class="addAndRemove remove">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </div>';
+                                    }
+                                    echo '</div>';
+                                }
+                            ?>
                             <!--上传图片-->
                             <!-- <div class="hr-line-dashed"></div>
                             <div class="form-group">

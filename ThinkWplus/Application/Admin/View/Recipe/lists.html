@@ -55,12 +55,14 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <volist name="vo['food']" id="fo">
-                                                <tr>
-                                                    <td>{$fo.foodname}</td>
-                                                    <td>{$fo.foodnum}</td>
-                                                </tr>
-                                                </volist>
+                                            <?php
+                                                for($i=0;$i<count($vo['foodname']);$i++){
+                                                    echo "<tr>".
+                                                            "<td>".$vo['foodname'][$i]."</td>".
+                                                            "<td>".$vo['foodnum'][$i]."</td>".
+                                                        "</tr>";
+                                                }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -72,9 +74,9 @@
                                     <volist name="vo['step']" id="st">
                                     <div class="col-sm-2"></div>
                                     <div class="col-sm-10">
-                                        <div class="col-sm-2 steps">{$st.step}.</div>
+                                        <div class="col-sm-2 steps">{$i}.</div>
                                         <div class="col-sm-8 paddingTop">
-                                            <p>{$st.text}</p>
+                                            <p>{$st}</p>
                                             <div>
                                                 <img src="__PUBLIC__/back/img/p1.jpg" alt="">
                                             </div>
@@ -96,12 +98,14 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <volist name="vo['clock']" id="cl">
-                                                <tr>
-                                                    <td>步骤{$cl.step}</td>
-                                                    <td>{$cl.time}</td>
-                                                </tr>
-                                                </volist>
+                                            <?php
+                                                for($i=0;$i<count($vo['clocknum']);$i++){
+                                                    echo "<tr>".
+                                                            "<td>步骤".$vo['clocknum'][$i]."</td>".
+                                                            "<td>".$vo['clocktime'][$i]."</td>".
+                                                        "</tr>";
+                                                }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div>

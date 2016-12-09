@@ -30,7 +30,7 @@
                         <h5>添加菜谱</h5>
                     </div>
                     <div class="ibox-content">
-                        <form method="post" class="form-horizontal" enctype="multipart/form-data" action="__MODULE__/Recipe/doAdd">
+                        <form method="post" class="form-horizontal" action="__MODULE__/Recipe/doAdd">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">菜名</label>
 
@@ -64,7 +64,11 @@
                                 <label class="col-sm-2 control-label">做法</label>
 
                                 <div class="col-sm-9">
-                                    <textarea name="text[]" id="" rows="3" class="form-control" placeholder="步骤"></textarea>
+                                    <textarea name="step[]" id="" rows="3" class="form-control" placeholder="步骤"></textarea>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-9 paddingTop">
+                                     //
                                 </div>
                                 <div class="addAndRemove" id="addProcedure">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -74,16 +78,10 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">闹钟</label>
                                 <div class="col-sm-5">
-                                    <select class="form-control" name="step[]">
-                                        <option>请选择</option>
-                                        <option value="1">步骤1</option>
-                                        <option value="2">步骤2</option>
-                                        <option value="3">步骤3</option>
-                                        <option value="4">步骤4</option>
-                                    </select>
+                                    <input type="text" class="form-control" placeholder="第几步，请输入数字" name="clocknum[]">
                                 </div>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="time[]" placeholder="时间">
+                                    <input type="text" class="form-control" name="clocktime[]" placeholder="时间">
                                 </div>
                                 <div class="addAndRemove" id="addClock">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -115,10 +113,11 @@
     <script src="__PUBLIC__/back/js/bootstrap.min.js?v=3.3.6"></script>   
 
     <!-- 自定义js -->
-    <script src="__PUBLIC__/back/js/fileinput.js"></script>
-    <script src="__PUBLIC__/back/js/fileinput_locale_zh.js"></script>
+    
     <script src="__PUBLIC__/back/js/content.js?v=1.0.0"></script>
+    <script src="__PUBLIC__/back/js/jquery.uploadView.js"></script>
     <script src="__PUBLIC__/back/js/luxiaojia.js"></script>
+
 
     <!-- iCheck -->
     <script src="__PUBLIC__/back/js/plugins/iCheck/icheck.min.js"></script>

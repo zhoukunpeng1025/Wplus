@@ -5,22 +5,22 @@ class RecipeController extends Controller {
 
 	public function lists(){
 		$recipeModel = M("recipe");
-		$stepModel = M("step");
-		$foodModel = M("food");
 		$recipe = $recipeModel->select();
 		
-		// 将step表和food表的数据插入recipe数组，实现嵌套循环
-		foreach ($recipe as $key => $value) {
-			// 查询食材
-			$recipe[$key]["food"] = $foodModel->where("recipeid=".$value["id"])->select();
-			// 查询时间不为空的闹钟
-			$recipe[$key]["clock"] = $stepModel->where("recipeid=".$value["id"]." and time!=''")->order("step")->field("time,step")->select();
-			// 查询所有步骤
-			$recipe[$key]["step"] = $stepModel->where("recipeid=".$value["id"])->order("step")->select();		
+		// 将字符串转为数组
+		for($i = 0; $i < count($recipe); $i++) {
+			$recipe[$i]["foodname"] = explode("&", $recipe[$i]["foodname"]);
+			$recipe[$i]["foodnum"] = explode("&", $recipe[$i]["foodnum"]);
+			// $recipe[$i]["food"] = array("foodname"=>$foodname, "foodnum"=>$foodnum);
+			$recipe[$i]["step"] = explode("&", $recipe[$i]["step"]);
+			$recipe[$i]["img"] = explode("&", $recipe[$i]["img"]);
+			$recipe[$i]["clocktime"] = explode("&", $recipe[$i]["clocktime"]);
+			$recipe[$i]["clocknum"] = explode("&", $recipe[$i]["clocknum"]);
 		}
 
 		// dump($recipe);
-		$this->assign('recipe', $recipe);		
+
+		$this->assign('recipe', $recipe);
 		$this->display();
     }
 
@@ -34,62 +34,43 @@ class RecipeController extends Controller {
     	if (!IS_POST) {
 			exit("bad request!");
 		}
-		$recipeModel = M("recipe");
-		$foodModel = M("food");
-		$stepModel = M("step");
 		$data = $_POST;
-		// 向recipe表添加数据
-		if ($recipeModel->add($data)) {
-			// recipe表数据添加成功后，获取添加菜谱的id
-			$recipeid = $recipeModel->order("id desc")->limit(1)->getField("id");
 
-			// 向food表添加数据
-			for ($i = 0; $i < count($_POST["foodname"]); $i++) {
-				$foodData["foodname"] = $_POST["foodname"][$i];
-				$foodData["foodnum"] = $_POST["foodnum"][$i];
-				$foodData["recipeid"] = $recipeid;
-				if(!$foodModel->add($foodData)){
-					$this->error("添加食材失败");
-				}
-			}
+		// 将数组转成字符串
+		$data["foodname"] = implode("&", $data["foodname"]);
+		$data["foodnum"] = implode("&", $data["foodnum"]);
+		$data["step"] = implode("&", $data["step"]);
+		$data["clocknum"] = implode("&", $data["clocknum"]);
+		$data["clocktime"] = implode("&", $data["clocktime"]);
+		// dump($data);
 
-			// 向step表添加数据
-			for ($i = 0; $i < count($_POST["text"]); $i++) {
-				$stepData["text"] = $_POST["text"][$i];
-				$stepData["step"] = $i+1;
-				// 下面这段闹钟代码有bug，不会改QAQ
-				// if ($_POST["step"][$i] == $stepData["step"]) {
-				// 	$stepData["time"] = $_POST["time"][$i];
-				// }
-				$stepData["recipeid"] = $recipeid;
-				if(!$stepModel->add($stepData)){
-					$this->error("添加步骤失败");
-				}
-			}
-			$this->success("添加成功！", U("lists"));
-		}
-		else {
-			$this->error("添加失败！");
-		}
+		// $recipeModel = M("recipe");
+		// if (!$recipeModel->create()) {
+		// 	$this->error($recipeModel->getError());
+		// }
+		// if ($recipeModel->add($data)) {
+		// 	$this->success("添加成功！", U("lists"));
+		// }
+		// else {
+		// 	$this->error("添加失败！");
+		// }
     }
 
     // 显示需要编辑的菜谱的信息
     public function edit(){
     	$id = I("id");
     	$recipeModel = M("recipe");
-		$stepModel = M("step");
-		$foodModel = M("food");
 		$recipe = $recipeModel->where("id=$id")->select();
 		
-		// 查询食材
-		$recipe[0]["food"] = $foodModel->where("recipeid=$id")->select();
-		// 查询时间不为空的闹钟
-		$recipe[0]["clock"] = $stepModel->where("recipeid=$id and time!=''")->order("step")->field("time,step")->select();
-		// 查询所有步骤
-		$recipe[0]["step"] = $stepModel->where("recipeid=$id")->order("step")->select();		
+		// 将字符串转成数组
+		$recipe[0]["foodname"] = explode("&", $recipe[0]["foodname"]);
+		$recipe[0]["foodnum"] = explode("&", $recipe[0]["foodnum"]);
+		$recipe[0]["step"] = explode("&", $recipe[0]["step"]);
+		$recipe[0]["clocktime"] = explode("&", $recipe[0]["clocktime"]);
+		$recipe[0]["clocknum"] = explode("&", $recipe[0]["clocknum"]);
 
 		// dump($recipe);
-		$this->assign('recipe', $recipe);		
+		$this->assign('recipe', $recipe);
 		$this->display();
     }
 
@@ -97,38 +78,26 @@ class RecipeController extends Controller {
     public function doEdit(){
     	$id = I("id");
     	$data = $_POST;
-    	dump($data);
+
+    	// 将数组转成字符串
+		$data["foodname"] = implode("&", $data["foodname"]);
+		$data["foodnum"] = implode("&", $data["foodnum"]);
+		$data["step"] = implode("&", $data["step"]);
+		$data["clocknum"] = implode("&", $data["clocknum"]);
+		$data["clocktime"] = implode("&", $data["clocktime"]);
+		// dump($data);
+
 		$recipeModel = M("recipe");
-		$foodModel = M("food");
-		$stepModel = M("step");
-		$recipe = $recipeModel->where("id=$id")->save($data);
-
-		// 修改food表数据
-		for ($i = 0; $i < count($data["foodname"]); $i++) {
-			$foodData["foodname"] = $data["foodname"][$i];
-			$foodData["foodnum"] = $data["foodnum"][$i];
-			$foodData["recipeid"] = $id;
-			$food = $foodModel->save($foodData);
+		if (!$recipeModel->create()) {
+			$this->error($recipeModel->getError());
 		}
-
-		// 向step表添加数据
-		// for ($i = 0; $i < count($data["text"]); $i++) {
-		// 	$stepData["text"] = $data["text"][$i];
-		// 	$stepData["step"] = $i+1;
-		// 	// 下面这段闹钟代码有bug，不会改QAQ
-		// 	// if ($_POST["step"][$i] == $stepData["step"]) {
-		// 	// 	$stepData["time"] = $_POST["time"][$i];
-		// 	// }
-		// 	$stepData["recipeid"] = $id;
-		// 	$step = $stepModel->save($stepData);
-		// }
+		if ($recipeModel->where("id=$id")->save($data)) {
+			$this->success("修改成功！", U("lists"));
+		}
+		else {
+			$this->error("修改失败！");
+		}
 		
-		if ($recipe && $food) {
-			$this->success("更新成功！", U("lists"));
-		}
-		// else {
-		// 	$this->error("更新失败！");
-		// }
     }
 
     // 删除
@@ -139,15 +108,7 @@ class RecipeController extends Controller {
 		$recipeModel = M("recipe");
 		$recipe = $recipeModel->delete($id);
 
-    	// 删除food表数据
-    	$foodModel = M("food");
-		$food = $foodModel->where("recipeid=$id")->delete();
-
-    	// 删除step表数据
-		$stepModel = M("step");
-		$step = $stepModel->where("recipeid=$id")->delete();
-
-		if ($recipe && $food && $step) {
+		if ($recipe) {
 			$this->success("删除成功！", U("lists"));
 		}
 		else {
