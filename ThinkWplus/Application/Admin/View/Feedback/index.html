@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--360浏览器优先以webkit内核解析-->
+
+
+    <title>反馈管理</title>
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/back/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+      <form class="form-horizontal" role="form" action="{:U('Admin/feedback/alldestroy')}" method="post">
+        <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            账号
+                        </th>
+                        <th>
+                            反馈类型
+                        </th>
+                        <th>
+                           状态
+                        </th>
+                        <th>
+                            用户名
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>                 
+                    <volist name="feedbacks" id="data"> 
+                    <tr>
+                        <td>
+                            <label><input type="checkbox" name="id[]" value="{$data.id}" /></label>  
+                        </td>
+                        <td>
+                            {$data.id}
+                        </td>
+                        <td>
+                            {$data.backtype}
+                        </td>
+                        <td>
+                            {$data.backstate}
+                        </td>
+                        <td>
+                          {$data.username}
+                        </td>
+                        <td>
+
+                            <a href="__MODULE__/Feedback/reply/id/{$data.id}"><button type="button" class="btn btn-link ">
+                              <span class="glyphicon  glyphicon-share-alt"></span>回复      
+                             </button>
+                             </a>
+                            <a href="__MODULE__/Feedback/destroy/id/{$data.id}"><button type="button" class="btn btn-link ">
+                              <span class="glyphicon  glyphicon-trash"></span> 删除     
+                            </button></a>
+                        </td>
+                    </tr>
+                    </volist>
+                </tbody>
+            </table>
+        </div>
+        </div>  
+        <div class="row clearfix">
+        <div class="col-md-1 column">
+        </div>
+        <div class="col-md-5 column">
+             <button type="submit" class="btn btn-danger ">
+              <span class="glyphicon  glyphicon-trash"></span> 批量删除     
+            </button>
+           <!--  <button type="button" class="btn btn-success">
+              <span class="glyphicon  glyphicon-share-alt"></span> 批量回复      
+            </button>  -->
+        </div>
+        <div class="col-md-6 column">
+            <ul class="pagination pagination-lg ">
+                {$page}
+            </ul>
+        </div>
+        </div>
+       </form> 
+    </div>    
+    <!-- 全局js -->
+    <script src="__PUBLIC__/back/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/back/js/bootstrap.min.js?v=3.3.6"></script>
+</body>
+</html>
