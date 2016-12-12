@@ -125,7 +125,7 @@
         </div>
     </div>
     <!-- 全局js -->
-    <script src="__PUBLIC__/back/js/echarts.min.js"></script>
+    <script src="__PUBLIC__/back/js/echarts1.min.js"></script>
     <script src="__PUBLIC__/back/js/macarons.js"></script>
     <script src="__PUBLIC__/back/js/jquery.min.js?v=2.1.4"></script>
     <script src="__PUBLIC__/back/js/bootstrap.min.js?v=3.3.6"></script>
@@ -203,162 +203,47 @@
         };
 
 
-        // // 通过 new 关键词来定义 Date 对象
-        // var base = +new Date();
-        // //一天的秒数
-        // var oneDay = 24 * 3600 * 1000;
-        // //定义一个date空数组
-        // var date = [];
-        // //定义data为一个随机数的数组
-        // var data = [Math.random() * 150];
-        // //定义现在的开始时间为base，base默认为现在时间
-        // var now = new Date(base);
-
-        // function addData(shift) {
-        //     //现在的时间[现在的四位数年份，返回月份+1，返回日期]讲数组放入字符串用/隔开
-        //     now = [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/');
-        //     //向数组date末尾添加元素,并返回数组长度
-        //     date.push(now);
-        //     //向data数组中添加
-        //     data.push((Math.random() - 0.4) * 10 + data[data.length - 1]);
-
-        //     if (shift) {
-        //         //删除并返回数组的第一个元素
-        //         date.shift();
-        //         data.shift();
-        //     }
-        //     //现在的时间加上一天的时间生成新的时间
-        //     now = new Date(+new Date(now) + oneDay);
-        // }
-
-        // for (var i = 1; i < 100; i++) {
-        //     addData();
-        // }
-
-        // option2 = {
-        //     title: {
-        //     text: '用户发布动态量'
-        //     },
-        //     grid: {
-        //         left: '2%',
-        //         right: '3%',
-        //         bottom: '3%',
-        //         containLabel: true
-        //     },
-        //     xAxis: {
-        //         type: 'category',
-        //         boundaryGap: false,
-        //         data: date
-        //     },
-        //     yAxis: {
-        //         boundaryGap: [0, '50%'],
-        //         type: 'value'
-        //     },
-        //     series: [
-        //         {
-        //             name:'成交',
-        //             type:'line',
-        //             smooth:true,
-        //             symbol: 'none',
-        //             stack: 'a',
-        //             areaStyle: {
-        //                 normal: {}
-        //             },
-        //             data: data
-        //             // data: [1]
-        //         }
-        //     ]
-        // };
-
-        // setInterval(function () {
-        //     addData(true);
-        //     myChart2.setOption({
-        //         xAxis: {
-        //             data: date
-        //         },
-        //         series: [{
-        //             name:'成交',
-        //             data: data
-        //         }]
-        //     });
-        // }, 500);
-         
-        
-        //定义一个date空数组
-        var date = [];
-        //定义data为一个随机数的数组
-        var data = [Math.random() * 150];
-        //定义现在的开始时间为base，base默认为现在时间
-        var now = [];
-
-        function addData(shift) {
-            
-            now = ["{$hms}"]
-            //向数组date末尾添加元素,并返回数组长度
-            date.push(now);
-            //向data数组中添加
-            data.push((Math.random() - 0.4) * 10 + data[data.length - 1]);
-
-            if (shift) {
-                //删除并返回数组的第一个元素
-                date.shift();
-                data.shift();
-            }
-            now = ["{$hms6}"];
-        }
-
-        for (var i = 1; i < 100; i++) {
-            addData();
-        }
-
-        option2 = {
+       option2 = {
             title: {
-            text: '用户发布动态量'
+            text: '用户年龄层'
+            },
+            color: ['#3398DB'],
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
             },
             grid: {
-                left: '2%',
-                right: '3%',
+                left: '3%',
+                right: '4%',
                 bottom: '3%',
                 containLabel: true
             },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: date
-            },
-            yAxis: {
-                boundaryGap: [0, '50%'],
-                type: 'value'
-            },
-            series: [
+            xAxis : [
                 {
-                    name:'成交',
-                    type:'line',
-                    smooth:true,
-                    symbol: 'none',
-                    stack: 'a',
-                    areaStyle: {
-                        normal: {}
-                    },
-                    data: data
-                    // data: [1]
+                    type : 'category',
+                    data : ['50前', '50后', '60后', '70后', '80后', '90后', '00后'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    type:'bar',
+                    barWidth: '60%',
+                    data:[10, 52, 200, 334, 390, 330, 220]
                 }
             ]
         };
-
-        setInterval(function () {
-            addData(true);
-            myChart2.setOption({
-                xAxis: {
-                    data: date
-                },
-                series: [{
-                    name:'成交',
-                    data: data
-                }]
-            });
-        }, 1000);
-
+         
+     
 
  
    
