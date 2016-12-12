@@ -55,21 +55,34 @@ class IndexController extends Controller {
         $articleNum1 = $articleNumModel->where($condition)->count();
         $this->assign('articleNum1',$articleNum1);
        ;
-        $hms=date("H:i:s");
-        $hms6=date("H:i:s",strtotime("-1 seconds"));
-        $hms5=date("H:i:s",strtotime("-2 seconds"));
-        $hms4=date("H:i:s",strtotime("-3 seconds"));
-        $hms3=date("H:i:s",strtotime("-4 seconds"));
-        $hms2=date("H:i:s",strtotime("-5 seconds"));
-        $hms1=date("H:i:s",strtotime("-6 seconds"));
-        $this->assign('hms',$hms);
-        $this->assign('hms2',$hms2);
-        $this->assign('hms1',$hms1);
-        $this->assign('hms3',$hms3);
-        $this->assign('hms4',$hms4);
-        $this->assign('hms5',$hms5);
-        $this->assign('hms5',$hms5);
 
+        // data : ['50前', '50后', '60后', '70后', '80后', '90后', '00后']
+       $condition['birthday'] = array('like','2%');
+       $userBirth00 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth00',$userBirth00);
+
+       $condition['birthday'] = array('like','199%');
+       $userBirth90 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth90',$userBirth90);
+
+       $condition['birthday'] = array('like','198%');
+       $userBirth80 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth80',$userBirth80);
+
+       $condition['birthday'] = array('like','197%');
+       $userBirth70 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth70',$userBirth70);
+
+       $condition['birthday'] = array('like','196%');
+       $userBirth60 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth60',$userBirth60);
+
+       $condition['birthday'] = array('like','195%');
+       $userBirth50 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth50',$userBirth50);
+
+       $userBirthBefor = $userNum - $userBirth00 - $userBirth90 - $userBirth80 - $userBirth70 - $userBirth60 - $userBirth50;
+       $this->assign('userBirthBefor',$userBirthBefor);
   
         $this->display();
     }
