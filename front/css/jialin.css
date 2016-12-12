@@ -352,8 +352,8 @@ body{position: relative;
 .exTitle{
 	position: absolute;
 	top: 20%;
-	left: 50%;
-	margin-left: -120px;
+	/*left: %;*/
+	margin-left: 10%;
 	letter-spacing: 1px;
 	/*margin-top: 20px;*/
 }
