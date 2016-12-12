@@ -55,20 +55,8 @@ class IndexController extends Controller {
         $articleNum1 = $articleNumModel->where($condition)->count();
         $this->assign('articleNum1',$articleNum1);
        ;
-        $hms=date("H:i:s");
-        $hms6=date("H:i:s",strtotime("-1 seconds"));
-        $hms5=date("H:i:s",strtotime("-2 seconds"));
-        $hms4=date("H:i:s",strtotime("-3 seconds"));
-        $hms3=date("H:i:s",strtotime("-4 seconds"));
-        $hms2=date("H:i:s",strtotime("-5 seconds"));
-        $hms1=date("H:i:s",strtotime("-6 seconds"));
-        $this->assign('hms',$hms);
-        $this->assign('hms2',$hms2);
-        $this->assign('hms1',$hms1);
-        $this->assign('hms3',$hms3);
-        $this->assign('hms4',$hms4);
-        $this->assign('hms5',$hms5);
-        $this->assign('hms5',$hms5);
+
+        // data : ['50前', '50后', '60后', '70后', '80后', '90后', '00后']
 
   
         $this->display();
