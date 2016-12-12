@@ -250,7 +250,7 @@ a:visited {
 	text-align: center;
 }
 .textLeft{
-	text-align: left;
+	text-align: left!important;
 }
 .textRight{
 	text-align: right;
