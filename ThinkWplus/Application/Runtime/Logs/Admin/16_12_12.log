@@ -1,0 +1,254 @@
+[ 2016-12-12T15:11:46+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/admin/admin/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.018605s ]
+INFO: [ app_init ] --END-- [ RunTime:0.109621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.057147s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.057509s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0754s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `adminuser` LIMIT 1   [ RunTime:0.0268s ]
+SQL: SELECT * FROM `adminuser` ORDER BY `id` ASC LIMIT 0,6   [ RunTime:0.0319s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.026483s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.026654s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.344608s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.344804s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.027046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.027204s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018801s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018985s ]
+
+[ 2016-12-12T15:11:47+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/admin/admin/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001010s ]
+
+[ 2016-12-12T15:11:52+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/admin/admin/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.238842s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.238918s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000883s ]
+
+[ 2016-12-12T15:12:41+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/Admin/doAdd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001515s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given G:\wwwroot\github\Wplus\ThinkWplus\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0336s ]
+NOTIC: [8] Undefined index: validate G:\wwwroot\github\Wplus\ThinkWplus\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `adminuser` WHERE `username` = 'meimei' LIMIT 1   [ RunTime:0.0342s ]
+NOTIC: [8] Undefined index: auto G:\wwwroot\github\Wplus\ThinkWplus\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `adminuser` (`username`,`realname`,`password`,`repassword`,`sex`,`position`,`phonenum`,`email`,`birth`,`headimg`) VALUES ('meimei','美美','111111','111111','女','开发人员','11111111111','111@qq.com','1996-12-12','../Public/uploads/2016-12-12/584e4de68f027.jpg') [ RunTime:0.0398s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.088332s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.088493s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001695s ]
+
+[ 2016-12-12T15:12:46+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/Admin/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001307s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.2470s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `adminuser` LIMIT 1   [ RunTime:0.0271s ]
+SQL: SELECT * FROM `adminuser` ORDER BY `id` ASC LIMIT 0,6   [ RunTime:0.0306s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000409s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080996s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081240s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001353s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003463s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003746s ]
+
+[ 2016-12-12T15:12:46+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/Admin/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+
+[ 2016-12-12T15:12:51+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/Admin/lists/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001003s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0356s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `adminuser` LIMIT 1   [ RunTime:0.0353s ]
+SQL: SELECT * FROM `adminuser` ORDER BY `id` ASC LIMIT 6,6   [ RunTime:0.0340s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000818s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000881s ]
+
+[ 2016-12-12T15:12:51+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/Admin/lists/p/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000761s ]
+
+[ 2016-12-12T15:12:56+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/Admin/lists/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0349s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `adminuser` LIMIT 1   [ RunTime:0.0370s ]
+SQL: SELECT * FROM `adminuser` ORDER BY `id` ASC LIMIT 6,6   [ RunTime:0.0377s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023694s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001740s ]
+
+[ 2016-12-12T15:13:02+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/Admin/lists/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001126s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001515s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0315s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `adminuser` LIMIT 1   [ RunTime:0.0323s ]
+SQL: SELECT * FROM `adminuser` ORDER BY `id` ASC LIMIT 0,6   [ RunTime:0.0339s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057378s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057465s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000920s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001141s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001241s ]
+
+[ 2016-12-12T15:14:07+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/Admin/edit?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `adminuser` [ RunTime:0.0345s ]
+SQL: SELECT * FROM `adminuser` WHERE `id` = 1 LIMIT 1   [ RunTime:0.2496s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000229s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000417s ]
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' G:\wwwroot\github\Wplus\ThinkWplus\Application\Runtime\Cache\Admin\b64e0870e99206b74f3c41c0218e59fb.php 第 59 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' G:\wwwroot\github\Wplus\ThinkWplus\Application\Runtime\Cache\Admin\b64e0870e99206b74f3c41c0218e59fb.php 第 61 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079096s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001636s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002946s ]
+
+[ 2016-12-12T15:14:33+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001882s ]
+NOTIC: [8] Use of undefined constant recipe - assumed 'recipe' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 6 行.
+SQL: SHOW COLUMNS FROM `recipe` [ RunTime:0.0347s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `recipe` LIMIT 1   [ RunTime:0.2543s ]
+NOTIC: [8] Use of undefined constant state - assumed 'state' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `state` [ RunTime:0.0363s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `state` LIMIT 1   [ RunTime:0.0350s ]
+NOTIC: [8] Use of undefined constant feedback - assumed 'feedback' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `feedback` [ RunTime:0.0322s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feedback` LIMIT 1   [ RunTime:0.0320s ]
+NOTIC: [8] Use of undefined constant user - assumed 'user' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0303s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0350s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 22 行.
+NOTIC: [8] Use of undefined constant article - assumed 'article' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0346s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `time` LIKE '2016%' LIMIT 1   [ RunTime:0.0347s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 28 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `time` LIKE '2015%' LIMIT 1   [ RunTime:0.0335s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `time` LIKE '2014%' LIMIT 1   [ RunTime:0.0334s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 38 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `time` LIKE '2013%' LIMIT 1   [ RunTime:0.0344s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 43 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `time` LIKE '2012%' LIMIT 1   [ RunTime:0.0326s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 48 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `time` LIKE '2011%' LIMIT 1   [ RunTime:0.0352s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' G:\wwwroot\github\Wplus\ThinkWplus\Application\Admin\Controller\IndexController.class.php 第 53 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `time` LIKE '2010%' LIMIT 1   [ RunTime:0.0340s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000506s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000873s ]
+NOTIC: [8] Undefined variable: hms6 G:\wwwroot\github\Wplus\ThinkWplus\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 307 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052218s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052449s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001507s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001673s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004723s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005013s ]
+
+[ 2016-12-12T15:14:34+08:00 ] 127.0.0.1 /github/Wplus/ThinkWplus/index.php/Admin/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+

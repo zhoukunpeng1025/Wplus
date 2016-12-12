@@ -1,0 +1,803 @@
+/*
+* @description: 启动页 splash.html
+* @author: 鲁晓佳
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.splash{
+	background: url(../images/splash.jpg) no-repeat;
+	background-size: 100%;
+	text-align: center;
+}
+.slogan{
+	display: block;
+	position: absolute;
+	top: 30%;
+	width: 95%;
+}
+.logo{
+	margin-top: 100%;
+	width: 20%;
+}
+
+/*
+* @description: 登录页 signin.html
+* @author: 鲁晓佳
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.inputList ul::before, .inputList ul::after{
+	background: transparent;
+}
+.bottomBorder{
+	border-bottom: 1px solid #ccc!important;
+}
+.problemLink{
+	padding-top: 10%;
+	height: 50px;
+}
+.sign{
+	position: absolute;
+	width: 100%;
+}
+.signBtn{
+	width: 150px;
+	border: none;
+	background: #ccc;
+	color: #fff;
+	margin: 0 auto;
+}
+.OR{
+	padding-top: 150px;
+	text-align: center;
+}
+.orBox{
+	text-align: center;
+}
+.orBox a{
+	display: block;
+	width: 33.33%;
+	float: left;
+	font-size: 20px;
+}
+
+/*
+* @description: 注册页 signup1.html
+* @author: 鲁晓佳
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.areaCode{
+	padding-right: 20px;
+}
+
+/*
+* @description: 验证页 signup2.html
+* @author: 鲁晓佳
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.verify{
+	font-weight: bold;
+	font-size: 18px;
+}
+.paddingRight{
+	padding-right: 15px;
+}
+.resendBtn{
+	border: none;
+	background: #ccc;
+	color: #fff;
+}
+
+/*
+* @description: 主页 index.html
+* @author: 鲁晓佳
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+
+.tab-link{
+	line-height: 15px;
+	padding: 0 10px;
+	text-align: center;
+}
+.searchBlock{
+	width: 90%;
+}
+
+/*图片轮播touchSlider插件*/
+/* main_image */
+.main_visual{height:190px;overflow:hidden;position:relative;}
+.main_image{height:190px;overflow:hidden;position:relative;}
+.main_image ul{width:9999px;height:190px;overflow:hidden;position:absolute;top:0;left:0}
+.main_image li{float:left;width:100%;height:190px;}
+.main_image li span{display:block;width:100%;height:190px}
+.main_image li a{display:block;width:100%;height:190px}
+.main_image li .img_1{background:url('../images/1.jpeg') center top no-repeat;background-size: 100%;}
+.main_image li .img_2{background:url('../images/1.jpeg') center top no-repeat;background-size: 100%;}
+.main_image li .img_3{background:url('../images/1.jpeg') center top no-repeat;background-size: 100%;}
+.main_image li .img_4{background:url('../images/1.jpeg') center top no-repeat;background-size: 100%;}
+.main_image li .img_5{background:url('../images/1.jpeg') center top no-repeat;background-size: 100%;}
+/*图片下面的按钮，以及左右按钮*/
+div.flicking_con{position:absolute;top:160px;left:50%;z-index:999;width:300px;height:21px;margin:0 0 0 -50px;}
+div.flicking_con a{float:left;width:21px;height:21px;margin:0;padding:0;background:url('../images/btn_main_img.png') 0 0 no-repeat;display:block;text-indent:-1000px}
+div.flicking_con a.on{background-position:0 -21px}
+#btn_prev,#btn_next{z-index:11111;position:absolute;display:block;width:73px!important;height:74px!important;top:50%;margin-top:-37px;display:none;}
+#btn_prev{background:url(../images/hover_left.png) no-repeat left top;left:100px;}
+#btn_next{background:url(../images/hover_right.png) no-repeat right top;right:100px;}
+
+
+/*facebook-card*/
+.card-header{
+	height: 54px;
+}
+.fb{
+	float: left;
+	width: 216px;
+}
+.followBtn{
+	width: 64px;
+	float: right;
+	margin-top: 3px;
+	color: #ea4027;
+	border-color: #ea4027;
+}
+.facebook-card .card-header {
+display: block;
+padding: 10px;
+}
+
+.facebook-card .facebook-avatar {
+	float: left;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.facebook-avatar img{
+	width: 34px;
+	height: 34px;
+}
+.facebook-card .facebook-name {
+margin-left: 44px;
+font-size: 14px;
+font-weight: 500;
+}
+.facebook-card .facebook-date {
+margin-left: 44px;
+font-size: 13px;
+color: #8e8e93;
+}
+.facebook-card .card-footer {
+background: #fafafa;
+}
+.facebook-card .card-footer a {
+color: #81848b;
+font-weight: 500;
+}
+.facebook-card .card-content img {
+display: block;
+width: 100%;
+padding-bottom: 10px;
+}
+.facebook-card .card-content-inner {
+padding: 15px 10px;
+}
+
+/*
+* @description: 添加菜谱页 menu-add.html
+* @author: 鲁晓佳
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.noMargin{
+	margin: 0;
+}
+.menuLabel{
+	margin: 10px 0 0 10px;
+	font-size: 13px;
+}
+.stepImg{
+	text-align: center;
+}
+.stepImg img{
+	width: 100%;
+}
+.addStepBtn{
+	width: 100%;
+	text-align: center;
+}
+.addStepBtn:hover{
+	background: transparent;
+}
+.noBorder{
+	border: none;
+}
+.addAndRemove{
+	margin-top: 9px;
+	text-align: center;
+}
+
+/*
+* @description: 标题、工具栏样式
+* @author: 刘林会
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.navCss{
+  background-color: #ea4027;
+  color: white;
+}
+.tab-link{
+  line-height: 15px;
+  padding: 0 10px;
+}
+
+/*
+* @description: 直播间样式
+* @author: 刘林会
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+/*等级显示样式*/
+.textLv1{
+  background-color:#ffd861;
+  color: white;
+  font-size:13px;
+}
+.textLv2{
+  background-color: #ff6f87;
+  color: white;
+  font-size:12px;
+}
+/*直播作者信息div样式*/
+.carddivCss{
+  margin-top: 5%;
+}
+/*评论列表样式*/
+.ulCss{
+  list-style-type: none;
+  line-height: 25px;
+  margin-left: -7%;
+}
+/*start按钮样式*/
+#buttonRedcolor{
+  color: white;
+  background-color: #ea4027;
+}
+/*发评论*/
+.talkCss{
+  padding-bottom: -4%;
+}
+.imgCenter{
+  margin:0 auto;
+}
+/*直播间卡片样式*/
+.cardCss{
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+    margin: -5px auto;
+}
+.cardDis{
+  margin: 2% auto;
+  padding:0px 0.8%;
+}
+.rowCss{
+  margin: auto 1.5%;
+}
+.cardScreen{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.textUp{
+   margin-top: -3%;
+}
+.cardCss1{
+  margin-top: -4px;
+  padding-bottom: 4%;
+}
+.cardCss2{
+  margin: auto 0px;
+}
+.planeCss{
+	margin-right: -5%;
+}
+.fanColor{
+  color: #959595;
+  background-color:#ECECEC;
+  border:solid 1px #ECECEC;
+}
+
+/*
+* @description: 不等袋 request-list.html
+* @author: 武亦文
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.requestH3{
+	padding-left: 16%;
+	color: #D32F2F;
+}
+#rightPlus:link{
+	color: white;
+}
+#rightPlus:visited{
+	color: white;
+}
+.requestTime{
+	padding-left: 15%;
+	color: #959595;
+	font-size: 12px;
+}
+#building{
+	text-align: center;
+	margin-bottom: 2px;
+}
+.tab-link{
+line-height: 15px;
+padding: 0 10px;
+}
+
+/*
+* @description: 菜篮 basket-list.html
+* @author: 武亦文
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+/*菜篮列表边框颜色*/
+.itemBorder1{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #ff6f87
+}
+.itemBorder2{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #aff7ff
+}
+.itemBorder3{
+	border-left-style: solid;
+	border-left-width: 3px;
+	border-left-color: #ffd861
+}
+/*菜篮列表title样式*/
+.basketH3{
+	padding-left: 16%;
+}
+.basketTitle{
+	padding-left: 65px;
+}
+.itemTitleBoder{
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #959595
+}
+.itemTitleBoder div{
+	padding-top: 5px;
+	padding-left: 12px;
+	padding-bottom: 2px;
+}
+/*手风琴内容文本*/
+.itemContentText{
+	font-size: 16px;
+}
+.useLevel{
+	color: #959595
+}
+/*联系方式样式：住址、电话*/
+.contactWay{
+	padding-top: 20px;
+	color: #959595;
+}
+
+/*
+* @description: 菜谱分类页 menu-Assortment.html
+* @author: 武亦文
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+@charset "utf-8";
+.category{
+	width: 80%;
+	margin: 0 auto;
+	background: white;
+}
+.catTitle{
+	height: 30px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+.topLeft,.topRight,.bottomLeft,.bottomRight{
+	width: 48%;
+	padding: 0 2px;
+	float: left;
+}
+.smallImg{
+	width: 50%;
+}
+
+.tagAssorts{
+	padding-top: 5%;
+	padding-bottom: 6%;
+}
+.hotTag{
+	font-size: 100%;
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-left-color: #ea4027;
+	text-align: center;
+}
+.hotTags{
+	padding-top: 4%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.hotTags div a{
+	color: #212121;
+}
+
+/*
+* @description: 菜谱列表 menu-list.html
+* @author: 武亦文
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.lookAll{
+	margin-top: 2%;
+	padding-bottom: 2%;
+	border-top-style: solid;
+	border-top-color: #959595;
+	border-top-width: 1px;
+}
+.littleTag{
+	color: #959595;
+}
+.littleTag a:link{
+	color:#959595;
+}
+.littleTag a:active{
+	color:#ea4027;
+}
+.lookBtn{
+	padding-top:6%;
+}
+
+/*
+* @description: 菜谱内容页 menu-content.html
+* @author: 武亦文
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.contentTitle{
+	text-align: center;
+}
+.ppp{
+	font-size: 18px;
+	color: #959595;
+	padding-left: 20px;
+}
+.level{
+	color: #ea4027;
+}
+.orderNum{
+	color: #959595;
+	font-size: 20px;
+}
+.pickerInner img{
+	padding-left: 26%;
+}
+.pickerInner p{
+	font-size: 10px;
+	text-align: center;
+}
+#picker1:link{
+	color: #212121;
+}
+#picker1:visited{
+	color: #212121;
+}
+#thumbs:link{
+	color: #212121;
+}
+#thumbs:visited{
+	color: #212121;
+}
+#heart:link{
+	color: #212121;
+}
+#heart:visited{
+	color: #212121;
+}
+#cancel a:link{
+	color: #212121;
+}
+#cancel a:visited{
+	color: #212121;
+}
+.grayLink{
+	float: right;
+}
+.grayLink:link{
+	color: #959595;
+}
+.grayLink:visited{
+	color: #959595;
+}
+.stepContent{
+	padding-top:2%;
+	padding-left:1%;
+	padding-right: 1%;
+	text-align: left;
+}
+.menuImg{
+	padding-left: 11%;
+	padding-top: 2%;
+	padding-bottom: 5%;
+}
+/*计时按钮*/
+#timeKeep{
+	color: white;
+	background-color: #ea4027;
+	font-size: 60%;
+	text-align: center;
+	width: 30%;
+	margin-top: 5%;
+	margin-right: 10%;
+	float: right;
+}
+
+/*
+* @description: 生成订单页 make-order.html
+* @author: 武亦文
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+#makeOrderTil{
+	color: #ea4027;
+}
+.rightBtn{
+	padding-left: 10%;
+}
+.btnGroup{
+	background: white;
+	min-height: 50px;
+	height: auto;
+	padding-top: 20px;
+}
+.selfBuy,.otherBuy{
+	width: 85%;
+	margin: 0 auto;
+}
+.otherBuy{
+	color: white;
+	border: none;
+	border-radius: 5px;
+	height: 29px;
+	background: #ea4027;
+	line-height: 29px;
+	text-align: center;
+	float: right;
+}
+.selfBuy{
+	color: #ea4027;
+	border-color: #ea4027;
+	float: left;
+}
+#daiBuyContent{
+	margin-left: -40%;
+}
+
+/*
+* @description: 菜谱步骤页 menu-step.html
+* @author: 武亦文
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.stepImgs{
+	padding-top: 2%;
+}
+.stepsKeepTime{
+	opacity:0.6;
+}
+.textCenter{
+	text-align: center;
+}
+.twentyFont{
+	font-size: 1.5em;
+	font-weight: bold;
+	border-bottom: solid 2px #ea4027;
+}
+.fourteenFont{
+	font-size: 0.8em;
+}
+/*修改内容*/
+.contentBtn{
+	width: 50%;
+	height: 100%;
+	line-height: 44px;
+	margin: 0; 
+	color: #ffffff;
+	border: none;
+	padding: 0;
+	-moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+/*
+* @description: 所有链接样式
+* @author: 武亦文
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+.menuAsLink:link{
+	color: #212121;
+}
+.menuAsLink:visited{
+	color: #212121;
+}
+.grayLeft:link{
+	color: #212121;
+}
+.grayLeft:visited{
+	color: #212121;
+}
+.redLeft:link{
+	color: #212121;
+}
+.redLeft:visited{
+	color: #212121;
+}
+
+/*
+* @description: 附近页 nearby.html
+* @author: 周锟鹏
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+/*Navbar CSS*/
+.popover {
+ 	width: 200px;
+}
+.toolbar{
+	text-align: center;
+}
+/*Popover CSS*/
+.list-block a{
+	color: #ea4027 !important;
+}
+
+/*
+* @description: 文章编辑页 essayedit.html
+* @author: 周锟鹏
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+/*Navbar CSS*/
+.nav2{
+	background: #ccc !important;
+	font:bold 20px;
+	color: #000000;
+}
+.nav2 i{
+	color: #000000;
+}
+.essayPage{
+	padding-bottom: 0 !important;
+	background: #ffffff;
+}
+.essayList{
+	margin: 0;
+}
+.essayList ul::after, .sayText ::after{
+	background-color: #ffffff!important;
+}{
+	background-color: #ffffff;
+}
+.toolLink{
+	width: 50% !important;
+}
+.toolLink a{
+	padding-top: 8%;
+}
+.inputCamera{
+	width: 64px;
+	height: 64px;
+	margin: 15px;
+	background: url(../images/photo.png) no-repeat;
+	background-size: 90%;
+}
+.Camera{
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    font-size: 30px;
+    outline: medium none;
+    position: absolute;
+    opacity: 0; 
+}
+.showGPS{
+	color: #000000;
+}
+.icon-back{
+	width: 14px !important;
+	height: 17px !important;
+	margin-left: 15px; 
+	background-image: url(../images/back.png) !important;
+}
+.cardLink{
+	color: #000000;
+}
+
+/*导航栏渐变半透明效果*/
+.transparentNav{
+	background: #000000 ;
+	/*设置半透明*/
+	opacity:0.5 !important;
+	filter:alpha(opacity=30) !important;
+  	-webkit-filter:alpha(opacity=30) !important;
+	/*代表从上到下，从黑到白的渐变*/
+	background: -webkit-linear-gradient(top,#000000 0,#ffffff 100%) !important;
+	background: -moz-linear-gradient(top,#000000 0,#ffffff 100%) !important;
+	background: -o-linear-gradient(top,#000000 0,#ffffff 100%) !important;
+	background: linear-gradient(to bottom,#000000 0,#ffffff 100%) !important;
+}
+
+/*
+* @description: 其他公用样式
+* @author: 鲁晓佳、刘林会
+* @update: 2016-12-12 鲁晓佳 整合css
+*/
+/*********
+*文本居中
+*********/
+.textCenter{
+  text-align: center;
+}
+.textRight{
+  text-align: right;
+}
+/*********
+*字体颜色
+*********/
+.redColor{
+	color: #ea4027;
+}
+.greyColor{
+	color: #959595;
+}
+.whiteColor{
+	color: #ffffff;
+}
+.blackColor{
+	color: #000;
+}
+/*********
+*字体大小
+*********/
+.font20{
+	font-size: 20px;
+	line-height: 16px;
+}
+.font18{
+  font-size: 18px;
+}
+.font16{
+	font-size: 16px;
+}
+.font13{
+  font-size: 13px;
+}
+.font11{
+	font-size: 11px;
+}
+/*********
+*背景颜色
+*********/
+.redBGColor{
+	background: #ea4027;
+}
+.whiteBGColor{
+	background: #ffffff;
+}
+/*********
+* 浮  动
+*********/
+.rightFloat,.floatRight{
+	float: right;
+}
+.leftFloat,.floatLeft{
+	float: left;
+}
+.clearFloat{
+	clear: both;
+}
+.Center{
+	text-align: center;
+}
