@@ -57,7 +57,32 @@ class IndexController extends Controller {
        ;
 
         // data : ['50前', '50后', '60后', '70后', '80后', '90后', '00后']
+       $condition['birthday'] = array('like','2%');
+       $userBirth00 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth00',$userBirth00);
 
+       $condition['birthday'] = array('like','199%');
+       $userBirth90 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth90',$userBirth90);
+
+       $condition['birthday'] = array('like','198%');
+       $userBirth80 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth80',$userBirth80);
+
+       $condition['birthday'] = array('like','197%');
+       $userBirth70 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth70',$userBirth70);
+
+       $condition['birthday'] = array('like','196%');
+       $userBirth60 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth60',$userBirth60);
+
+       $condition['birthday'] = array('like','195%');
+       $userBirth50 = $userNumModel->where($condition)->count();
+       $this->assign('userBirth50',$userBirth50);
+
+       $userBirthBefor = $userNum - $userBirth00 - $userBirth90 - $userBirth80 - $userBirth70 - $userBirth60 - $userBirth50;
+       $this->assign('userBirthBefor',$userBirthBefor);
   
         $this->display();
     }
