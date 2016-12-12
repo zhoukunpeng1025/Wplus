@@ -6,14 +6,14 @@ class LoginController extends Controller {
     	if (IS_POST) {
 			$adminUsersModel = M('adminuser');
 			$condition = array(
-				"adminname" => I("post.adminname"),
+				"username" => I("post.username"),
 				"password" => I("post.password")
 			);
 			$result = $adminUsersModel->where($condition)->count();
 			$id = $adminUsersModel->field('id')->where($condition)->select();
 			// var_dump($result);
 			if ($result > 0) {
-				$_SESSION['adminname'] = I("post.adminname");
+				$_SESSION['username'] = I("post.username");
 				$_SESSION['userid'] = $id[0]["id"];
 				// ？？用数组设定session不生效
 				// session(array(
