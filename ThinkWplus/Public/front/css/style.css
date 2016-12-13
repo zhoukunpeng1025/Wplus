@@ -139,8 +139,8 @@ div.flicking_con a.on{background-position:0 -21px}
 	border-color: #ea4027;
 }
 .facebook-card .card-header {
-display: block;
-padding: 10px;
+	display: block;
+	padding: 10px;
 }
 
 .facebook-card .facebook-avatar {
@@ -155,29 +155,35 @@ padding: 10px;
 	height: 34px;
 }
 .facebook-card .facebook-name {
-margin-left: 44px;
-font-size: 14px;
-font-weight: 500;
+	margin-left: 44px;
+	font-size: 14px;
+	font-weight: 500;
 }
 .facebook-card .facebook-date {
-margin-left: 44px;
-font-size: 13px;
-color: #8e8e93;
+	margin-left: 44px;
+	font-size: 13px;
+	color: #8e8e93;
 }
 .facebook-card .card-footer {
-background: #fafafa;
+	background: #fafafa;
 }
 .facebook-card .card-footer a {
-color: #81848b;
-font-weight: 500;
+	color: #81848b;
+	font-weight: 500;
 }
 .facebook-card .card-content img {
-display: block;
-width: 100%;
-padding-bottom: 10px;
+	display: block;
+	width: 100%;
+	padding-bottom: 10px;
 }
 .facebook-card .card-content-inner {
 padding: 15px 10px;
+}
+/*设置超出隐藏*/
+.card-content-inner p{
+	height: 40px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /*
