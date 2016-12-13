@@ -22,23 +22,23 @@ myapp.pages.IndexPageController = function (myapp, $$) {
     welcomescreen_slides = [
       {
         id: 'slide0',
-        picture: '<div class="tutorialicon"><img src="images/slider0.png"></div>',
+        picture: '<div class="tutorialicon"><img src="../../../Public/front/images/slider0.png"></div>',
       },
       {
         id: 'slide1',
-        picture: '<div class="tutorialicon"><img src="images/slider1.png"></div>',
+        picture: '<div class="tutorialicon"><img src="../../../Public/front/images/slider1.png"></div>',
       },
       {
         id: 'slide2',
-        picture: '<div class="tutorialicon"><img src="images/slider2.png"></div>',
+        picture: '<div class="tutorialicon"><img src="../../../Public/front/images/slider2.png"></div>',
       },
       {
         id: 'slide3',
-        picture: '<div class="tutorialicon"><img src="images/slider3.png"></div>',
+        picture: '<div class="tutorialicon"><img src="../../../Public/front/images/slider3.png"></div>',
       },
       {
         id: 'slide4',
-        picture: '<div class="tutorialicon"><img src="images/slider4.png"></div>',
+        picture: '<div class="tutorialicon"><img src="../../../Public/front/images/slider4.png"></div>',
         text: '<a class="tutorial-close-btn" href="#">进入味+</a>'
       }
     ],
