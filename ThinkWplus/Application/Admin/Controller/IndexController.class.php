@@ -15,11 +15,11 @@ class IndexController extends Controller {
 		}
 
 		public function indexIndex(){
-			$menuNumModel = M(recipe);
+			$menuNumModel = M(dish);
 			$menuNum = $menuNumModel->count();
 			$this->assign('menuNum',$menuNum);
 
-			$vedioNumModel = M(state);
+			$vedioNumModel = M(order);
 			$vedioNum = $vedioNumModel->count();
 			$this->assign('vedioNum',$vedioNum);
 

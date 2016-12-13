@@ -7,11 +7,11 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="/github/Wplus/ThinkWplus/Public/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Wplus/ThinkWplus/Public/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/animate.css" rel="stylesheet">
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/animate.css" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
     .form-group label{
     	font-size: 18px;
@@ -22,7 +22,7 @@
 <body>
 	<div class="container" style="border:solid 1px #E0E0E0;margin-top:1%;">
 		<h2 style="padding:1% 0;border-bottom:solid 1px #E0E0E0;">添加管理员</h2>
-		<form action="/github/Wplus/ThinkWplus/index.php/Admin/Admin/doEdit" method="post" name="myform" enctype="multipart/form-data">  
+		<form action="/Wplus/ThinkWplus/index.php/Admin/Admin/doEdit" method="post" name="myform" enctype="multipart/form-data">  
 		  <div class="col-md-12" style="padding-top:1%">
 		    <div class="form-group">
 		        <label class="col-sm-3 control-label">用户名：</label>
@@ -38,20 +38,7 @@
 
 		        </div>
 		    </div>
-		    <div class="form-group">
-		        <label class="col-sm-3 control-label">密码：</label>
-		        <div class="col-sm-8">
-		            <input type="password" class="form-control" name="password" placeholder="请输入密码" value="<?php echo ($adminUsers["password"]); ?>">
-		            <span class="help-block m-b-none"></span>
-		        </div>
-		    </div>
-		    <div class="form-group">
-		        <label class="col-sm-3 control-label">确认密码：</label>
-		        <div class="col-sm-8">
-		            <input type="password" class="form-control" name="repassword" placeholder="请输入密码" value="<?php echo ($adminUsers["repassword"]); ?>">
-		            <span class="help-block m-b-none"></span>
-		        </div>
-		    </div>
+		    <!-- 删除了编辑他人密码的功能 -->
 		    <div class="form-group">
 		        <label class="col-sm-3 control-label">性别：</label>
 		        <div class="col-sm-8">
@@ -73,7 +60,7 @@
 		    <div class="form-group">
 		        <label class="col-sm-3 control-label">上传头像：</label>
 		        <div class="col-sm-8">
-		        	<img src="/github/Wplus/ThinkWplus/Public/<?php echo ($adminUsers["headimg"]); ?>" width="50px" height="50px"/>
+		        	<img src="/Wplus/ThinkWplus/Public/<?php echo ($adminUsers["headimg"]); ?>" width="50px" height="50px"/>
 		            <input type="file" name="headimg" class="form-control"><span class="help-block m-b-none"></span>
 		        </div>
 		    </div>
@@ -111,10 +98,10 @@
 	</div>
 
 	<!-- 全局js -->
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- layerDate plugin javascript -->
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/plugins/layer/laydate/laydate.js"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/plugins/layer/laydate/laydate.js"></script>
     <script>
         //外部js调用
         laydate({

@@ -7,11 +7,11 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="/github/Wplus/ThinkWplus/Public/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Wplus/ThinkWplus/Public/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/animate.css" rel="stylesheet">
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/animate.css" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
     .form-group label{
     	font-size: 18px;
@@ -108,10 +108,10 @@
 	</div>
 
 	<!-- 全局js -->
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- layerDate plugin javascript -->
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/plugins/layer/laydate/laydate.js"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/plugins/layer/laydate/laydate.js"></script>
     <script>
         //外部js调用
         laydate({

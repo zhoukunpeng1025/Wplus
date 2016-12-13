@@ -7,11 +7,11 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <link rel="shortcut icon" href="favicon.ico"> <link href="/github/Wplus/ThinkWplus/Public/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Wplus/ThinkWplus/Public/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/animate.css" rel="stylesheet">
-    <link href="/github/Wplus/ThinkWplus/Public/back/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/animate.css" rel="stylesheet">
+    <link href="/Wplus/ThinkWplus/Public/back/css/style.css?v=4.1.0" rel="stylesheet">
     <style type="text/css">
     .page{
         list-style: none;
@@ -33,7 +33,7 @@
                     <div class="contact-box">
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive headimg" src="/github/Wplus/ThinkWplus/Public/<?php echo ($d["headimg"]); ?>">
+                                <img alt="image" class="img-circle m-t-xs img-responsive headimg" src="/Wplus/ThinkWplus/Public/<?php echo ($d["headimg"]); ?>">
                                 <div class="m-t-xs font-bold"><?php echo ($d["position"]); ?></div>
                             </div>
                         </div>
@@ -48,8 +48,8 @@
                                 <abbr title="Phone">Tel:</abbr> <?php echo ($d["phonenum"]); ?>
                             </address>
                             <div class="row" style="float:right; width: 156px;; width: 156px;">
-                                <a href="/github/Wplus/ThinkWplus/index.php/Admin/Admin/edit?id=<?php echo ($d["id"]); ?>" type="button" class="btn  btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> 编辑</a> 
-                                <a href="/github/Wplus/ThinkWplus/index.php/Admin/Admin/delete?id=<?php echo ($d["id"]); ?>" type="button" class="btn  btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> 删除</a> 
+                                <a href="/Wplus/ThinkWplus/index.php/Admin/Admin/edit?id=<?php echo ($d["id"]); ?>" type="button" class="btn  btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> 编辑</a> 
+                                <a href="/Wplus/ThinkWplus/index.php/Admin/Admin/delete?id=<?php echo ($d["id"]); ?>" type="button" class="btn  btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> 删除</a> 
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -69,10 +69,10 @@
     </div>
 </div>
     <!-- 全局js -->
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/jquery.min.js?v=2.1.4"></script>
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- 自定义js -->
-    <script src="/github/Wplus/ThinkWplus/Public/back/js/content.js?v=1.0.0"></script>
+    <script src="/Wplus/ThinkWplus/Public/back/js/content.js?v=1.0.0"></script>
     <script>
         $(document).ready(function () {
             $('.contact-box').each(function () {
