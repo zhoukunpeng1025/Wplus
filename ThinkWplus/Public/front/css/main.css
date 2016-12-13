@@ -1,12 +1,22 @@
+body{
+  height: 100%;
+}
+
+.welcomescreen-picture{
+  height: 100%;
+}
+
 .tutorialicon {
   font-size: 250px;
   line-height: 170px;
+  height: 100%;
 }
 .tutorialicon img{
   position: relative;
   top: -100px;
   max-width: 400px;
-  width: 100%;
+  /*width: 100%;*/
+  height: 90%;
 }
 
 /*.tutorial-close-btn {
