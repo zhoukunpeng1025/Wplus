@@ -55,6 +55,7 @@
                   </ul>
                 </div>
               </div><!-- 图片轮播end -->
+              <volist name="article" id="vo">
               <!-- 文章卡片 -->
               <div class="card facebook-card">
                   <div class="card-header">
@@ -62,16 +63,16 @@
                       <div class="facebook-avatar">
                         <img src="__PUBLIC__/front/images/avatar.jpg">
                       </div>
-                      <div class="facebook-name">南国姑娘萌萌哒</div>
-                      <div class="facebook-date">Monday at 2:15 PM</div>
+                      <div class="facebook-name">{$vo.username}</div>
+                      <div class="facebook-date">{$vo.time}</div>
                     </div>
                     <a href="#" class="button followBtn">关注</a>
                   </div>
                   <div class="card-content">
                       <div class="card-content-inner">
                         <img src="__PUBLIC__/front/images/2.jpg">
-                        <h3>鹌鹑如何吃更有营养</h3>
-                        <p>鹌鹑既有鲜美的味道,又有着丰富的营养。鹌鹑肉中富含蛋白质,含量高达22.2%,另外还...</p>
+                        <h3>{$vo.title}</h3>
+                        <p>{$vo.content}</p>
                       </div>
                   </div>
                   <div class="card-footer">
@@ -80,38 +81,14 @@
                     <a href="#" class="link"><i class="icon fa fa-share-square-o"> 10</i></a>
                   </div>
               </div><!-- 文章卡片end -->
-              <!-- 文章卡片 -->
-              <div class="card facebook-card">
-                  <div class="card-header">
-                    <div class="fb">
-                      <div class="facebook-avatar">
-                        <img src="__PUBLIC__/front/images/avatar.jpg">
-                      </div>
-                      <div class="facebook-name">南国姑娘萌萌哒</div>
-                      <div class="facebook-date">Monday at 2:15 PM</div>
-                    </div>
-                    <a href="#" class="button followBtn">关注</a>
-                  </div>
-                  <div class="card-content">
-                      <div class="card-content-inner">
-                        <img src="__PUBLIC__/front/images/2.jpg">
-                        <h3>鹌鹑如何吃更有营养</h3>
-                        <p>鹌鹑既有鲜美的味道,又有着丰富的营养。鹌鹑肉中富含蛋白质,含量高达22.2%,另外还...</p>
-                      </div>
-                  </div>
-                  <div class="card-footer">
-                    <a href="#" class="link"><i class="icon fa fa-heart-o"> 112</i></a>
-                    <a href="#" class="link"><i class="icon fa fa-commenting-o"> 24</i></a>
-                    <a href="#" class="link"><i class="icon fa fa-share-square-o"> 10</i></a>
-                  </div>
-              </div><!-- 文章卡片end -->
+              </volist>
             </div>
           </div>
         </div>
         <!-- Bottom Toolbar-->
         <div class="toolbar">
           <div class="toolbar-inner">
-            <a href="index.html" class="tab-link redColor">
+            <a href="__MODULE__/Index/index" class="tab-link redColor">
               <i class="icon fa fa-home font20"></i>
               <span class="tabbar-label font11">主页</span>
             </a>
