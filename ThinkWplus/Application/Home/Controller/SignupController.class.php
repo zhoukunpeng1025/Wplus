@@ -6,6 +6,28 @@ class SignupController extends Controller {
 		$this->display();
 	}
 
+	public function doSign(){
+		if (IS_POST) {
+			session(null);
+
+			$userModel = M("user");
+
+			$condition = array(
+				"phonenum" => I("post.phonenum"),
+				"password" => I("post.password")
+			);
+			$result = $userModel->where($condition)->count();
+			$username = $userModel->where($condition)->getField("username");
+			$id = $userModel->where($condition)->getField("id");
+
+			if ($result > 0) {
+				$_SESSION['username'] = $username;
+
+				$this->redirect("Index/index");
+			}
+		}
+	}
+
     public function signup(){
 		$this->display();
 	}
@@ -14,6 +36,8 @@ class SignupController extends Controller {
     	// 此功能需要开启php_curl.dll扩展
 		
 		if(IS_POST){
+			session(null);
+			
 			$phonenum = I("post.phonenum");
 			$verifycode = strval(rand(100000,999999)); // 随机一个六位验证码
 			$_SESSION['phonenum'] = $phonenum;
@@ -74,7 +98,7 @@ class SignupController extends Controller {
 			$username = I("post.username");
 			$password = I("post.password");
 			$_SESSION['username'] = $username;
-			$_SESSION['password'] = $password;
+			// $_SESSION['password'] = $password;
 
 			$data = $_POST;
 			$data['phonenum'] = I("session.phonenum");
