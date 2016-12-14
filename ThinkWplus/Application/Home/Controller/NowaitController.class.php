@@ -7,10 +7,6 @@ class NowaitController extends Controller {
     	$Model=M('order');
     	$order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id')->select();
 
-    	// for($i = 0; $i < count($order); $i++) {
-     //        $recipe[$i]["ingredients"] = explode("|", $order[$i]["ingredients"]);
-     //        $recipe[$i]["amount"] = explode("|", $order[$i]["amount"]);
-     //    }
         for($i = 0; $i < count($order); $i++) {
             $order[$i]["ingredients"] = explode("&", $order[$i]["ingredients"]);
             $order[$i]["amount"] = explode("&", $order[$i]["amount"]);
