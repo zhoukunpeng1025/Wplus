@@ -330,10 +330,11 @@
             function timer(intDiff){
               intervalId = window.setInterval(function(){
                 if (intDiff<=0) {
+                  //添加音频，闹钟提示音
                   $("#pop").append('<audio id="audios"  loop="loop" autoplay="autoplay" hidden="true"><source src="images/clock.mp3" type="audio/mpeg"><source src="images/2.ogg" type="audio/ogg"></audio>');
                   $("#pop").css("visibility","visible");
                   $("#ok").click(function(){
-                    $('#audios').remove();
+                    $('#audios').remove();//移除声音
                     $("#pop").css("visibility","hidden");
                     btn.html("开始计时");
                     clearInterval(intervalId);
@@ -352,7 +353,7 @@
                 }
                 if (minute <= 9) minute = '0' + minute;
                 if (second <= 9) second = '0' + second;
-                btn.html(hour+":"+minute+":"+second);
+                btn.html(hour+":"+minute+":"+second);//显示倒计时时间
                 intDiff--;    
               }, 1000);
             } 
