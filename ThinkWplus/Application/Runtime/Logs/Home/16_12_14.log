@@ -5745,3 +5745,25 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002246s ]
 INFO: [ app_end ] --END-- [ RunTime:0.002478s ]
 
+[ 2016-12-14T22:40:32+08:00 ] 127.0.0.1 /CLONE/Wplus/ThinkWplus/index.php/Home/Nowait/basketlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016808s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0947s ]
+SQL: SELECT * FROM `order` INNER JOIN address ON order.addressid = address.id INNER JOIN user ON order.makerid = user.id   [ RunTime:0.0384s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054291s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054388s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000832s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000913s ]
+

@@ -4,7 +4,8 @@ use Think\Controller;
 class NowaitController extends Controller {
     public function requestlist(){
     	//1获取数据
-    	$Model=M('order');
+    	$Model=M('order'); 
+        //连接数据表
     	$order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id')->select();
 
         for($i = 0; $i < count($order); $i++) {
