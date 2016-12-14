@@ -6,12 +6,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>signin</title>
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/welcomescreen.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/style.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/welcomescreen.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/main.css">
   </head>
   <body>
     <div class="statusbar-overlay"></div>
@@ -22,19 +22,19 @@
           <div class="navbar-inner">
             <div class="left" style="width: 30px;"></div>
             <div class="center whiteColor">登录</div>
-            <div class="right"><a href="signup1.html" class="external link whiteColor">注册</a></div>
+            <div class="right"><a href="__MODULE__/Signup/signup" class="external link whiteColor">注册</a></div>
           </div>
         </div>
         <div class="pages navbar-through toolbar-throug">
           <div data-page="index" class="page">
             <div class="page-content whiteBGColor">
-              <div class="list-block inputList">
+              <form class="list-block inputList" id="form" action="__MODULE__/Signup/doSign" method="post">
                 <ul>
                   <li>
                     <div class="item-content">
                       <div class="item-inner">
                         <div class="item-input">
-                          <input type="text" placeholder="请输入手机账号" id="mobile">
+                          <input type="text" placeholder="请输入手机账号" id="mobile" name="phonenum">
                         </div>
                       </div>
                     </div>
@@ -43,19 +43,19 @@
                     <div class="item-content">
                       <div class="item-inner bottomBorder">
                         <div class="item-input">
-                          <input type="password" placeholder="请输入密码" id="password">
+                          <input type="password" placeholder="请输入密码" id="password" name="password">
                         </div>
                       </div>
                     </div>
                   </li>
                 </ul>
-              </div>
+              </form>
               <div class="rightFloat problemLink">
                 <a href="#" class="link redColor">登录遇到问题？</a>
               </div>
               <div class="clearFloat"></div>
               <div class="sign">
-                <a href="index.html" class="external button signBtn" disabled="disabled">登录</a>
+                <a href="#" class="external button signBtn" disabled="disabled" onclick="document.getElementById('form').submit();return false;">登录</a>
               </div>
               
               <p class="greyColor clearBoth OR">OR</p>
@@ -69,11 +69,11 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/jquery-2.2.2.js"></script>
-    <script type="text/javascript" src="js/signin.js"></script>
-    <script type="text/javascript" src="js/welcomescreen.js"></script>
-    <script type="text/javascript" src="js/myapp/pages/IndexPageController.js"></script>
-    <script type="text/javascript" src="js/myapp/init.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/front/js/framework7.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/front/js/jquery-2.2.2.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/front/js/signin.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/front/js/welcomescreen.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/front/js/myapp/pages/IndexPageController.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/front/js/myapp/init.js"></script>
   </body>
 </html>

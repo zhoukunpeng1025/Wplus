@@ -6,10 +6,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>验证手机</title>
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/style.css">
   </head>
   <body>
     <div class="statusbar-overlay"></div>
@@ -18,7 +18,7 @@
         <!-- Top Navbar-->
         <div class="navbar redBGColor">
           <div class="navbar-inner">
-            <div class="left"><a href="signup1.html"><i class="whiteColor fa fa-arrow-left"></i></a></div>
+            <div class="left"><a href="__MODULE__/Signup/signup"><i class="whiteColor fa fa-arrow-left"></i></a></div>
             <div class="center whiteColor">验证手机</div>
             <div class="right" style="width: 30px;"></div>
           </div>
@@ -28,11 +28,11 @@
             <div class="page-content whiteBGColor">
             <p class="Center verify">我们发送了6位验证码至</p>
             <p class="Center verify"><?php echo I("session.phonenum");?></p>
-              <form class="list-block inputList">
+              <form class="list-block inputList" action="__MODULE__/Signup/doVerify" method="post" id="form">
                 <div class="item-content  paddingRight">
                   <div class="item-inner">
                     <div class="item-input">
-                      <input type="text" placeholder="输入验证码" id="PIN">
+                      <input type="text" placeholder="输入验证码" id="PIN" name="verifycode">
                     </div>
                     <div class="">
                       <a href="#" class="button resendBtn" id="resend" disabled="disabled">60s后重新获取</a>
@@ -41,16 +41,16 @@
                 </div>
               </form>
               <div class="sign">
-                <a href="signup3.html" class="button signBtn" disabled="disabled">下一步</a>
+                <a href="#" class="button signBtn" disabled="disabled" name="submit" onclick="document.getElementById('form').submit();return false;">下一步</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/jquery-2.2.2.js"></script>
+    <script src="__PUBLIC__/front/js/framework7.min.js"></script>
+    <script src="__PUBLIC__/front/js/jquery-2.2.2.js"></script>
     <!-- <script src="js/my-app.js"></script> -->
-    <script src="js/verify.js"></script>
+    <script src="__PUBLIC__/front/js/verify.js"></script>
   </body>
 </html>

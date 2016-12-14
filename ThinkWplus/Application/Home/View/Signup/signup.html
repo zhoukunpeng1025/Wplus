@@ -18,7 +18,7 @@
         <!-- Top Navbar-->
         <div class="navbar redBGColor">
           <div class="navbar-inner">
-            <div class="left"><a href="signin.html"><i class="whiteColor fa fa-arrow-left"></i></a></div>
+            <div class="left"><a href="__MODULE__/Signup/signin"><i class="whiteColor fa fa-arrow-left"></i></a></div>
             <div class="center whiteColor">注册</div>
             <div class="right" style="width: 30px;"></div>
           </div>
@@ -26,7 +26,7 @@
         <div class="pages navbar-through toolbar-throug">
           <div data-page="index" class="page">
             <div class="page-content whiteBGColor">
-              <form class="list-block inputList" action="__MODULE__/Signup/sendMsg">
+              <form class="list-block inputList" action="__MODULE__/Signup/sendMsg" id="form" method="post">
                 <div class="item-content">
                   <span class="areaCode">+86</span>
                   <div class="item-inner">
@@ -37,7 +37,7 @@
                 </div>
               </form>
               <div class="sign">
-                <a href="signup2.html" class="button signBtn" disabled="disabled" name="submit" onclick="document.getElementById('mobile').submit();return false">下一步</a>
+                <a href="#" class="button signBtn" disabled="disabled" name="submit" onclick="document.getElementById('form').submit();return false;">下一步</a>
               </div>
               
               <p class="greyColor clearBoth OR">OR</p>

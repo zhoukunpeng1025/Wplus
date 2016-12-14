@@ -6,10 +6,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>完善资料</title>
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/style.css">
   </head>
   <body>
     <div class="statusbar-overlay"></div>
@@ -18,7 +18,7 @@
         <!-- Top Navbar-->
         <div class="navbar redBGColor">
           <div class="navbar-inner">
-            <div class="left"><a href="signup2.html"><i class="whiteColor fa fa-arrow-left"></i></a></div>
+            <div class="left"><a href="__MODULE__/Signup/signup"><i class="whiteColor fa fa-arrow-left"></i></a></div>
             <div class="center sliding whiteColor">完善资料</div>
             <div class="right" style="width: 30px;"></div>
           </div>
@@ -26,13 +26,13 @@
         <div class="pages navbar-through toolbar-throug">
           <div data-page="index" class="page">
             <div class="page-content whiteBGColor">
-              <div class="list-block inputList">
+              <form class="list-block inputList" action="__MODULE__/Signup/doSet" method="post" id="form">
                 <ul>
                   <li>
                     <div class="item-content">
                       <div class="item-inner">
                         <div class="item-input">
-                          <input type="text" placeholder="输入昵称" id="nick" class="improve">
+                          <input type="text" placeholder="输入用户名" id="nick" class="improve" name="username">
                         </div>
                       </div>
                     </div>
@@ -41,15 +41,15 @@
                     <div class="item-content">
                       <div class="item-inner bottomBorder">
                         <div class="item-input">
-                          <input type="password" placeholder="输入6-16位密码" id="password" class="improve">
+                          <input type="password" placeholder="输入6-16位密码" id="password" class="improve" name="password">
                         </div>
                       </div>
                     </div>
                   </li>
                 </ul>
-              </div>
+              </form>
               <div class="sign">
-                <a href="index.html" class="button signBtn" disabled="disabled">下一步</a>
+                <a href="#" class="button signBtn" disabled="disabled" name="submit" onclick="document.getElementById('form').submit();return false;">下一步</a>
               </div>
               
               <p class="greyColor clearBoth OR font11">点击下一步即代表同意味+</p>
@@ -59,8 +59,8 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/jquery-2.2.2.js"></script>
-    <script src="js/improve.js"></script>
+    <script src="__PUBLIC__/front/js/framework7.min.js"></script>
+    <script src="__PUBLIC__/front/js/jquery-2.2.2.js"></script>
+    <script src="__PUBLIC__/front/js/improve.js"></script>
   </body>
 </html>
