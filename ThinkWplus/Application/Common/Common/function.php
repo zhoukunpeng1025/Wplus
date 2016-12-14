@@ -5,4 +5,11 @@ function isLogin(){
 	}
 	return true;
 }
+
+function isAdminLogin(){
+	if (!isset($_SESSION['adminname']) || $_SESSION['adminname'] == '') {
+		return false;
+	}
+	return true;
+}
 ?>

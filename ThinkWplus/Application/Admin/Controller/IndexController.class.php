@@ -5,7 +5,7 @@ class IndexController extends Controller {
 	//构造函数。判断是否登录
 		public function __construct() {
 			parent::__construct();
-			if (!isLogin()) {
+			if (!isAdminLogin()) {
 				$this->error("请先登录", U("Login/login"));
 			}
 		}
