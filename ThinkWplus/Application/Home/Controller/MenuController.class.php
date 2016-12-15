@@ -5,11 +5,11 @@ use Think\Controller;
 class MenuController extends Controller {
 	//assortment页动态获取
 	public function assortment(){
-
+		$this->display();
 	}
 	// lists页动态获取
 	public function lists(){
-		
+		$this->display();
 	}
 
 }
