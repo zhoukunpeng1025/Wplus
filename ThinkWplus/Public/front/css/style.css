@@ -431,6 +431,9 @@ padding: 0 10px;
 	padding-left: 5%;
 	padding-right: 5%;
 }
+.hotTags div{
+	padding-bottom: 2%;
+}
 .hotTags div a{
 	color: #212121;
 }
