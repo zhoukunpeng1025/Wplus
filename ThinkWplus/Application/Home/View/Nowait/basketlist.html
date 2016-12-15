@@ -38,6 +38,7 @@
                 <!--菜篮列表-->
               <div class="list-block">
                 <ul>
+                  <volist name="orders1" id="data1"> 
                   <li class="accordion-item itemBorder2 swipeout" onclick="omitHide()">
                     <div class="accordion-item-toggle swipeout-content">
                       <div class="row item-title">
@@ -46,7 +47,7 @@
                           <p class="basketTitle">的菜篮</p>
                         </div>
                         <div class="col-60 itemTitleBoder" id="dataUseLevel"> 
-                          <div class="row">
+                          <!-- <div class="row">
                             <div class="col-50">虾仁</div>
                             <div class="col-50 useLevel">350g</div>
                           </div>
@@ -57,7 +58,16 @@
                           <div class="row" id="basketListOmit">
                             <div class="col-50">鸡胸脯肉</div>
                             <div class="col-50 useLevel">250g</div>
-                          </div>
+                          </div> -->
+                        <?php
+                                                for($i=0;$i<3;$i++){
+                                                    echo  "<div class='row'>".
+                                                      "<div class='col-50'>".$data1['ingredients'][$i]."</div>".
+                                                            "<div class='col-50 useLevel'>".$data1['amount'][$i]."</div>".
+                                                        "</div>";
+                                                }
+                                            ?>
+                          
                         </div>
                       </div>
                     </div>
@@ -65,7 +75,7 @@
                     <div class="row accordion-item-content swipeout-content">
                       <div class="col-40"></div>
                       <div class="col-60 itemTitleBoder itemContentText">
-                        <div class="row">
+                        <!-- <div class="row">
                           <div class="col-50">虾仁</div>
                           <div class="col-50 useLevel">350g</div>
                         </div>
@@ -76,7 +86,15 @@
                         <div class="row">
                           <div class="col-50">鸡精</div>
                           <div class="col-50 useLevel">1袋</div>
-                        </div>
+                        </div> -->
+                        <?php
+                                                for($i=3;$i<count($data1['ingredients']);$i++){
+                                                    echo  "<div class='row'>".
+                                                      "<div class='col-50'>".$data1['ingredients'][$i]."</div>".
+                                                            "<div class='col-50 useLevel'>".$data1['amount'][$i]."</div>".
+                                                        "</div>";
+                                                }
+                                            ?>
                         <div class="row">
                           <div class="col-40"></div>
                           <div class="col-50" style="padding-bottom:10px">
@@ -95,6 +113,7 @@
                     </div>
                   </li>
                   <li class="item-divider"></li><!--分割-->
+                  </volist>
                   <volist name="orders" id="data"> 
                   <li class="accordion-item itemBorder1 swipeout">
                     <div class="accordion-item-toggle swipeout-content">
