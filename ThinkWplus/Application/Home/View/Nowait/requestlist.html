@@ -64,7 +64,7 @@
                         <h3 id="building">{$data.address}</h3>
                        
                           <?php
-                                                for($i=0;$i<3;$i++){
+                                                for($i=0;$i<count($data['ingredients']);$i++){
                                                     echo  "<div class='row'>".
                                                       "<div class='col-60'>".$data['ingredients'][$i]."</div>".
                                                             "<div class='col-40 useLevel'>".$data['amount'][$i]."</div>".
