@@ -9,7 +9,7 @@ class NowaitController extends Controller {
     	$order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
         // $where =$Model['purchaserid']=array('EQ','NULL'); 
         //添加购买者id为空，表示不等待订单
-        $order=$order->where('purchaserid is not null');
+        $order=$order->where('purchaserid is null');
         $order=$order->select();
 
         for($i = 0; $i < count($order); $i++) {
