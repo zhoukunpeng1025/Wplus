@@ -6,7 +6,11 @@ class NowaitController extends Controller {
     	//1获取数据
     	$Model=M('order'); 
         //连接数据表
-    	$order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id')->select();
+    	$order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
+        // $where =$Model['purchaserid']=array('EQ','NULL'); 
+        $order=$order->where('purchaserid is not null');
+
+        $order=$order->select();
 
         for($i = 0; $i < count($order); $i++) {
             $order[$i]["ingredients"] = explode("&", $order[$i]["ingredients"]);
