@@ -60,10 +60,10 @@
                             <div class="col-50 useLevel">250g</div>
                           </div> -->
                         <?php
-                                                for($i=0;$i<3;$i++){
+                                                for($j=0;$j<3;$j++){
                                                     echo  "<div class='row'>".
-                                                      "<div class='col-50'>".$data1['ingredients'][$i]."</div>".
-                                                            "<div class='col-50 useLevel'>".$data1['amount'][$i]."</div>".
+                                                      "<div class='col-50'>".$data1['ingredients'][$j]."</div>".
+                                                            "<div class='col-50 useLevel'>".$data1['amount'][$j]."</div>".
                                                         "</div>";
                                                 }
                                             ?>
@@ -153,11 +153,11 @@
                           <div class="col-15">
                           <!-- 实现电话拨打功能 -->
                           <a href="tel:{$data.phonenum}" class="external" >
-                            <i class="fa fa-phone" aria-hidden="true" style="color:gray"></i>
+                            <i class="fa fa-phone" aria-hidden="true" style="color:gray;"></i>
                           </a>
                           </div>
                            <a href="tel:{$data.phonenum}" class="external">
-                          <div class="col-75" style="color:gray">{$data.phonenum}</div>
+                          <div class="col-75" style="color:gray;">{$data.phonenum}</div>
                           </a>
                         </div>
                       </div>
@@ -203,19 +203,20 @@
               <i class="icon fa fa-home font20"></i>
               <span class="tabbar-label font11">主页</span>
             </a>
-            <a href="video_ing.html" class="external tab-link greyColor">
+            <a href="__MODULE__/Video/lists" class="external tab-link greyColor">
               <i class="icon fa fa-video-camera font16"></i>
               <span class="tabbar-label font11">直播间</span>
             </a>
-              <a href="request-list.html" class="external tab-link redColor">
+              <a href="#" class="external tab-link redColor">
                 <i class="icon fa fa-plus font16"></i>
                 <span class="tabbar-label font11">发布</span>
               </a>
-            <a href="nearby.html" class="external tab-link greyColor">
+            <a href="__MODULE__/Nearby/lists" class="external tab-link greyColor">
               <i class="icon fa fa-map-signs font16"></i>
               <span class="tabbar-label font11">附近</span>
             </a>
-            <a href="meIndex.html" class="external tab-link greyColor">
+            
+            <a href="__MODULE__/Me/index" class="external tab-link greyColor">
               <i class="icon fa fa-user font16"></i>
               <span class="tabbar-label font11">我</span>
             </a>
