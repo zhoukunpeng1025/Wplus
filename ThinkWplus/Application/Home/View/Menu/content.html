@@ -54,112 +54,26 @@
                 <img src="__PUBLIC__/front/images/menucontent1.jpg" width="100%" class="contentImg">
               </div>
               <!-- 菜谱内容 -->
-              <h2 class="contentTitle">鱼香白菜</h2>
+              <h2 class="contentTitle">{$recipe.recipename}</h2>
               <p class="ppp">用料 ： </p>
               <ul class="list-block" style="list-style:none;padding-left:1%;margin:1% 0;"><!--用料列表，多选框-->
                 <!-- Single chekbox item -->
-                <li> 
-                  <label class="label-checkbox item-content">
-                    <!-- Checked by default -->
-                    <input type="checkbox" name="my-checkbox" value="cabbage" checked="checked">
-                    <div class="item-media">
-                      <i class="icon icon-form-checkbox"></i>
-                    </div>
-                    <div class="item-inner row">
-                      <div class="col-60 item-title">白菜帮</div>
-                      <div class="col-40 level">500g</div>
-                    </div>
-                  </label>
-                </li>
-                <!-- Another chekbox item -->
-                <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="my-checkbox" value="lajiao">
-                    <div class="item-media">
-                      <i class="icon icon-form-checkbox"></i>
-                    </div>
-                    <div class="item-inner row">
-                      <div class="col-60 item-title">泡红辣椒</div>
-                      <div class="col-40 level">4个</div>
-                    </div>
-                  </label>
-                </li>
-                <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="my-checkbox" value="lajiao">
-                    <div class="item-media">
-                      <i class="icon icon-form-checkbox"></i>
-                    </div>
-                    <div class="item-inner row">
-                      <div class="col-60 item-title ">泡红辣椒</div>
-                      <div class="col-40 level">4个</div>
-                    </div>
-                  </label>
-                </li>
-                <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="my-checkbox" value="lajiao">
-                    <div class="item-media">
-                      <i class="icon icon-form-checkbox"></i>
-                    </div>
-                    <div class="item-inner row">
-                      <div class="col-60 item-title">泡红辣椒</div>
-                      <div class="col-40 level">4个</div>
-                    </div>
-                  </label>
-                </li>
-                <!-- Another chekbox item -->
-                <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="my-checkbox" value="jiang">
-                    <div class="item-media">
-                      <i class="icon icon-form-checkbox"></i>
-                    </div>
-                    <div class="item-inner row">
-                      <div class="col-60 item-title">泡姜</div>
-                      <div class="col-40 level">1块</div>
-                    </div>
-                  </label>
-                </li>
-                <!-- Another chekbox item -->
-                <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="my-checkbox" value="suan">
-                    <div class="item-media">
-                      <i class="icon icon-form-checkbox"></i>
-                    </div>
-                    <div class="item-inner row">
-                      <div class="col-60 item-title">蒜末</div>
-                      <div class="col-40 level">1大勺</div>
-                    </div>
-                  </label>
-                </li>
-                <!-- Another chekbox item -->
-                <li>
-                  <label class="label-checkbox item-content">
-                    <input type="checkbox" name="my-checkbox" value="cong">
-                    <div class="item-media">
-                      <i class="icon icon-form-checkbox"></i>
-                    </div>
-                    <div class="item-inner row">
-                      <div class="col-60 item-title ">葱末</div>
-                      <div class="col-40 level">1大勺</div>
-                    </div>
-                  </label>
-                </li>
-                <li> 
-                  <label class="label-checkbox item-content">
-                    <!-- Checked by default -->
-                    <input type="checkbox" name="my-checkbox" value="ccc">
-                    <div class="item-media">
-                      <i class="icon icon-form-checkbox"></i>
-                    </div>
-                    <div class="item-inner row">
-                      <div class="col-60 item-title">水</div>
-                      <div class="col-40 level">500g</div>
-                    </div>
-                  </label>
-                </li>
+                <?php
+                  for($i=0;$i<count($recipe['foodname']);$i++){
+                    echo  "<li> ".
+                            "<label class='label-checkbox item-content'>".
+                              "<input type='checkbox' name='my-checkbox' value='cabbage'>".
+                              "<div class='item-media'>".
+                                "<i class='icon icon-form-checkbox'></i>".
+                              "</div>".
+                              "<div class='item-inner row'>".
+                                "<div class='col-60 item-title'>".$recipe['foodname'][$i]."</div>".
+                                "<div class='col-40 level'>".$recipe['foodnum'][$i]."</div>".
+                              "</div>".
+                            "</label>".
+                          "</li>";
+                  }
+                ?>
               </ul><!--用料end-->
               <div class="row" style="padding-top:1%">
                 <div class="col-50"></div>
