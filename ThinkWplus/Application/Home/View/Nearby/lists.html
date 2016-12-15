@@ -37,20 +37,21 @@
         <div data-page="index" class="page">
           <!-- Scrollable page content-->
           <div class="page-content">
+            <volist name="article" id="vo">
             <div class="card facebook-card">
               <div class="card-header">
                 <div class="fb">
                   <div class="facebook-avatar"><img src="__PUBLIC__/front/images/p001_70.jpg"></div>
-                  <div class="facebook-name">万达少掌门</div>
-                  <div class="facebook-date">Monday at 2:15 PM</div>
+                  <div class="facebook-name">{$vo.username}</div>
+                  <div class="facebook-date">{$vo.time}</div>
                 </div>
                 <a href="#" class="button followBtn">关注</a>
               </div>
               <div class="card-content">
                 <div class="card-content-inner">
                   <a href="__MODULE__/Nearby/content" class="cardLink external">
-                    <h3>鹌鹑如何吃更有营养</h3>
-                    <p>鹌鹑既有鲜美的味道,又有着丰富的营养。鹌鹑肉中富含蛋白质,含量高达22.2%,另外还含有多种维生素和矿物质,以及卵磷脂、激素和多种人体所必需的氨基酸。</p>
+                    <h3>{$vo.title}</h3>
+                    <p>{$vo.content}</p>
                     <img src="__PUBLIC__/front/images/001_70.jpg" width="100%">
                   </a>
                 </div>
@@ -61,30 +62,7 @@
                 <a href="#" class="link"><i class="icon fa fa-share-square-o"> 152</i></a>
               </div>
             </div>
-            <div class="card facebook-card">
-              <div class="card-header">
-                <div class="fb">
-                  <div class="facebook-avatar"><img src="__PUBLIC__/front/images/p001_70.jpg"></div>
-                  <div class="facebook-name">万达少掌门</div>
-                  <div class="facebook-date">Monday at 2:15 PM</div>
-                </div>
-                <a href="#" class="button followBtn">关注</a>
-              </div>
-              <div class="card-content">
-                <div class="card-content-inner">
-                  <a href="__MODULE__/Nearby/content" class="cardLink external">
-                    <h3>鹌鹑如何吃更有营养</h3>
-                    <p>鹌鹑既有鲜美的味道,又有着丰富的营养。鹌鹑肉中富含蛋白质,含量高达22.2%,另外还含有多种维生素和矿物质,以及卵磷脂、激素和多种人体所必需的氨基酸。</p>
-                    <img src="__PUBLIC__/front/images/001_70.jpg" width="100%">
-                  </a>
-                </div>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="link"><i class="icon fa fa-heart-o"> 112</i></a>
-                <a href="#" class="link"><i class="icon fa fa-commenting-o"> 24</i></a>
-                <a href="#" class="link"><i class="icon fa fa-share-square-o"> 152</i></a>
-              </div>
-            </div>
+            </volist>
           </div>
         </div>
       </div>
