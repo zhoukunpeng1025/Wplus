@@ -56,21 +56,18 @@
               <!-- 菜谱内容 -->
               <h2 class="contentTitle">{$recipe.recipename}</h2>
               <p class="ppp">用料 ： </p>
-              <ul class="list-block" style="list-style:none;padding-left:1%;margin:1% 0;"><!--用料列表，多选框-->
-                <!-- Single chekbox item -->
+              <ul class="list-block" style="list-style:none;padding-left:1%;margin:1% 0;">
+              <!--用料列表-->
                 <?php
                   for($i=0;$i<count($recipe['foodname']);$i++){
                     echo  "<li> ".
-                            "<label class='label-checkbox item-content'>".
-                              "<input type='checkbox' name='my-checkbox' value='cabbage'>".
-                              "<div class='item-media'>".
-                                "<i class='icon icon-form-checkbox'></i>".
-                              "</div>".
-                              "<div class='item-inner row'>".
-                                "<div class='col-60 item-title'>".$recipe['foodname'][$i]."</div>".
-                                "<div class='col-40 level'>".$recipe['foodnum'][$i]."</div>".
-                              "</div>".
-                            "</label>".
+                            "<div class='item-media'>".
+                              "<i class='icon icon-form-checkbox'></i>".
+                            "</div>".
+                            "<div class='item-inner row'>".
+                              "<div class='col-50 item-title'>".$recipe['foodname'][$i]."</div>".
+                              "<div class='col-50 level'>".$recipe['foodnum'][$i]."</div>".
+                            "</div>".
                           "</li>";
                   }
                 ?>
