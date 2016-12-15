@@ -7,14 +7,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>MYAPP</title>
     <!-- Path to Framework7 Library CSS, iOS Theme -->
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.min.css">
     <!-- Path to Framework7 color related styles, iOS Theme -->
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu-swiper.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/swiper.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/style.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/menu-swiper.css">
     <!-- Demo styles -->
     <style>
         html, body {
@@ -60,7 +60,7 @@
       <div class="navbar" style="opacity:0.5;">
         <div class="navbar-inner">
           <div class="left">
-            <a href="menu-content.html" class="external grayLeft">
+            <a href="__MODULE__/Menu/content" class="external grayLeft">
               <i class="fa fa-close fa-lg" aria-hidden="true"></i>
             </a>
           </div>
@@ -79,7 +79,7 @@
 	                <div class="col-90 stepContent">
 	                  把白菜帮斜刀片成大片状以备使用；
 	                </div>
-	                <img src="images/menucontent1.jpg" width="100%" class="stepImgs">
+	                <img src="__PUBLIC__/front/images/menucontent1.jpg" width="100%" class="stepImgs">
             	</div>
             </div>
             <div class="swiper-slide">
@@ -89,7 +89,7 @@
 	                <div class="col-90 stepContent">
 	                  把白菜帮斜刀片成大片状以备使用；泡红椒切碎、泡姜葱蒜切末，豆瓣酱剁细备用；
 	                </div>
-	                <img src="images/menucontent1.jpg" width="100%" class="stepImgs">
+	                <img src="__PUBLIC__/front/images/menucontent1.jpg" width="100%" class="stepImgs">
             	</div>
             </div>
             <div class="swiper-slide">
@@ -108,7 +108,7 @@
 	                  	<i class="fa fa-hourglass-end fa-lg stepsKeepTime" aria-hidden="true"></i><span></span>
 	                  </a>
 	                </div>
-	                <img src="images/menucontent1.jpg" width="100%" class="stepImgs">
+	                <img src="__PUBLIC__/front/images/menucontent1.jpg" width="100%" class="stepImgs">
             	</div>
             </div>
             <div class="swiper-slide">
@@ -118,7 +118,7 @@
 	                <div class="col-90 stepContent">
 	                  泡红椒切碎、泡姜葱蒜切末，豆瓣酱剁细备用；
 	                </div>
-	                <img src="images/menucontent1.jpg" width="100%" class="stepImgs">
+	                <img src="__PUBLIC__/front/images/menucontent1.jpg" width="100%" class="stepImgs">
             	</div>
             </div>
             <div class="swiper-slide">
@@ -137,7 +137,7 @@
 	                  	<i class="fa fa-hourglass-end fa-lg stepsKeepTime" aria-hidden="true"></i><span></span>
 	                  </a>
 	                </div>
-	                <img src="images/menucontent1.jpg" width="100%" class="stepImgs">
+	                <img src="__PUBLIC__/front/images/menucontent1.jpg" width="100%" class="stepImgs">
             	</div>
             </div>
         </div>
@@ -238,12 +238,12 @@
 	</div>
 
   <!-- Swiper JS -->
-  <script src="js/swiper.min.js"></script>
+  <script src="__PUBLIC__/front/js/swiper.min.js"></script>
   <!-- Path to Framework7 Library JS-->
-  <script type="text/javascript" src="js/framework7.min.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/front/js/framework7.min.js"></script>
   <!-- Path to your app js-->
-  <script type="text/javascript" src="js/my-app.js"></script>
-  <script type="text/javascript" src="js/jquery-2.2.2.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/front/js/my-app.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/front/js/jquery-2.2.2.js"></script>
   <!-- Initialize Swiper -->
   <script type="text/javascript">
     $(document).ready(function(){
@@ -268,7 +268,7 @@
             intervalId = window.setInterval(function(){
               if (intDiff<=0) {
                 //添加音频，闹钟提示音
-                $("body").append('<audio id="audios"  loop="loop" autoplay="autoplay" hidden="true"><source src="images/clock.mp3" type="audio/mpeg"><source src="images/2.ogg" type="audio/ogg"></audio>');
+                $("body").append('<audio id="audios"  loop="loop" autoplay="autoplay" hidden="true"><source src="__PUBLIC__/front/images/clock.mp3" type="audio/mpeg"><source src="__PUBLIC__/front/images/2.ogg" type="audio/ogg"></audio>');
                 $(".popDiv").css("visibility","visible");
                 $(".okBtn").click(function(){
                   $('#audios').remove();//移除声音
