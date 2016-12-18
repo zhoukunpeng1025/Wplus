@@ -39,7 +39,7 @@ class RecipeController extends Controller {
 		$upload->maxSize=3145728 ;// 设置附件上传大小
 		$upload->exts=array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
 		$upload->rootPath = THINK_PATH; // 设置附件上传根目录
-		$upload->savePath ='../../../Public/uploads/'; // 设置附件上传（子）目录
+		$upload->savePath ='../Public/uploads/'; // 设置附件上传（子）目录
 		// 上传文件 
 		$info = $upload->upload();
 		if(!$info) {// 上传错误提示错误信息
@@ -48,7 +48,7 @@ class RecipeController extends Controller {
 		else{
 			// 设置存储路径
 			for($i = 0; $i<count($info); $i++){
-				$savepath[$i] = $info[$i]["savepath"].$info[$i]["savename"];
+				$savepath[$i] = "../../".$info[$i]["savepath"].$info[$i]["savename"];
 			}
 
 			$data = $_POST;
@@ -58,7 +58,7 @@ class RecipeController extends Controller {
 			$data["step"] = implode("&", $data["step"]);
 			$data["clocknum"] = implode("&", $data["clocknum"]);
 			$data["clocktime"] = implode("&", $data["clocktime"]);
-			// $data["img"] = implode("&", $savepath);
+			$data["img"] = implode("&", $savepath);
 			// dump($data);
 
 			$recipeModel = M("recipe");
