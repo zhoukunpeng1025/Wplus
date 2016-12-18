@@ -30,7 +30,7 @@
                         <h5>添加菜谱</h5>
                     </div>
                     <div class="ibox-content">
-                        <form method="post" class="form-horizontal" action="__MODULE__/Recipe/doAdd">
+                        <form method="post" class="form-horizontal" action="__MODULE__/Recipe/doAdd" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">菜名</label>
 
@@ -63,12 +63,17 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">做法</label>
 
-                                <div class="col-sm-9">
-                                    <textarea name="step[]" id="" rows="3" class="form-control" placeholder="步骤"></textarea>
+                                <div class="col-sm-7">
+                                    <textarea name="step[]" id="" rows="7" class="form-control" placeholder="步骤"></textarea>
                                 </div>
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-9 paddingTop">
-                                     //
+                                <div class="col-sm-2">
+                                    <div class="control-group js_uploadBox">
+                                        <div class="btn-upload">
+                                          <a href=""><i class="icon-upload"></i><span class="js_uploadText">上传</span>图片</a>
+                                          <input class="js_upFile" type="file" name="img[]">
+                                        </div>
+                                        <div class="js_showBox "><img class="js_logoBox" src="__PUBLIC__/back/img/a2.jpg" width="100px" ></div>
+                                    </div>
                                 </div>
                                 <div class="addAndRemove" id="addProcedure">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -115,8 +120,9 @@
     <!-- 自定义js -->
     
     <script src="__PUBLIC__/back/js/content.js?v=1.0.0"></script>
-    <script src="__PUBLIC__/back/js/jquery.uploadView.js"></script>
     <script src="__PUBLIC__/back/js/luxiaojia.js"></script>
+    <script src="__PUBLIC__/back/js/jquery.uploadView.js"></script>
+    
 
 
     <!-- iCheck -->
@@ -129,10 +135,19 @@
             });
         });
     </script>
-
-    
-    
-
+    <script>
+        $(".js_upFile").uploadView({
+            uploadBox: '.js_uploadBox',//设置上传框容器
+            showBox : '.js_showBox',//设置显示预览图片的容器
+            width : 100, //预览图片的宽度，单位px
+            height : 100, //预览图片的高度，单位px
+            allowType: ["gif", "jpeg", "jpg", "bmp", "png"], //允许上传图片的类型
+            maxSize :20, //允许上传图片的最大尺寸，单位M
+            success:function(e){
+                $(".js_uploadText").text('更改');
+            }
+        });
+    </script>
 </body>
 
 </html>
