@@ -9,4 +9,9 @@ class MeController extends Controller {
     public function setting(){
         $this->display();
     }
+
+    public function signout(){
+    	session(null);
+    	$this->redirect("Signup/signin");
+    }
 }
