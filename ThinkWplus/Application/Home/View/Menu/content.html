@@ -61,12 +61,10 @@
                 <?php
                   for($i=0;$i<count($recipe['foodname']);$i++){
                     echo  "<li> ".
-                            "<div class='item-media'>".
-                              "<i class='icon icon-form-checkbox'></i>".
-                            "</div>".
                             "<div class='item-inner row'>".
+                              "<div class='col-10'></div>".
                               "<div class='col-50 item-title'>".$recipe['foodname'][$i]."</div>".
-                              "<div class='col-50 level'>".$recipe['foodnum'][$i]."</div>".
+                              "<div class='col-40 level'>".$recipe['foodnum'][$i]."</div>".
                             "</div>".
                           "</li>";
                   }
@@ -88,6 +86,19 @@
                 </div>
                 <div class="col-10"></div>
               </div>
+              <?php
+                for($i=0;$i<count($recipe['step']);$i++){
+                  $j = $i+1;
+                  echo '<div class="row">'.
+                        '<div class="col-5"></div>'.
+                        '<div class="col-5 orderNum">'.$j.'</div>'.
+                        '<div class="col-90 stepContent">'.
+                          $recipe['step'][$i].
+                        '</div>'.
+                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>'.
+                      '</div>';
+                }
+              ?>
               <div class="row">
                 <div class="col-5"></div>
                 <div class="col-5 orderNum">1</div>
