@@ -4,13 +4,14 @@ use Think\Controller;
 class NowaitController extends Controller {
     public function requestlist(){
     	//1获取数据
-    	$Model=M('order'); 
+    	$Model=M('orderform'); 
         //连接数据表
-    	$order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
+    	$order=$Model->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
         // $where =$Model['purchaserid']=array('EQ','NULL'); 
         //添加购买者id为空，表示不等待订单
         $order=$order->where('purchaserid is null');
         $order=$order->select();
+        // var_dump($order);
 
         for($i = 0; $i < count($order); $i++) {
             $order[$i]["ingredients"] = explode("&", $order[$i]["ingredients"]);
@@ -50,5 +51,37 @@ class NowaitController extends Controller {
         $this->display();
 
     }
+    public function destroy(){
+        //删除菜篮中的订单，回到不等待中
+        $Model=M('order');
+        $id=I('id');
+         //var_dump($id); //string(1) "4"
+        // $order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
+         $order=$Model->where("id=$id")->find(); 
+          // $order=$order->select();
+        // var_dump($order['purchaserid']);
+        $order['purchaserid']=null;
+        if($Model->save($order)){
+            $this->success('删除成功','basketlist');
+          }else{
+            $this->error('删除失败');
+          }    
 
+    }
+    public function get(){
+        //领取不等待中的订单，变到自己菜篮中
+         $Model=M('order');
+        $id=I('id');
+         // var_dump($id); //string(1) "4"
+        // $order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
+         $order=$Model->where("id=$id")->find(); 
+        // var_dump($order);
+        $order['purchaserid']=2;
+        if($Model->save($order)){
+            $this->success('领取成功','requestlist');
+          }else{
+            $this->error('领取失败');
+          }    
+
+    }
 }
