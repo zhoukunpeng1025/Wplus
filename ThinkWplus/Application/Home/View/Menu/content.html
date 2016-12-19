@@ -89,7 +89,19 @@
               <?php
                 for($i=0;$i<count($recipe['step']);$i++){
                   $j = $i+1;
-                  echo '<div class="row">'.
+                  //选择出现“分钟”“小时”关键字的步骤出现闹钟按钮
+                  if(stripos($recipe['step'][$i],"分钟") || stripos($recipe['step'][$i],"小时")){
+                    echo '<div class="row">'.
+                        '<div class="col-5"></div>'.
+                        '<div class="col-5 orderNum">'.$j.'</div>'.
+                        '<div class="col-90 stepContent">'.
+                          $recipe['step'][$i].
+                          '<a href="#" class="button button-round button-fill timekeeper" id="timeKeep">开始计时</a>'.
+                        '</div>'.
+                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>'.
+                      '</div>';
+                  }else{
+                    echo '<div class="row">'.
                         '<div class="col-5"></div>'.
                         '<div class="col-5 orderNum">'.$j.'</div>'.
                         '<div class="col-90 stepContent">'.
@@ -97,50 +109,9 @@
                         '</div>'.
                         '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>'.
                       '</div>';
+                  }
                 }
-              ?>
-              <div class="row">
-                <div class="col-5"></div>
-                <div class="col-5 orderNum">1</div>
-                <div class="col-90 stepContent">
-                  把白菜帮斜刀片成大片状以备使用；
-                </div>
-                <a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>
-              </div>
-              <div class="row">
-                <div class="col-5"></div>
-                <div class="col-5 orderNum">2</div>
-                <div class="col-90 stepContent">
-                  泡红椒切碎、泡姜葱蒜切末，豆瓣酱剁细备用；
-                </div>
-                <a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>
-              </div>
-              <div class="row">
-                <div class="col-5"></div>
-                <div class="col-5 orderNum">3</div>
-                <div class="col-90 stepContent">
-                  小火慢炖10分钟；
-                  <a href="#" class="button button-round button-fill timekeeper" id="timeKeep">开始计时</a>
-                </div>
-                <a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>
-              </div>
-              <div class="row">
-                <div class="col-5"></div>
-                <div class="col-5 orderNum">4</div>
-                <div class="col-90 stepContent">
-                  泡红椒切碎、泡姜葱蒜切末，豆瓣酱剁细备用；
-                </div>
-                <a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>
-              </div>
-              <div class="row">
-                <div class="col-5"></div>
-                <div class="col-5 orderNum">5</div>
-                <div class="col-90 stepContent">
-                  泡红椒切碎、泡姜葱蒜切末，豆瓣酱剁细备用；盖上锅盖焖5分钟再出锅，完成！
-                  <a href="#" class="button button-round button-fill timekeeper" id="timeKeep">开始计时</a>
-                </div>
-                <a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>
-              </div>              
+              ?>             
             </div>  
           </div>
         </div>
