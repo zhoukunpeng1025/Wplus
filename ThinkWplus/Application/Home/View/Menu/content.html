@@ -225,6 +225,7 @@
           var second = parseInt(clocktime.substr(6,2));
           var seconds = second + minute*60 + hour*360;
           var intDiff = parseInt(seconds);//倒计时总秒数量,获取闹钟总秒数
+          
           if(btn.html() =="开始计时"){
             function timer(intDiff){
               intervalId = window.setInterval(function(){
