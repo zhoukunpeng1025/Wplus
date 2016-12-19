@@ -109,7 +109,7 @@
                     <!-- 侧滑事件 -->
                     <div class="swipeout-actions-right">
                       <a href="#" class="action1">置顶</a>
-                      <a href="#" class="action2 bg-red">删除</a>
+                      <a href="__MODULE__/Nowait/destroy/id/{$data.oid}" class="action2 bg-red external">删除</a>
                     </div>
                   </li>
                   <li class="item-divider"></li><!--分割-->
@@ -127,13 +127,13 @@
                           
                            
                              <?php
-                                                for($i=0;$i<3;$i++){
-                                                    echo  "<div class='row'>".
-                                                      "<div class='col-50'>".$data['ingredients'][$i]."</div>".
-                                                            "<div class='col-50 useLevel'>".$data['amount'][$i]."</div>".
-                                                        "</div>";
-                                                }
-                                            ?>
+                                for($i=0;$i<3;$i++){
+                                    echo  "<div class='row'>".
+                                      "<div class='col-50'>".$data['ingredients'][$i]."</div>".
+                                            "<div class='col-50 useLevel'>".$data['amount'][$i]."</div>".
+                                        "</div>";
+                                }
+                            ?>
                           
                           
                         </div>
@@ -164,13 +164,13 @@
                       </div>
                       <div class="col-60 itemTitleBoder itemContentText">
                           <?php
-                                                for($i=3;$i<count($data['ingredients']);$i++){
-                                                    echo  "<div class='row'>".
-                                                      "<div class='col-50'>".$data['ingredients'][$i]."</div>".
-                                                            "<div class='col-50 useLevel'>".$data['amount'][$i]."</div>".
-                                                        "</div>";
-                                                }
-                                            ?>
+                            for($i=3;$i<count($data['ingredients']);$i++){
+                                echo  "<div class='row'>".
+                                  "<div class='col-50'>".$data['ingredients'][$i]."</div>".
+                                        "<div class='col-50 useLevel'>".$data['amount'][$i]."</div>".
+                                    "</div>";
+                            }
+                        ?>
                         <div class="row">
                           <div class="col-40"></div>
                           <div class="col-50" style="padding-bottom:10px">
