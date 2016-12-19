@@ -51,7 +51,7 @@
             <div class="page-content">
               <!-- 菜谱banner图 -->
               <div class="row">
-                <img src="__PUBLIC__/front/images/menucontent1.jpg" width="100%" class="contentImg">
+                <img src="<?php echo end($recipe['img']);?>" width="100%" class="contentImg">
               </div>
               <!-- 菜谱内容 -->
               <h2 class="contentTitle">{$recipe.recipename}</h2>
@@ -87,19 +87,21 @@
                 <div class="col-10"></div>
               </div>
               <?php
-                for($i=0;$i<count($recipe['step']);$i++){
+                for($i=0,$k=0;$i<count($recipe['step']);$i++){ 
                   $j = $i+1;
-                  //选择出现“分钟”“小时”关键字的步骤出现闹钟按钮
-                  if(stripos($recipe['step'][$i],"分钟") || stripos($recipe['step'][$i],"小时")){
+
+                  if($recipe['clocknum'][$k] == $j){
                     echo '<div class="row">'.
                         '<div class="col-5"></div>'.
                         '<div class="col-5 orderNum">'.$j.'</div>'.
                         '<div class="col-90 stepContent">'.
                           $recipe['step'][$i].
+                          '<input type="hidden" name="clocktime" class="clocktime" value="'.$recipe['clocktime'][$k].'">'.
                           '<a href="#" class="button button-round button-fill timekeeper" id="timeKeep">开始计时</a>'.
                         '</div>'.
-                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>'.
+                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
                       '</div>';
+                    $k++;
                   }else{
                     echo '<div class="row">'.
                         '<div class="col-5"></div>'.
@@ -107,7 +109,7 @@
                         '<div class="col-90 stepContent">'.
                           $recipe['step'][$i].
                         '</div>'.
-                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="__PUBLIC__/front/images/menucontent1.jpg" width="80%" class="menuImg"></a>'.
+                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
                       '</div>';
                   }
                 }
@@ -213,11 +215,16 @@
             $("#heart i").attr("class","fa fa-heart-o");
           }
         });   
-        // 闹钟
+        // 闹钟实现动态获取，武
         var intervalId = null;
-        var intDiff = parseInt(3);//倒计时总秒数量,获取闹钟总秒数
         $(".timekeeper").click(function(){
           var btn = $(this);
+          var clocktime = btn.prev().val();
+          var hour = parseInt(clocktime.substr(0,2));
+          var minute = parseInt(clocktime.substr(3,2));
+          var second = parseInt(clocktime.substr(6,2));
+          var seconds = second + minute*60 + hour*360;
+          var intDiff = parseInt(seconds);//倒计时总秒数量,获取闹钟总秒数
           if(btn.html() =="开始计时"){
             function timer(intDiff){
               intervalId = window.setInterval(function(){
