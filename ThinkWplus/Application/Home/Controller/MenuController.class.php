@@ -36,6 +36,18 @@ class MenuController extends Controller {
 	}
 	//steps页
 	public function steps(){
+		$recipeModel = M('recipe');
+		$recipe = $recipeModel->where("id=1")->find();//能获取当前数据
+
+		// 将字符串转为数组
+		$recipe["foodname"] = explode("&", $recipe["foodname"]);
+		$recipe["foodnum"] = explode("&", $recipe["foodnum"]);
+		$recipe["step"] = explode("&", $recipe["step"]);
+		$recipe["img"] = explode("&", $recipe["img"]);
+		$recipe["clocktime"] = explode("&", $recipe["clocktime"]);
+		$recipe["clocknum"] = explode("&", $recipe["clocknum"]);
+		
+		$this->assign("recipe",$recipe);
 		$this->display();
 	}
 }
