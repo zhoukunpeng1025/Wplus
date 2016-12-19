@@ -60,7 +60,7 @@
         <div class="navbar" style="opacity:0.5;">
           <div class="navbar-inner">
             <div class="left">
-              <a href="__MODULE__/Menu/content" class="external grayLeft">
+              <a href="__MODULE__/Menu/content/id/<?php echo $recipe['id'];?>" class="external grayLeft">
                 <i class="fa fa-close fa-lg" aria-hidden="true"></i>
               </a>
             </div>
@@ -93,7 +93,7 @@
                                 '<i class="fa fa-hourglass-end fa-lg stepsKeepTime" aria-hidden="true"></i><span></span>'.
                               '</a>'.
                             '</div>'.
-                            '<img src="'.$recipe['img'][$i].'" width="100%" class="stepImgs">'.
+                            '<img src="../../'.$recipe['img'][$i].'" width="100%" class="stepImgs">'.
                           '</div>'.
                         '</div>';
                   $k++;
@@ -105,7 +105,7 @@
                             '<div class="col-90 stepContent">'.
                               $recipe['step'][$i].
                             '</div>'.
-                            '<img src="'.$recipe['img'][$i].'" width="100%" class="stepImgs">'.
+                            '<img src="../../'.$recipe['img'][$i].'" width="100%" class="stepImgs">'.
                         '</div>'.
                         '</div>';
                 }

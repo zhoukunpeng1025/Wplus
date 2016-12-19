@@ -26,9 +26,10 @@
         <div class="navbar">
           <div class="navbar-inner">
             <div class="left">
-              <a href="__MODULE__/Menu/lists" class="external grayLeft">
+              <a href="__MODULE__/Menu/lists/tagid/<?php echo $recipe['recipetagid']?>" class="external grayLeft">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
               </a>
+              
             </div>
             <div class="right">
               <a href="#" data-picker=".picker-1" class="open-picker" id="picker1">
@@ -82,7 +83,7 @@
               <div class="row">
                 <div class="col-40"><p class="ppp">做法 ： </p></div>
                 <div class="col-50">
-                  <p style="padding-top:5%;"><a href="__MODULE__/Menu/steps" class="external grayLink">(点击切换大图模式)</a></p>
+                  <p style="padding-top:5%;"><a href="__MODULE__/Menu/steps/id/<?php echo $recipe['id'];?>" class="external grayLink">(点击切换大图模式)</a></p>
                 </div>
                 <div class="col-10"></div>
               </div>
@@ -99,7 +100,7 @@
                           '<input type="hidden" name="clocktime" class="clocktime" value="'.$recipe['clocktime'][$k].'">'.
                           '<a href="#" class="button button-round button-fill timekeeper" id="timeKeep">开始计时</a>'.
                         '</div>'.
-                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="../../'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
+                        '<a href="__MODULE__/Menu/steps/id/'.$recipe['id'].'" class="external menuImgA"><img src="../../'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
                       '</div>';
                     $k++;
                   }else{
@@ -109,7 +110,7 @@
                         '<div class="col-90 stepContent">'.
                           $recipe['step'][$i].
                         '</div>'.
-                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="../../'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
+                        '<a href="__MODULE__/Menu/steps/id/'.$recipe['id'].'" class="external menuImgA"><img src="../../'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
                       '</div>';
                   }
                 }

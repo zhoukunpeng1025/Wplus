@@ -49,13 +49,16 @@ class MenuController extends Controller {
 		$recipe["clocknum"] = explode("&", $recipe["clocknum"]);
 		$recipe["img"] = explode("&", $recipe["img"]);
 		
+		// dump($recipe);
+
 		$this->assign("recipe",$recipe);
 		$this->display();
 	}
 	//steps页
 	public function steps(){
+		$id = I("id");
 		$recipeModel = M('recipe');
-		$recipe = $recipeModel->where("id=1")->find();//能获取当前数据
+		$recipe = $recipeModel->where("id=$id")->find();//能获取当前数据
 
 		// 将字符串转为数组
 		$recipe["foodname"] = explode("&", $recipe["foodname"]);
