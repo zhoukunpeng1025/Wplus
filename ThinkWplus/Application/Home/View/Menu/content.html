@@ -51,7 +51,7 @@
             <div class="page-content">
               <!-- 菜谱banner图 -->
               <div class="row">
-                <img src="<?php echo end($recipe['img']);?>" width="100%" class="contentImg">
+                <img src="../../<?php echo end($recipe['img']);?>" width="100%" class="contentImg">
               </div>
               <!-- 菜谱内容 -->
               <h2 class="contentTitle">{$recipe.recipename}</h2>
@@ -99,7 +99,7 @@
                           '<input type="hidden" name="clocktime" class="clocktime" value="'.$recipe['clocktime'][$k].'">'.
                           '<a href="#" class="button button-round button-fill timekeeper" id="timeKeep">开始计时</a>'.
                         '</div>'.
-                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
+                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="../../'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
                       '</div>';
                     $k++;
                   }else{
@@ -109,7 +109,7 @@
                         '<div class="col-90 stepContent">'.
                           $recipe['step'][$i].
                         '</div>'.
-                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
+                        '<a href="__MODULE__/Menu/steps" class="external menuImgA"><img src="../../'.$recipe['img'][$i].'" width="80%" class="menuImg"></a>'.
                       '</div>';
                   }
                 }

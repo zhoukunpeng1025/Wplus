@@ -31,7 +31,7 @@
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
               </a>
             </div>
-            <div class="center">$_POST["menuname"]</div>
+            <div class="center"><volist name="menu" id="vo">{$vo.menuname}</volist></div>
             <div class="right">
               <i class="fa fa-search" aria-hidden="true"></i>
             </div>
@@ -128,20 +128,21 @@
               <!-- 早餐推荐列表 -->
               <div class="list-block">
                 <ul>
+                  <volist name="recipe" id="re">
                   <li class="list-content">
-                    <a href="__MODULE__/Menu/content" class="external">
+                    <a href="__MODULE__/Menu/content/id/{$re.id}" class="external">
                       <div class="row">
-                         <img src="__PUBLIC__/front/images/tusi.jpg" width="100%">
+                         <img src="__PUBLIC__/{$re.img}" width="100%">
                       </div>
                     </a>
                     <div class="row">
                       <div class="col-10"></div>
                       <div class="col-50">
-                        <p>黄金煎吐司</p>
+                        <p>{$re.recipename}</p>
                         <p class="littleTag"># <a href="#">鸡蛋</a>&nbsp;&nbsp;<a href="#">吐司</a></p>
                       </div>
                       <div class="col-30 lookBtn">
-                        <a href="__MODULE__/Menu/content" class="external button button-round color-red">
+                        <a href="__MODULE__/Menu/content/id/{$re.id}" class="external button button-round color-red">
                           查看菜谱
                         </a>
                       </div>
@@ -149,6 +150,7 @@
                     </div>
                   </li>
                   <li class="item-divider"></li><!--分割-->
+                  </volist>
                 </ul>
               </div>
 
