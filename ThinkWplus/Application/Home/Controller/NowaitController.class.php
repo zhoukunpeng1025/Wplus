@@ -27,8 +27,8 @@ class NowaitController extends Controller {
 
     public function basketlist(){
         //菜篮中别人的东西
-        $Model=M('order');
-        $order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
+        $Model=M('orderform');
+        $order=$Model->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
         $order=$order->where('purchaserid = 2 AND purchaserid <> makerid'  );
         $order=$order->select();
         for($i = 0; $i < count($order); $i++) {
@@ -37,8 +37,8 @@ class NowaitController extends Controller {
         }
         $this->assign("orders",$order);
         //菜篮中自己的订单
-        $Model1=M('order');
-        $order1=$Model1->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
+        $Model1=M('orderform');
+        $order1=$Model1->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
         $order1=$order1->where('purchaserid = 2 AND purchaserid = makerid');
         $order1=$order1->select();
         for($i = 0; $i < count($order1); $i++) {
