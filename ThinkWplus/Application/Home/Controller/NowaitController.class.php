@@ -53,11 +53,11 @@ class NowaitController extends Controller {
     }
     public function destroy(){
         //删除菜篮中的订单，回到不等待中
-        $Model=M('order');
+        $Model=M('orderform');
         $id=I('id');
-         //var_dump($id); //string(1) "4"
-        // $order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
-         $order=$Model->where("id=$id")->find(); 
+         var_dump($id); //string(1) "4"
+        $order=$Model->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
+         $order=$Model->where("oid=$id")->find(); 
           // $order=$order->select();
         // var_dump($order['purchaserid']);
         $order['purchaserid']=null;
@@ -70,18 +70,7 @@ class NowaitController extends Controller {
     }
     public function get(){
         //领取不等待中的订单，变到自己菜篮中
-         $Model=M('order');
-        $id=I('id');
-         // var_dump($id); //string(1) "4"
-        // $order=$Model->join('address ON order.addressid = address.id')->join('user ON order.makerid = user.id');
-         $order=$Model->where("id=$id")->find(); 
-        // var_dump($order);
-        $order['purchaserid']=2;
-        if($Model->save($order)){
-            $this->success('领取成功','requestlist');
-          }else{
-            $this->error('领取失败');
-          }    
+        
 
     }
 }
