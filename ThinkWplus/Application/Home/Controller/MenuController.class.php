@@ -9,6 +9,9 @@ class MenuController extends Controller {
 	}
 	//assortment页动态获取
 	public function assortment(){
+		$menuModel = M("menu");
+		$menu = $menuModel->select();
+		$this->assign("menu", $menu);
 		$this->display();
 	}
 	// lists页动态获取
