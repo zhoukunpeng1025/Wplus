@@ -17,40 +17,40 @@
     <link rel="stylesheet" href="__PUBLIC__/front/css/menu-swiper.css">
     <!-- Demo styles -->
     <style>
-    html, body {
-        position: relative;
-        height: 100%;
-    }
-    body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color:#000;
-        margin: 0;
-        padding: 0;
-    }
-    .swiper-container {
-        width: 100%;
-        height: 100%;
-    }
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
+      html, body {
+          position: relative;
+          height: 100%;
+      }
+      body {
+          background: #eee;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color:#000;
+          margin: 0;
+          padding: 0;
+      }
+      .swiper-container {
+          width: 100%;
+          height: 100%;
+      }
+      .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+      }
     </style>
 </head>
 <body>
@@ -72,6 +72,45 @@
         <!-- Swiper -->
       <div class="swiper-container">
           <div class="swiper-wrapper">
+            <?php
+              for($i=0,$k=0;$i<count($recipe['step']);$i++){ 
+                $j = $i+1;
+
+                if($recipe['clocknum'][$k] == $j){
+                  echo '<div class="swiper-slide">'.
+                        '<!-- 闹钟弹出层 -->'.
+                        '<div class="popDiv">'.
+                            '<h3 style="text-align:center">时间到！</h3>'.
+                            '<p><a href="#" class="button color-gray okBtn">确定</a></p>'.
+                        '</div>'.
+                        '<div class="row">'.
+                          '<div class="col-5"></div>'.
+                            '<div class="col-5 orderNum">'.$j.'</div>'.
+                            '<div class="col-90 stepContent">'.
+                              $recipe['step'][$i].
+                              '<!-- 定时闹钟 -->'.
+                              '<a href="#" class="stepsKeepTimeA grayLeft">'.
+                                '<i class="fa fa-hourglass-end fa-lg stepsKeepTime" aria-hidden="true"></i><span></span>'.
+                              '</a>'.
+                            '</div>'.
+                            '<img src="'.$recipe['img'][$i].'" width="100%" class="stepImgs">'.
+                          '</div>'.
+                        '</div>';
+                  $k++;
+                }else{
+                  echo '<div class="swiper-slide">'.
+                        '<div class="row">'.
+                          '<div class="col-5"></div>'.
+                            '<div class="col-5 orderNum">'.$j.'</div>'.
+                            '<div class="col-90 stepContent">'.
+                              $recipe['step'][$i].
+                            '</div>'.
+                            '<img src="'.$recipe['img'][$i].'" width="100%" class="stepImgs">'.
+                        '</div>'.
+                        '</div>';
+                }
+              }
+            ?> 
               <div class="swiper-slide">
                 <div class="row">
                   <div class="col-5"></div>
@@ -93,11 +132,11 @@
                 </div>
               </div>
               <div class="swiper-slide">
-                    <!-- 闹钟弹出层 -->
-                    <div class="popDiv">
-                        <h3 style="text-align:center">时间到！</h3>
-                        <p><a href="#" class="button color-gray okBtn">确定</a></p>
-                    </div>
+                <!-- 闹钟弹出层 -->
+                <div class="popDiv">
+                    <h3 style="text-align:center">时间到！</h3>
+                    <p><a href="#" class="button color-gray okBtn">确定</a></p>
+                </div>
                 <div class="row">
                   <div class="col-5"></div>
                     <div class="col-5 orderNum">3</div>
@@ -157,6 +196,19 @@
           <div class="col-33"></div>
         </div>
         <ul class="list-block" style="list-style:none;padding-left:1%;margin:1% 0;">
+          <?php
+            for($i=0;$i<count($recipe['foodname']);$i++){
+              echo  '<li>' .
+                        '<div class="item-media">'.
+                          '<i class="icon icon-form-checkbox"></i>'.
+                        '</div>'.
+                        '<div class="item-inner row">'.
+                          '<div class="col-60 item-title">'.$recipe['foodname'][$i].'</div>'.
+                          '<div class="col-40 level">'.$recipe['foodnum'][$i].'</div>'.
+                       ' </div>'.
+                    '</li>';
+            }
+          ?>
             <!-- Single chekbox item -->
             <li> 
                 <div class="item-media">
