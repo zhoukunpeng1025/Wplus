@@ -117,53 +117,15 @@
                     <div class="col-25 hotTag">热门标签</div>
                     <div class="col-70"></div>
                   </div>
-                  <div class="row hotTags">
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">中餐</a>
+                  <form method="post">
+                    <div class="row hotTags">
+                        <volist name="menu" id="vo"> 
+                          <div class="col-33">
+                              <a name="tag" href="__MODULE__/Menu/tag/{vo.id}" class="external button color-gray">{$vo.menuname}</a>
+                          </div>
+                        </volist>
                     </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">川菜</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">家常菜</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">西餐</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">甜点</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">饮品</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">甜点饮品</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">冰激凌</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">水果</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">面食</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">川菜</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">家常菜</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">中餐</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">川菜</a>
-                    </div>
-                    <div class="col-33">
-                      <a href="__MODULE__/Menu/lists" class="external button color-gray">家常菜</a>
-                    </div>
-                  </div>
+                  </form>
                 </div>
               </div><!--hotTags end-->
             </div>  
