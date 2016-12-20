@@ -93,6 +93,8 @@ class MenuController extends Controller {
 	}
 	//找人代买
 	public function othersbuy(){
+		// var_dump($_POST['address']);
+		// exit;
 		$orderModel = M('orderform');
 		$userModel = M('user');
 		$addressModel = M('address');

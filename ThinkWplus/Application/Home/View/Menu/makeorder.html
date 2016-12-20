@@ -40,7 +40,7 @@
             <!-- Scrollable page content -->
             <div class="page-content" style="padding-top:20px">
               <!-- 用料用量 -->
-              <form enctype="multipart/form-data" action="" method="post">
+              <form enctype="multipart/form-data" action="__MODULE__/Menu/othersbuy" method="post">
                 <div class="list-block">
                   <ul id="selectedMenu">
                     <!--用料列表-->
@@ -48,7 +48,7 @@
                         for($i=0;$i<count($recipe['foodname']);$i++){
                           echo  '<li class="item-content menuData">'.
                                   '<div class="item-inner">'.
-                                    '<div class="item-title label" name="ingredients[]">'.$recipe['foodname'][$i].'</div>'.
+                                    '<input type="text" name="ingredients[]" placeholder="" value="'.$recipe['foodname'][$i].'" readonly>'.
                                     '<div class="item-input">'.
                                       '<input type="text" name="amount[]" class="textRight" placeholder="数量" value="">'.
                                     '</div>'.
@@ -162,7 +162,7 @@
           else{
             var one = $('<li class="item-content menuData"></li>');
             var two = $('<div class="item-inner"></div>');
-            var three1 = $('<div class="item-title label" name="ingredients[]">'+plusName+'</div>');
+            var three1 = $('<input type="text" name="ingredients[]" placeholder="" value="'+plusName+'" readonly>');
             var three2 = $('<div class="item-input"></div>');
             var three3 = $('<i class="rightBtn fa fa-close"></i>');
             var four = $('<input type="text" name="amount[]" class="textRight" placeholder="数量" value="'+plusNum+'">');
