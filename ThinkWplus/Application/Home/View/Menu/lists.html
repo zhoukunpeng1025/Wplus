@@ -132,7 +132,7 @@
                   <li class="list-content">
                     <a href="__MODULE__/Menu/content/id/{$re.id}" class="external">
                       <div class="row">
-                         <img src="__PUBLIC__/{$re.img}" width="100%">
+                         <img class="bannerImg" src="__PUBLIC__/{$re.img}" width="100%">
                       </div>
                     </a>
                     <div class="row">
@@ -152,14 +152,11 @@
                   <li class="item-divider"></li><!--分割-->
                   </volist>
                 </ul>
-              </div>
-
-
+              </div><!--end-->
             </div>  
           </div>
         </div>
-        <!-- Bottom Toolbar-->
-       
+        <!-- Bottom Toolbar-->  
       </div>
     </div>
     <!-- Path to Framework7 Library JS-->
@@ -167,5 +164,12 @@
     <!-- Path to your app js-->
     <script type="text/javascript" src="__PUBLIC__/front/js/my-app.js"></script>
     <script type="text/javascript" src="__PUBLIC__/front/js/jquery-2.2.2.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //实现菜谱banner图
+        var imgWidth = $(".bannerImg").width();
+        $(".bannerImg").height(imgWidth*0.65);
+      });
+    </script>
   </body>
 </html> 
