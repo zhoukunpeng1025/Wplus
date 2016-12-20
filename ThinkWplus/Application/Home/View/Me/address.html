@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.colors.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/front/css/my-app.css">
     <link rel="stylesheet" href="__PUBLIC__/front/css/jialin.css">
   </head>
   <body>
@@ -36,15 +35,16 @@
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
             <div class="page-content">
+              <volist name="address" id="vo">
               <div class="card cardM1">
         			  <div class="card-content">
         			    <div class="card-content-inner mT8">
           			    <div class="row">
-          			    	<div class="col-25 carName">王致和</div>
-          			    	<div class="col-50 carName">138****9898</div>
+          			    	<div class="col-25 carName">{$vo.username}</div>
+          			    	<div class="col-50 carName">{$vo.phonenum}</div>
           			    	<div class="col-25 "><a href="#" class="button buttonColor">一键代</a></div>
           			    </div>
-        			    	<div class="cardAddress">河北省石家庄市裕华区南二环东路20号河北师范大学新校区</div>
+        			    	<div class="cardAddress" style="font-size: 18px;">{$vo.address}</div>
         			    	<div class="mT10"><a href="#" class="icon fa fa-dollar">在线支付</a></div>
         			    </div>
         			  </div>
@@ -53,7 +53,8 @@
         			    <span class="footerRight"><a href="#" class="icon fa fa-edit fontGrey">&nbsp;编辑</a><a href="#">&nbsp;&nbsp;</a>
         			    <a href="#" class="icon fa fa-trash fontGrey">&nbsp;删除</a></span>
         			  </div>
-        			</div>     
+        			</div>
+              </volist>     
             </div>
             <div class="toolbar">
               <div class="toolbar-inner redBack">

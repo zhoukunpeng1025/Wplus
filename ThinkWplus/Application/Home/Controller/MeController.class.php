@@ -28,6 +28,14 @@ class MeController extends Controller {
         $this->display();
     }
 
+    public function address(){
+        $Model = M();
+        $id = I("session.id");
+        $address = $Model->table("address a, user b")->where("a.userid = b.id and b.id = $id")->select();
+        $this->assign("address", $address);
+        $this->display();
+    }
+
     // 功能未实现
     public function getCity($id){
         $cityModel = M("city");
