@@ -22,6 +22,7 @@ class SignupController extends Controller {
 
 			if ($result > 0) {
 				$_SESSION['username'] = $username;
+				$_SESSION['id'] = $id;
 
 				$this->redirect("Index/index");
 			}
@@ -97,14 +98,17 @@ class SignupController extends Controller {
 		if (IS_POST) {
 			$username = I("post.username");
 			$password = I("post.password");
-			$_SESSION['username'] = $username;
-			// $_SESSION['password'] = $password;
 
 			$data = $_POST;
 			$data['phonenum'] = I("session.phonenum");
 
 			$userModel = M("user");
 			if($userModel->add($data)) {
+				// 未测试
+				$_SESSION['username'] = $username;
+				$id = $userModel->where("username=$username")->getField("id");
+				$_SESSION['id'] = $id;
+
 				$this->redirect("Index/index");
 			}
 		}

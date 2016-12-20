@@ -65,13 +65,24 @@
                         <div class="item-title">我的订单</div>
                       </div></a>
                     <div class="accordion-item-content">
-                      <volist name="order" id="vo">
-                        <div class="content-block">
-                          <ul>
-                            <li><a href="#">{$vo.username}</a></li>
-                          </ul> 
-                        </div>
-                      </volist>
+                      <?php
+                        if(empty($make)){
+                          echo '<div class="content-block">'.
+                                  '<ul>'.
+                                    '<li>'.
+                                      '您还没有发布过订单'.
+                                    '</li>'.
+                                  '</ul>'.
+                                '</div>';
+                        }
+                      ?>
+                      <div class="content-block">
+                        <ul>
+                          <volist name="make" id="ma">
+                          <li class="orderList">您让 <a href="#" class="redColor">{$ma.username}</a> 帮忙带</li>
+                          </volist>
+                        </ul> 
+                      </div>  
                     </div>
                   </li>
                   <li class="accordion-item"><a href="#" class="item-content item-link">
@@ -79,13 +90,24 @@
                         <div class="item-title">我的接单</div>
                       </div></a>
                     <div class="accordion-item-content">
-                      <volist name="order" id="vo">
-                        <div class="content-block">
-                          <ul>
-                            <li><a href="#">{$vo.username}</a></li>
-                          </ul> 
-                        </div>
-                      </volist>
+                      <?php
+                        if(empty($pur)){
+                          echo '<div class="content-block">'.
+                                  '<ul>'.
+                                    '<li>'.
+                                      '您还没有接单'.
+                                    '</li>'.
+                                  '</ul>'.
+                                '</div>';
+                        }
+                      ?>
+                      <div class="content-block">
+                        <ul class="orderList">
+                        <volist name="pur" id="pu">
+                          <li><a href="#" class="redColor">{$pu.username}</a> 让您帮忙带</li>
+                        </volist>
+                        </ul> 
+                      </div>
                     </div>
                   </li>
                 </ul>
@@ -122,7 +144,8 @@
           </div>
     </div>
     <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="__PUBLIC__/front/js/framework7.min.js"></script>
+    <script src="__PUBLIC__/front/js/jquery-2.2.2.js"></script>
+    <script src="__PUBLIC__/front/js/framework7.min.js"></script>   
     <!-- Path to your app js-->
     <script type="text/javascript" src="__PUBLIC__/front/js/my-app.js"></script> 
   </body>
