@@ -28,13 +28,25 @@ class MeController extends Controller {
         $this->display();
     }
 
+    // 功能未实现
+    public function getCity($id){
+        $cityModel = M("city");
+        $city = $cityModel->where("provinceid = $id")->select();
+        dump($city);
+    }
+
+    // 功能未实现
     public function addAddress(){
         $provinceModel = M("province");
         $province = $provinceModel->select();
         $this->assign("province", $province);
-        $cityModel = M();
-        $city = $cityModel->table("city b")->where("a.provinceid = b.provinceid")->select();
-        $this->assign("city", $city);
+
+        $provName = I("post.province");
+        // dump($provName);
+        // $provId = $provinceModel->where("province = $provName")->getField("provinceid");
+        // $cityModel = M("city");
+        // $city = $cityModel->where("provinceid = $provId")->select();
+        // $this->assign("city", $city);
         $this->display();
     }
 

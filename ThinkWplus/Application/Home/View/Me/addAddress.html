@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.colors.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
-    <link rel="stylesheet" href="__PUBLIC__/front/css/my-app.css">
     <link rel="stylesheet" href="__PUBLIC__/front/css/jialin.css">
   </head>
   <body>
@@ -40,16 +39,16 @@
             <div class="row">
               <div class="col-100">&nbsp;</div>
             </div>
-            <div class="list-block">
+            <form class="list-block" action="__MODULE__/Me/addAddress" method="post">
               <ul>
                 <li>
                 <div class="item-content">
                   <div class="item-inner">
                     <div class="item-title label">所在省</div>
                     <div class="item-input">
-                        <select>
+                        <select id="provSelect">
                           <volist name="province" id="vo">
-                            <option>{$vo.province}</option>
+                            <option class="province" value="{$vo.provinceid}">{$vo.province}</option>
                           </volist>
                         </select>
                     </div>
@@ -71,9 +70,7 @@
                 </div>
               </li>
               </ul>
-            </div>
-            
-             
+            </form>
           </div>
           <div class="toolbar">
           <div class="toolbar-inner redBack">
@@ -83,8 +80,24 @@
       </div>
     </div>
     <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="__PUBLIC__/front/js/framework7.min.js"></script>
+    <script src="__PUBLIC__/front/js/framework7.min.js"></script>
+    <script src="__PUBLIC__/front/js/jquery-2.2.2.js"></script>
     <!-- Path to your app js-->
-    <script type="text/javascript" src="__PUBLIC__/front/js/my-app.js"></script>
+    <script src="__PUBLIC__/front/js/my-app.js"></script>
+    <script>
+    // 以下代码功能未实现
+    var province = $(".province").val();
+    $("#provSelect").change(function(){
+      var province = $(this).val();
+      $.ajax({
+        url: '__MODULE__/Me/getCity/id/'+province,
+        type: 'get',
+        success:function(){
+          //
+        }
+      });
+    });
+    // console.log(province);
+    </script>
   </body>
 </html>
