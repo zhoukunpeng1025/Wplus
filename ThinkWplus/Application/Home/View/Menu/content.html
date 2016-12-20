@@ -58,7 +58,7 @@
               <h2 class="contentTitle">{$recipe.recipename}</h2>
               <p class="ppp">用料 ： </p>
               <ul class="list-block" style="list-style:none;padding-left:1%;margin:1% 0;">
-              <!--用料列表-->
+                <!--用料列表-->
                 <?php
                   for($i=0;$i<count($recipe['foodname']);$i++){
                     echo  "<li> ".
@@ -74,7 +74,7 @@
               <div class="row" style="padding-top:1%">
                 <div class="col-50"></div>
                 <div class="col-40">
-                  <a href="make-order.html" class="external button button-round color-red">
+                  <a href="__MODULE__/Menu/makeorder/id/<?php echo $recipe['id'];?>" class="external button button-round color-red">
                     购买
                   </a>
                 </div>
