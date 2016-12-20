@@ -113,11 +113,22 @@
                         }
                       ?>
                       <div class="content-block">
-                        <ul class="orderList">
+                        <!-- <ul class="orderList">
                         <volist name="pur" id="pu">
                           <li><a href="#" class="redColor">{$pu.username}</a> 让您帮忙带</li>
                         </volist>
-                        </ul> 
+                        </ul>  -->
+                        <div class="list-block">
+                        <ul>
+					      <volist name="pur" id="pu">
+					        <li class="item-content">
+					          <div class="item-inner">
+					            <div class="item-title"><a href="#" class="redColor">{$pu.username}</a> 让您帮忙带</div>
+					          </div>
+					        </li>
+					        </volist>
+					      </ul>
+					      </div>
                       </div>
                     </div>
                   </li>
