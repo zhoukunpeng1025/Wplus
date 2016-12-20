@@ -89,6 +89,7 @@
                             '<div class="col-90 stepContent">'.
                               $recipe['step'][$i].
                               '<!-- 定时闹钟 -->'.
+                              '<input type="hidden" name="clocktime" class="clocktime" value="'.$recipe['clocktime'][$k].'">'.
                               '<a href="#" class="stepsKeepTimeA grayLeft">'.
                                 '<i class="fa fa-hourglass-end fa-lg stepsKeepTime" aria-hidden="true"></i><span></span>'.
                               '</a>'.
@@ -99,6 +100,11 @@
                   $k++;
                 }else{
                   echo '<div class="swiper-slide">'.
+                        '<!-- 闹钟弹出层 -->'.
+                        '<div class="popDiv">'.
+                            '<h3 style="text-align:center">时间到！</h3>'.
+                            '<p><a href="#" class="button color-gray okBtn">确定</a></p>'.
+                        '</div>'.
                         '<div class="row">'.
                           '<div class="col-5"></div>'.
                             '<div class="col-5 orderNum">'.$j.'</div>'.
@@ -165,12 +171,17 @@
     
     // 闹钟及漏斗转换
     var intervalId = null;
-    var intDiff = parseInt(3);//倒计时总秒数量,获取闹钟总秒数
     $("body").on("click",".stepsKeepTimeA",function(){
       var t = $(this).children("i").attr("class");//获取i标签的class值
       var i = $(this).children("i");//获取i标签
       var span = $(this).children("span");//获取span标签
-      
+      var clocktime = $(this).prev().val();//获取当前时间
+      var hour = parseInt(clocktime.substr(0,2));
+      var minute = parseInt(clocktime.substr(3,2));
+      var second = parseInt(clocktime.substr(6,2));
+      var seconds = second + minute*60 + hour*3600;
+      var intDiff = parseInt(seconds);//倒计时总秒数量,获取闹钟总秒数
+
       if(t == "fa fa-hourglass-end fa-lg stepsKeepTime"){
         i.attr("class","fa fa-hourglass-start fa-lg stepsKeepTime");
         function timer(intDiff){
