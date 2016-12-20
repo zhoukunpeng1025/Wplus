@@ -85,4 +85,15 @@ class NowaitController extends Controller {
         // } 
 
     }
+    //生成订单页
+    public function makeorder(){
+        $userModel = M('user');
+        $addressModel = M('address');
+        $condition['username'] = I("session.username");//获取当前用户名
+        $userid = $userModel->where($condition)->getField('id');//获取当前用户id
+        $address = $addressModel->where("userid=$userid")->find();//获取当前用户的地址信息
+
+        $this->assign("address",$address);
+        $this->display();
+    }
 }

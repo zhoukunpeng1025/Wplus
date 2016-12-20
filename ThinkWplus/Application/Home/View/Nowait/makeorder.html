@@ -43,25 +43,12 @@
               <form enctype="multipart/form-data" action="" method="post">
                 <div class="list-block">
                   <ul id="selectedMenu">
-                    <!--用料列表-->
-                      <?php
-                        for($i=0;$i<count($recipe['foodname']);$i++){
-                          echo  '<li class="item-content menuData">'.
-                                  '<div class="item-inner">'.
-                                    '<input type="text" name="ingredients[]" placeholder="" value="'.$recipe['foodname'][$i].'">'.
-                                    '<div class="item-input">'.
-                                      '<input type="text" name="amount[]" class="textRight" placeholder="数量" value="">'.
-                                    '</div>'.
-                                    '<i class="rightBtn fa fa-close"></i>'.
-                                 '</div>'.
-                                '</li>';
-                        }
-                      ?>
+
                   </ul>
                   <ul>
                     <li class="item-content">
                       <div class="item-inner">
-                        <div class="item-title label">我还想买</div>
+                        <div class="item-title label">我想买</div>
                         <div class="item-input">
                           <input type="text" class="textRight" id="plusName" placeholder="菜名" value="">
                         </div>
@@ -168,6 +155,9 @@
             var four = $('<input type="text" name="amount[]" class="textRight" placeholder="数量" value="'+plusNum+'">');
             var newOrder = one.append(two.append(three1,three2.append(four),three3));
             $("#selectedMenu").append(newOrder);
+            //添加后使原输入框中val为空
+            $("#plusName").val('');
+            $("#plusNum").val('');
           }
         });
         // ×号实现删除
@@ -177,10 +167,10 @@
         });
 
         $("#othersbuy").click(function(){
-          $('form').attr('action','__MODULE__/Menu/othersbuy');
+          $('form').attr('action',"{:U('Home/Menu/othersbuy')}");
         });
         $("#ownbuy").click(function(){
-          $('form').attr('action','__MODULE__/Menu/ownbuy');
+          $('form').attr('action',"{:U('Home/Menu/ownbuy')}");
         });
       });
     </script>
