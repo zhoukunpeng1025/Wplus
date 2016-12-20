@@ -39,7 +39,7 @@ class MenuController extends Controller {
 	public function content(){
 		$id = I("id");
 		$recipeModel = M('recipe');
-		$recipe = $recipeModel->where("id=$id")->find();//能获取当前数据
+		$recipe = $recipeModel->where("id=$id")->find();//获取当前数据
 
 		// 将字符串转为数组
 		$recipe["foodname"] = explode("&", $recipe["foodname"]);
@@ -58,7 +58,7 @@ class MenuController extends Controller {
 	public function steps(){
 		$id = I("id");
 		$recipeModel = M('recipe');
-		$recipe = $recipeModel->where("id=$id")->find();//能获取当前数据
+		$recipe = $recipeModel->where("id=$id")->find();//获取当前数据
 
 		// 将字符串转为数组
 		$recipe["foodname"] = explode("&", $recipe["foodname"]);
@@ -70,6 +70,34 @@ class MenuController extends Controller {
 		
 		$this->assign("recipe",$recipe);
 		$this->display();
+	}
+	//生成订单页，makeorder
+	public function makeorder(){
+		$id = I("id");
+		$recipeModel = M('recipe');
+		$userModel = M('user');
+		$addressModel = M('address');
+		$recipe = $recipeModel->where("id=$id")->find();//获取当前数据
+		$condition['username'] = I("session.username");//获取当前用户名
+		$userid = $userModel->where($condition)->getField('id');//获取当前用户id
+		//连接user、address表，暂时无用
+		$userAddress = $userModel->join('address ON user.id = address.userid');
+		$address = $addressModel->where("userid=$userid")->find();//获取当前用户的地址信息
+		// var_dump(I("session.username"));
+
+		$recipe["foodname"] = explode("&", $recipe["foodname"]);
+
+		$this->assign("recipe",$recipe);
+		$this->assign("address",$address);
+		$this->display();
+	}
+	//找人代买
+	public function othersbuy(){
+
+	}
+	//自己买
+	public function ownbuy(){
+		
 	}
 }
 ?>
