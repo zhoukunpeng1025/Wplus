@@ -55,13 +55,16 @@ class NowaitController extends Controller {
         //删除菜篮中的订单，回到不等待中
          $Model=M('orderform');
         $id=I('id');
+        // var_dump($id);
         
-        $order=$Model->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
-         $order=$order->where("oid=$id")->find(); 
+        $order1=$Model->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
+         $order1=$order1->where("oid=$id")->find(); 
           // $order=$order->select();
         // var_dump($order);
-        $order['purchaserid']=null;
-        $Model->save($order);
+        $order1['purchaserid']=null;
+        $Model->save($order1);
+        // $this->success('删除成功', 'basketlist');
+        $this->redirect('basketlist'); //直接跳转，不带计时后跳转
          // var_dump($order['purchaserid']);    
 
     }
@@ -75,9 +78,11 @@ class NowaitController extends Controller {
           // $order=$order->select();
         // var_dump($order['purchaserid']);
         $order['purchaserid']=2;
-        if($Model->save($order)){
-            $this->success('领取成功', 'requestlist');
-        } 
+        $Model->save($order);
+        $this->redirect('requestlist');
+        // if($Model->save($order)){
+        //     $this->success('领取成功', 'requestlist');
+        // } 
 
     }
 }
