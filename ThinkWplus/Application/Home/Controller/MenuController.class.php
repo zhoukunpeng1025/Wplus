@@ -93,7 +93,21 @@ class MenuController extends Controller {
 	}
 	//找人代买
 	public function othersbuy(){
+		$orderModel = M('orderform');
+		$userModel = M('user');
+		$addressModel = M('address');
+		$orderModel->create();
+		$condition['username'] = I("session.username");//获取当前用户名
+		$userid = $userModel->where($condition)->getField('id');//获取当前用户id
+		$orderModel->makerid = $userid;
+		$orderModel->purchaserid = null;
+		$adCondition['address'] = $_POST['address'];
+		$addressId = $addressModel->where($adCondition)->getField('id');
+		$orderModel->addressid = $addressId;
 
+		if ($orderModel->add()) {
+			$this->success('添加成功！',U('Nowait/requestlist'));
+		}
 	}
 	//自己买
 	public function ownbuy(){
