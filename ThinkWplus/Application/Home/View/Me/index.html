@@ -77,11 +77,22 @@
                         }
                       ?>
                       <div class="content-block">
-                        <ul>
-                          <volist name="make" id="ma">
-                          <li class="orderList">您让 <a href="#" class="redColor">{$ma.username}</a> 帮忙带</li>
+                        <!-- <ul>
+                          <volist name="make" id="ma" >
+                          <li style="line-height:30px;font-size:19px;border-bottom:solid 1px #959595;margin-left:20px;width:260px;">&nbsp;&nbsp;&nbsp;您让 <a href="#" class="redColor">{$ma.username}</a> 帮忙带</li>
                           </volist>
-                        </ul> 
+                        </ul>  -->
+                        <div class="list-block">
+					      <ul>
+					      <volist name="make" id="ma" >
+					        <li class="item-content">
+					          <div class="item-inner">
+					            <div class="item-title">您让 <a href="#" class="redColor">{$ma.username}</a> 帮忙带</div>
+					          </div>
+					        </li>
+					        </volist>
+					      </ul>
+					    </div>
                       </div>  
                     </div>
                   </li>
