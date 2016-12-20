@@ -93,27 +93,49 @@ class MenuController extends Controller {
 	}
 	//找人代买
 	public function othersbuy(){
-		// var_dump($_POST['address']);
-		// exit;
-		$orderModel = M('orderform');
 		$userModel = M('user');
 		$addressModel = M('address');
-		$orderModel->create();
+		
 		$condition['username'] = I("session.username");//获取当前用户名
 		$userid = $userModel->where($condition)->getField('id');//获取当前用户id
-		$orderModel->makerid = $userid;
-		$orderModel->purchaserid = null;
 		$adCondition['address'] = $_POST['address'];
-		$addressId = $addressModel->where($adCondition)->getField('id');
-		$orderModel->addressid = $addressId;
+		$addressId = $addressModel->where($adCondition)->getField('id');//获取当前地址id
 
-		if ($orderModel->add()) {
+		$data = $_POST;
+		// 将数组转成字符串
+		$data["ingredients"] = implode("&", $data["ingredients"]);
+		$data["amount"] = implode("&", $data["amount"]);
+		$data["makerid"] = $userid;
+		$data["purchaserid"] = null;
+		$data["addressid"] = $addressId;
+
+		$orderModel = M('orderform');
+		if ($orderModel->create() && $orderModel->add($data)) {
 			$this->success('添加成功！',U('Nowait/requestlist'));
 		}
 	}
 	//自己买
 	public function ownbuy(){
+		$userModel = M('user');
+		$addressModel = M('address');
 		
+		$condition['username'] = I("session.username");//获取当前用户名
+		$userid = $userModel->where($condition)->getField('id');//获取当前用户id
+		$adCondition['address'] = $_POST['address'];
+		$addressId = $addressModel->where($adCondition)->getField('id');//获取当前地址id
+
+		$data = $_POST;
+		// 将数组转成字符串
+		$data["ingredients"] = implode("&", $data["ingredients"]);
+		$data["amount"] = implode("&", $data["amount"]);
+		$data["makerid"] = $userid;
+		$data["purchaserid"] = $userid;
+		$data["addressid"] = $addressId;
+
+		$orderModel = M('orderform');
+		if ($orderModel->create() && $orderModel->add($data)) {
+			$this->success('添加成功！',U('Nowait/basketlist'));
+		}
 	}
 }
 ?>

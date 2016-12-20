@@ -40,7 +40,7 @@
             <!-- Scrollable page content -->
             <div class="page-content" style="padding-top:20px">
               <!-- 用料用量 -->
-              <form enctype="multipart/form-data" action="__MODULE__/Menu/othersbuy" method="post">
+              <form enctype="multipart/form-data" action="" method="post">
                 <div class="list-block">
                   <ul id="selectedMenu">
                     <!--用料列表-->
@@ -48,7 +48,7 @@
                         for($i=0;$i<count($recipe['foodname']);$i++){
                           echo  '<li class="item-content menuData">'.
                                   '<div class="item-inner">'.
-                                    '<input type="text" name="ingredients[]" placeholder="" value="'.$recipe['foodname'][$i].'" readonly>'.
+                                    '<input type="text" name="ingredients[]" placeholder="" value="'.$recipe['foodname'][$i].'">'.
                                     '<div class="item-input">'.
                                       '<input type="text" name="amount[]" class="textRight" placeholder="数量" value="">'.
                                     '</div>'.
@@ -124,7 +124,7 @@
                         <div class="row" style="padding-bottom:10px;">
                           <div class="col-65"></div>
                           <div class="col-30">
-                            <a href="__MODULE__/Menu/othersbuy" class="external button button-fill color-red" id="othersbuy">确认</a>
+                            <button type="submit" class="external button button-fill color-red" id="othersbuy">确认</button>
                           </div>
                           <div class="col-5"></div>
                         </div>
@@ -132,7 +132,7 @@
                     </div>
                   </div>
                   <div class="col-10"></div>
-                  <div class="col-33"><a href="__MODULE__/Menu/ownbuy" class="external button selfBuy" id="ownbuy">自己买</a></div>
+                  <div class="col-33"><button type="submit" class="external button selfBuy" id="ownbuy">自己买</button></div>
                   <div class="col-10"></div>
                 </div>
               </form>
@@ -162,7 +162,7 @@
           else{
             var one = $('<li class="item-content menuData"></li>');
             var two = $('<div class="item-inner"></div>');
-            var three1 = $('<input type="text" name="ingredients[]" placeholder="" value="'+plusName+'" readonly>');
+            var three1 = $('<input type="text" name="ingredients[]" placeholder="" value="'+plusName+'">');
             var three2 = $('<div class="item-input"></div>');
             var three3 = $('<i class="rightBtn fa fa-close"></i>');
             var four = $('<input type="text" name="amount[]" class="textRight" placeholder="数量" value="'+plusNum+'">');
@@ -176,12 +176,12 @@
           del.remove();
         });
 
-        // $("#othersbuy").click(function(){
-        //   $('form').attr('action','__MODULE__/Menu/othersbuy');
-        // });
-        // $("#ownbuy").click(function(){
-        //   $('form').attr('action','__MODULE__/Menu/ownbuy');
-        // });
+        $("#othersbuy").click(function(){
+          $('form').attr('action','__MODULE__/Menu/othersbuy');
+        });
+        $("#ownbuy").click(function(){
+          $('form').attr('action','__MODULE__/Menu/ownbuy');
+        });
       });
     </script>
   </body>
