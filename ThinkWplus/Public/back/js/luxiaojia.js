@@ -22,12 +22,17 @@ $(document).ready(function(){
 	$("#addProcedure").click(function(){
 		var formGroup = $("<div class='form-group'>"+
                             "<div class='col-sm-2'></div>"+
-                            "<div class='col-sm-9'>"+
-                                "<textarea name='step[]' id='' rows='3' class='form-control' placeholder='步骤'></textarea>"+
+                            "<div class='col-sm-7'>"+
+                                "<textarea name='step[]' id='' rows='7' class='form-control' placeholder='步骤'></textarea>"+
                             "</div>"+
-                            "<div class='col-sm-2'></div>"+
-                            "<div class='col-sm-9 paddingTop'>"+
-                                 "<input id='' type='file' class='file' data-overwrite-initial='false' name='img[]'>"+
+                            "<div class='col-sm-2'>"+
+                            	'<div class="control-group js_uploadBox">'+
+                                    '<div class="btn-upload">'+
+                                      '<a href=""><i class="icon-upload"></i><span class="js_uploadText">上传</span>图片</a>'+
+                                      '<input class="js_upFile" type="file" name="img[]">'+
+                                    '</div>'+
+                                    '<div class="js_showBox"><img class="js_logoBox" src="../../../Public/back/img/a2.jpg" width="100px" ></div>'+
+                                '</div>'+
                             "</div>"+
                             "<div class='addAndRemove remove'>"+
                                 "<span class='glyphicon glyphicon-remove'></span>"+

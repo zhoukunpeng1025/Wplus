@@ -71,18 +71,21 @@
                                 <div class="menuProcedure row">
                                     <div class="col-sm-2 menuTitle">做法</div>
                                     <div class="col-sm-10"></div>
-                                    <volist name="vo['step']" id="st">
-                                    <div class="col-sm-2"></div>
-                                    <div class="col-sm-10">
-                                        <div class="col-sm-2 steps">{$i}.</div>
-                                        <div class="col-sm-8 paddingTop">
-                                            <p>{$st}</p>
-                                            <div>
-                                                <img src="__PUBLIC__/back/img/p1.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </volist>
+                                    <?php
+                                    for($i = 0; $i<count($vo['step']); $i++){
+                                        $step = $i + 1;
+                                        echo "<div class='col-sm-2'></div>".
+                                            "<div class='col-sm-10'>".
+                                                "<div class='col-sm-2 steps'>".$step.".</div>".
+                                                "<div class='col-sm-8 paddingTop'>".
+                                                    "<p>".$vo['step'][$i]."</p>".
+                                                    "<div>".
+                                                        "<img src='".$vo['img'][$i]."' alt=''>".
+                                                    "</div>".
+                                                "</div>".
+                                            "</div>";
+                                    }
+                                    ?>
                                 </div> <!-- menuProcedure end -->
                                 
 

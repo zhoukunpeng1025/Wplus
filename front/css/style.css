@@ -536,7 +536,31 @@ padding: 0 10px;
 	margin-right: 10%;
 	float: right;
 }
-
+/*闹钟弹出框样式*/
+#pop{
+	position: absolute;
+	visibility: hidden;
+	overflow: hidden;
+	border:1px solid #CCC;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: #FAFAFA;
+	border:1px solid #959595;
+	padding:5px; 
+	left: 30%;
+	top: 30%;
+	z-index:1;
+	width: 40%;
+	height: 16%;
+}
+#ok{
+	text-align: center;
+	width:100%;
+	padding-bottom: 1px;
+	font-size: 20%;
+}
 /*
 * @description: 生成订单页 make-order.html
 * @author: 武亦文
@@ -598,6 +622,31 @@ padding: 0 10px;
 }
 .fourteenFont{
 	font-size: 0.8em;
+}
+/*闹钟弹出框样式*/
+.popDiv{
+	position: absolute;
+	visibility: hidden;
+	overflow: hidden;
+	border:1px solid #CCC;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: #FAFAFA;
+	border:1px solid #959595;
+	padding:5px; 
+	left: 30%;
+	top: 30%;
+	z-index:1;
+	width: 40%;
+	height: 20%;
+}
+.okBtn{
+	text-align: center;
+	width:100%;
+	padding-bottom: 1px;
+	font-size: 20%;
 }
 /*修改内容*/
 .contentBtn{

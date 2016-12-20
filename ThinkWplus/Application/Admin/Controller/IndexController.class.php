@@ -19,7 +19,7 @@ class IndexController extends Controller {
 			$menuNum = $menuNumModel->count();
 			$this->assign('menuNum',$menuNum);
 
-			$vedioNumModel = M(order);
+			$vedioNumModel = M(orderform);
 			$vedioNum = $vedioNumModel->count();
 			$this->assign('vedioNum',$vedioNum);
 

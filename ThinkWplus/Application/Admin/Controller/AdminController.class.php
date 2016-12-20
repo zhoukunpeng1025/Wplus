@@ -38,25 +38,24 @@ class AdminController extends Controller {
 	    $upload->savePath  =     '../Public/uploads/'; // 设置附件上传（子）目录
 	    // 上传文件 
 	    $info   =   $upload->upload();
-	    if(!$info) {// 上传错误提示错误信息
-	        $this->error($upload->getError());
-	    }	
-		else{
-			$adminUsersModel = D('adminuser');
-			$data = $adminUsersModel->create();
-			if (!$data) {
-				$this->error($adminUsersModel->getError());
-			}
-	    	//设置headimg属性值
-	    	$data['headimg'] = $info['headimg']['savepath'].$info['headimg']['savename'];
-	    	// exit;
-			if ($adminUsersModel->add($data)) {
-				$this->success("添加成功！", U("lists"));
-			}
-			else {
-				$this->error("添加失败！");
-			}
+	    // if(!$info) {// 上传错误提示错误信息
+	    //     $this->error($upload->getError());
+	    // }	
+		// else{
+		$adminUsersModel = D('adminuser');
+		$data = $adminUsersModel->create();
+		if (!$data) {
+			$this->error($adminUsersModel->getError());
 		}
+    	//设置headimg属性值
+    	$data['headimg'] = $info['headimg']['savepath'].$info['headimg']['savename'];
+		if ($adminUsersModel->add($data)) {
+			$this->success("添加成功！", U("lists"));
+		}
+		else {
+			$this->error("添加失败！");
+		}
+		// }
 	}
 
 	public function edit($id){
@@ -74,20 +73,20 @@ class AdminController extends Controller {
 	    $upload->savePath  ='../Public/uploads/'; // 设置附件上传（子）目录
 	    // 上传文件 
 	    $info   =   $upload->upload();
-	    if(!$info) {// 上传错误提示错误信息
-	        $this->error($upload->getError());
-	    }	
-		else{
-			$adminUsersModel = D("adminuser");
-			$data = $adminUsersModel->create();
-			$data['headimg'] = $info['headimg']['savepath'].$info['headimg']['savename'];
-			if($data && $adminUsersModel->save($data)){
-				$this->success("修改成功！",U("lists"));
-			}
-			else{
-				$this->error($adminUsersModel->getError());
-			}
+	    // if(!$info) {// 上传错误提示错误信息
+	    //     $this->error($upload->getError());
+	    // }	
+		// else{
+		$adminUsersModel = D("adminuser");
+		$data = $adminUsersModel->create();
+		$data['headimg'] = $info['headimg']['savepath'].$info['headimg']['savename'];
+		if($data && $adminUsersModel->save($data)){
+			$this->success("修改成功！",U("lists"));
 		}
+		else{
+			$this->error($adminUsersModel->getError());
+		}
+		// }
 	}
 
 	public function delete($id){

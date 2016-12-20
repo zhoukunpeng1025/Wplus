@@ -52,3 +52,41 @@
 	font-style: italic;
 	padding-top: 15px;
 }
+
+.btn-upload {
+  width: 106px;
+  height: 32px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.btn-upload a {
+  display: block;
+  width: 104px;
+  line-height: 18px;
+  padding: 6px 0;
+  text-align: center;
+  color: #4c4c4c;
+  background: #fff;
+  border: 1px solid #cecece;
+}
+.btn-upload input {
+  width: 106px;
+  height: 32px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.icon-upload {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url(../../back/img/icons.png) -78px 0 no-repeat;
+  vertical-align: middle;
+  margin-right: 5px;
+  background-position: -144px -24px;
+}
