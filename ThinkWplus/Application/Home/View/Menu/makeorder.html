@@ -168,6 +168,9 @@
             var four = $('<input type="text" name="amount[]" class="textRight" placeholder="数量" value="'+plusNum+'">');
             var newOrder = one.append(two.append(three1,three2.append(four),three3));
             $("#selectedMenu").append(newOrder);
+            //添加后使原输入框中val为空
+            $("#plusName").val('');
+            $("#plusNum").val('');
           }
         });
         // ×号实现删除
