@@ -111,7 +111,7 @@ class MenuController extends Controller {
 
 		$orderModel = M('orderform');
 		if ($orderModel->create() && $orderModel->add($data)) {
-			$this->success('添加成功！',U('Nowait/requestlist'));
+			$this->redirect("Nowait/requestlist");
 		}
 	}
 	//自己买
@@ -134,7 +134,7 @@ class MenuController extends Controller {
 
 		$orderModel = M('orderform');
 		if ($orderModel->create() && $orderModel->add($data)) {
-			$this->success('添加成功！',U('Nowait/basketlist'));
+			$this->redirect('Nowait/basketlist');
 		}
 	}
 }
