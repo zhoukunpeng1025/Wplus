@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!--360浏览器优先以webkit内核解析-->
-
-
     <title>用户管理</title>
-
     <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="__PUBLIC__/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
-
     <link href="__PUBLIC__/back/css/animate.css" rel="stylesheet">
     <link href="__PUBLIC__/back/css/style.css?v=4.1.0" rel="stylesheet">
-
 </head>
-
 <body class="gray-bg">
     <div class="wrapper wrapper-content">
         <div class="row clearfix">
@@ -30,9 +21,9 @@
                         <th></th>
                         <th>头像</th>
                         <th>用户名</th>
-                        <th>真实姓名</th>
+                        <th>称呼</th>
                         <th>性别</th>
-                        <th>家庭住址</th>
+                        <th>邮箱地址</th>
                         <th>手机号</th>
                         <th>操作</th>
                     </tr>
@@ -48,21 +39,23 @@
                            {$vl.username}
                         </td>
                         <td>
-                            {$vl.realname}
+                            {$vl.call}
                         </td>
                         <td>
-                           {$vl.sexy}
+                           {$vl.sex}
                         </td>
                         <td>
-                           {$vl.address1}
+                           {$vl.e-mail}
                         </td>
                          <td>
                            {$vl.phonenum}
                         </td>
                         <td>
-                            <button type="button " class="btn btn-danger  ">
-                                <span class="glyphicon  glyphicon-trash"></span><a href="__MODULE__/User/delete/id/{$vl.id}">删除</a>     
-                            </button>  
+                            <a href="__MODULE__/User/delete/id/{$vl.id}"><button type="button" class="btn btn-link ">
+                              <span class="glyphicon  glyphicon-trash"></span>
+                              删除     
+                            </button>
+                            </a> 
                         </td>
                     </tr>
                   </volist>
