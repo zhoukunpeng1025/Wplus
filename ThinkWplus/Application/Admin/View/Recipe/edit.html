@@ -76,45 +76,38 @@
                             ?>
                             
                             <div class="hr-line-dashed"></div>
-                            <volist name="vo['step']" id="st">
-                            <div class="form-group row">
-                            <if condition="$st eq $vo['step'][0]">
-                                <label class="col-sm-2 control-label">做法</label>
-                                <div class="col-sm-7">
-                                    <textarea name="step[]" id="" rows="7" class="form-control" placeholder="步骤">{$st}</textarea>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="control-group js_uploadBox">
-                                        <div class="btn-upload">
-                                          <a href=""><i class="icon-upload"></i><span class="js_uploadText">上传</span>图片</a>
-                                          <input class="js_upFile" type="file" name="img[]">
+                            <?php
+                                for($i = 0; $i<count($vo['step']); $i++) {
+                                    echo '<div class="form-group row">';
+                                    if($i == 0){
+                                        echo '<label class="col-sm-2 control-label">做法</label>';
+                                    } else{
+                                        echo '<div class="col-sm-2"></div>';
+                                    }
+                                    echo '<div class="col-sm-7">
+                                            <textarea name="step[]" id="" rows="7" class="form-control" placeholder="步骤">'.$vo['step'][$i].'</textarea>
                                         </div>
-                                        <div class="js_showBox "><img class="js_logoBox" src="__PUBLIC__/back/img/a2.jpg" width="100px" ></div>
-                                    </div>
-                                </div>
-                                <div class="addAndRemove" id="addProcedure">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                </div>
-                            <else />
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-7">
-                                    <textarea name="step[]" id="" rows="7" class="form-control" placeholder="步骤">{$st}</textarea>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="control-group js_uploadBox">
-                                        <div class="btn-upload">
-                                          <a href=""><i class="icon-upload"></i><span class="js_uploadText">上传</span>图片</a>
-                                          <input class="js_upFile" type="file" name="img[]">
-                                        </div>
-                                        <div class="js_showBox "><img class="js_logoBox" src="__PUBLIC__/back/img/a2.jpg" width="100px" ></div>
-                                    </div>
-                                </div>
-                                <div class="addAndRemove remove">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </div>
-                            </if>
-                            </div>
-                            </volist>
+                                        <div class="col-sm-2">
+                                            <div class="control-group js_uploadBox">
+                                                <div class="btn-upload">
+                                                  <a href=""><i class="icon-upload"></i><span class="js_uploadText">上传</span>图片</a>
+                                                  <input class="js_upFile" type="file" name="img[]">
+                                                </div>
+                                                <div class="js_showBox "><img class="js_logoBox" src="../../'.$vo['img'][$i].'" width="100px" ></div>
+                                            </div>
+                                        </div>';
+                                    if($i == 0) {
+                                        echo '<div class="addAndRemove" id="addProcedure">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </div>';
+                                    } else{
+                                        echo '<div class="addAndRemove remove">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </div>';
+                                    }
+                                    echo '</div>';
+                                }
+                            ?>
                             <div class="hr-line-dashed"></div>
                             <?php
                                 for($i = 0; $i<count($vo['clocknum']); $i++) {
