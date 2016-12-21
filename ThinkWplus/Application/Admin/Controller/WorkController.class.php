@@ -4,24 +4,27 @@ use Think\Controller;
 class WorkController extends Controller{
     //文章数据获取和展示
     public function articleLists(){
-      $articleModel = M("Article");
-      $article = $articleModel->select();
+      $articleModel = M("user");
+       // $article = $articleModel->join('user ON article.authorid = user.id');
+      $article = $articleModel->join('article ON user.id = article.authorid');
+      $article = $article->select();
       $this->assign("article", $article);
       $this->display();
+
+
     }
-    //单条删除
-    public function articleDelete(){
-      $articleModel = M("Article");
-      $id = I("id");
-      // dump($id);
-      $article = $articleModel->delete($id);
-      if ($article) {
-        $this->success("删除成功！", U("articleLists"));
-      }
-      else {
-        $this->error("删除失败！");
-      }
-    }
+     //单条删除数据
+     public function articleDelete(){
+          $id=I('id');
+          $Model=M('Article');
+          if($Model->where("id=$id")->delete()){
+            $this->success('删除成功');
+          }else{
+            $this->showError('删除失败');
+          }
+                  
+        }
+
     // 批量删除数据
     public function articleBatchDelete() {
       $articleModel = M("Article");

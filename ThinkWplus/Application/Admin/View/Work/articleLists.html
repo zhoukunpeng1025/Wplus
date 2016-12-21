@@ -50,7 +50,7 @@
                 <a href="__MODULE__/Work/article/id/{$vl.id}">{$vl.title}</a>
               </td>
               <td>
-                {$vl.author}
+                {$vl.username}
               </td>
               <td>
                 {$vl.time}
@@ -59,9 +59,10 @@
                 {$vl.amount}
               </td> 
               <td>   
-                <button type="button " class="btn btn-danger">
-                  <a href="__MODULE__/Work/articleDelete/id/{$vl.id}">删除</a>     
-                </button> 
+               
+                <a href="__MODULE__/Work/articleDelete/id/{$vl.id}"><button type="button" class="btn btn-link ">
+                  <span class="glyphicon  glyphicon-trash"></span> 删除     
+                </button></a>
               </td>
             </tr>
             </volist>
@@ -74,20 +75,13 @@
         <div class="col-sm-7 col-sm-7 col-lg-7">
           <div class="input-group pull-left form">
             <button type="submit" class="btn btn-danger">
-              <span class="glyphicon  glyphicon-trash"></span>批量删除     
+              <span class="glyphicon  glyphicon-trash"></span> 批量删除     
             </button>
           </div>
         </div> 
         <div class="col-sm-4 col-sm-4 col-lg-4">
           <ul class="pagination pagination-lg">
-            <li class="disabled"><a href="#">&laquo;</a></li> 
-            <li class="active"><a href="#">1</a></li> 
-            <li><a href="#">2</a></li> 
-            <li><a href="#">3</a></li> 
-            <li><a href="#">4</a></li> 
-            <li><a href="#">5</a></li>
-            <li><a href="#">6</a></li>
-            <li><a href="#">&raquo;</a></li> 
+              {$page}
           </ul>
         </div>
       </div>
