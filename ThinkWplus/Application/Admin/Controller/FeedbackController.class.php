@@ -3,7 +3,7 @@ namespace Admin\Controller;
 use Think\Controller;
 class FeedbackController extends Controller {
     public function index(){
-         $User = M('feedback'); // 实例化User对象
+         $User = M('feedback'); 
         $count      = $User->count();// 查询满足要求的总记录数
         $Page       = new \Think\Page($count,3);// 实例化分页类 传入总记录数和每页显示的记录数
         $orderby['id']='ASC';
