@@ -45,11 +45,11 @@ class MeController extends Controller {
 
     // 功能未实现
     public function addAddress(){
-        $provinceModel = M("province");
-        $province = $provinceModel->select();
-        $this->assign("province", $province);
+        // $provinceModel = M("province");
+        // $province = $provinceModel->select();
+        // $this->assign("province", $province);
 
-        $provName = I("post.province");
+        // $provName = I("post.province");
         // dump($provName);
         // $provId = $provinceModel->where("province = $provName")->getField("provinceid");
         // $cityModel = M("city");

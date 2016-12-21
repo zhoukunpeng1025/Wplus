@@ -39,8 +39,19 @@
             <div class="row">
               <div class="col-100">&nbsp;</div>
             </div>
-            <form class="list-block" action="__MODULE__/Me/addAddress" method="post">
+            <form class="list-block" action="__MODULE__/Me/addAddress" method="post" id="form">
               <ul>
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <input type="text" placeholder="请输入门牌号码" name="">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- <ul>
                 <li>
                 <div class="item-content">
                   <div class="item-inner">
@@ -69,12 +80,12 @@
                   </div>
                 </div>
               </li>
-              </ul>
+              </ul> -->
             </form>
           </div>
           <div class="toolbar">
           <div class="toolbar-inner redBack">
-              <a href="#" class="link redBack imgCerten"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;完成</a>
+              <a href="#" class="link redBack imgCerten" onclick="document.getElementById('form').submit();return false;"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;完成</a>
           </div>
 </div>
       </div>
