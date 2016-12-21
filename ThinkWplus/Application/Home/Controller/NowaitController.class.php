@@ -42,13 +42,12 @@ class NowaitController extends Controller {
         $this->assign("orders",$order);
         //菜篮中自己的订单
         $Model1=M('orderform');
-         $userModel=M('user');
-        $order1=$Model1->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
-        $condition['username'] = I("session.username");//获取当前用户名
-        $id = $userModel->where($condition)->getField('id');//获取当前用户id
+        $userModel=M('user');
+        // $order1=$Model1->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
         
-        $order1=$order1->where("purchaserid = $id AND purchaserid = makerid");
-        $order1=$order1->select();
+        $id = I("session.id");
+        // $order1=$order1->where("purchaserid = $id and purchaserid = makerid")->select();
+        $order1 = $Model1->where("makerid = purchaserid and makerid = $id")->select();
         for($i = 0; $i < count($order1); $i++) {
             $order1[$i]["ingredients"] = explode("&", $order1[$i]["ingredients"]);
             $order1[$i]["amount"] = explode("&", $order1[$i]["amount"]);
