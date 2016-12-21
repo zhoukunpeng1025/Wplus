@@ -55,7 +55,26 @@ class MeController extends Controller {
         // $cityModel = M("city");
         // $city = $cityModel->where("provinceid = $provId")->select();
         // $this->assign("city", $city);
+
         $this->display();
+    }
+
+    public function doAdd(){
+        if(IS_POST){    
+            $userid = I("session.id");
+            // 前台没写输入手机号码，所以此处的手机号是获取的用户注册的手机号
+            $phonenum = M("user")->where("id = $userid")->getField("phonenum");
+
+            $addressModel = M("address");
+            $data = $_POST;
+            $data['userid'] = $userid;
+            $data['phonenum'] = $phonenum;
+            // dump($data);
+
+            if($addressModel->add($data)){
+                $this->redirect("Me/address");
+            }
+        }
     }
 
     public function signout(){
