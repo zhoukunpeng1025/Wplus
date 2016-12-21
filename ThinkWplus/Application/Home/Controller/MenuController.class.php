@@ -80,10 +80,7 @@ class MenuController extends Controller {
 		$recipe = $recipeModel->where("id=$id")->find();//获取当前数据
 		$condition['username'] = I("session.username");//获取当前用户名
 		$userid = $userModel->where($condition)->getField('id');//获取当前用户id
-		//连接user、address表，暂时无用
-		$userAddress = $userModel->join('address ON user.id = address.userid');
 		$address = $addressModel->where("userid=$userid")->find();//获取当前用户的地址信息
-		// var_dump(I("session.username"));
 
 		$recipe["foodname"] = explode("&", $recipe["foodname"]);
 
