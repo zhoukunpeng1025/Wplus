@@ -31,7 +31,7 @@
 						<img src="{$vl.path}" width="25%"/>
 					</div>
 					<div class="" style="text-align: center; padding-top:1%;">
-						<button type="button " class="btn btn-danger">
+						<button type="button " class="btn ">
                             <a href="__MODULE__/Work/imageDelete/id/{$vl.id}">删除</a>     
                         </button>
 					</div>
@@ -46,20 +46,13 @@
         <div class="col-sm-7 col-sm-7 col-lg-7">
         	<div class="input-group pull-left form">
                 <button type="submit" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-trash"></span>批量删除     
+                    <span class="glyphicon glyphicon-trash"></span> 批量删除     
                 </button>
             </div>  
         </div> 
         <div class="col-sm-4 col-sm-4 col-lg-4">
             <ul class="pagination pagination-lg">
-                <li class="disabled"><a href="#">&laquo;</a></li> 
-                <li class="active"><a href="#">1</a></li> 
-                <li><a href="#">2</a></li> 
-                <li><a href="#">3</a></li> 
-                <li><a href="#">4</a></li> 
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">&raquo;</a></li> 
+               {$page}
             </ul>
         </div>
     </div>
