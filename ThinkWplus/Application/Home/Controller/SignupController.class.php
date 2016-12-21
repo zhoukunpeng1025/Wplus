@@ -45,28 +45,28 @@ class SignupController extends Controller {
 			$_SESSION['verifycode'] = $verifycode;
 			// dump($_SESSION);
 
-			// $appkey = "23564641";
-			// $secret = "00816798fbc0c004f6b35851a56b236a";
-			// vendor('Dayu.top.TopClient');
-			// vendor('Dayu.top.ResultSet');
-			// vendor('Dayu.top.RequestCheckUtil');
-			// vendor('Dayu.top.TopLogger');
-			// vendor('Dayu.top.request.AlibabaAliqinFcSmsNumSendRequest'); 
-			// $c = new \TopClient;
-			// $c->appkey = $appkey;
-			// $c->secretKey = $secret;
-			// $req = new \AlibabaAliqinFcSmsNumSendRequest;
-			// $req->setExtend("");
-			// $req->setSmsType("normal");
-			// $req->setSmsFreeSignName("味+");
-			// $req->setSmsParam("{number:'$verifycode'}");
-			// $req->setRecNum("$phonenum");
-			// $req->setSmsTemplateCode("SMS_33855075");
-			// $resp = $c->execute($req);
+			$appkey = "23564641";
+			$secret = "00816798fbc0c004f6b35851a56b236a";
+			vendor('Dayu.top.TopClient');
+			vendor('Dayu.top.ResultSet');
+			vendor('Dayu.top.RequestCheckUtil');
+			vendor('Dayu.top.TopLogger');
+			vendor('Dayu.top.request.AlibabaAliqinFcSmsNumSendRequest'); 
+			$c = new \TopClient;
+			$c->appkey = $appkey;
+			$c->secretKey = $secret;
+			$req = new \AlibabaAliqinFcSmsNumSendRequest;
+			$req->setExtend("");
+			$req->setSmsType("normal");
+			$req->setSmsFreeSignName("味+");
+			$req->setSmsParam("{number:'$verifycode'}");
+			$req->setRecNum("$phonenum");
+			$req->setSmsTemplateCode("SMS_33855075");
+			$resp = $c->execute($req);
 
 			// dump($resp->result->success);
-			// if($resp->result->success == "true") {
-			if(true){
+			if($resp->result->success == "true") {
+			// if(true){
 				// 发送成功
 				$this->redirect("Signup/verify");
 			}
@@ -104,11 +104,14 @@ class SignupController extends Controller {
 
 			$userModel = M("user");
 			if($userModel->add($data)) {
-				// 未测试
 				$_SESSION['username'] = $username;
-				$id = $userModel->where("username=$username")->getField("id");
+
+				// 写成where('username=$username')可能会因为字段名与变量名相同，识别错误
+				$condition = array('username' => $username);
+				$id = $userModel->where($condition)->getField("id");
 				$_SESSION['id'] = $id;
 
+				// dump($_SESSION);
 				$this->redirect("Index/index");
 			}
 		}
