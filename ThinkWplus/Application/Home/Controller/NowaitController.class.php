@@ -28,8 +28,12 @@ class NowaitController extends Controller {
     public function basketlist(){
         //菜篮中别人的东西
         $Model=M('orderform');
+        $userModel=M('user');
         $order=$Model->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
-        $order=$order->where('purchaserid = 2 AND purchaserid <> makerid'  );
+         $condition['username'] = I("session.username");//获取当前用户名
+        $id = $userModel->where($condition)->getField('id');//获取当前用户id
+
+        $order=$order->where("purchaserid = $id AND purchaserid <> makerid"  );
         $order=$order->select();
         for($i = 0; $i < count($order); $i++) {
             $order[$i]["ingredients"] = explode("&", $order[$i]["ingredients"]);
@@ -38,8 +42,12 @@ class NowaitController extends Controller {
         $this->assign("orders",$order);
         //菜篮中自己的订单
         $Model1=M('orderform');
+         $userModel=M('user');
         $order1=$Model1->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
-        $order1=$order1->where('purchaserid = 2 AND purchaserid = makerid');
+        $condition['username'] = I("session.username");//获取当前用户名
+        $id = $userModel->where($condition)->getField('id');//获取当前用户id
+        
+        $order1=$order1->where("purchaserid = $id AND purchaserid = makerid");
         $order1=$order1->select();
         for($i = 0; $i < count($order1); $i++) {
             $order1[$i]["ingredients"] = explode("&", $order1[$i]["ingredients"]);
@@ -71,13 +79,16 @@ class NowaitController extends Controller {
     public function get(){
         //领取不等待中的订单，变到自己菜篮中
         $Model=M('orderform');
+         $userModel=M('user');
         $id=I('id');
         
         $order=$Model->join('address ON orderform.addressid = address.id')->join('user ON orderform.makerid = user.id');
          $order=$order->where("oid=$id")->find(); 
           // $order=$order->select();
         // var_dump($order['purchaserid']);
-        $order['purchaserid']=2;
+        $condition['username'] = I("session.username");//获取当前用户名
+        $order['purchaserid'] = $userModel->where($condition)->getField('id');//获取当前用户id
+
         $Model->save($order);
         $this->redirect('requestlist');
         // if($Model->save($order)){
