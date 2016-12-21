@@ -103,7 +103,7 @@ class AdminController extends Controller {
 	//修改个人信息
 	public function modi(){
 		$adminUsersModel = D("adminuser");
-		$condition['username'] = I("session.username");//获取当前用户名
+		$condition['username'] = I("session.adminname");//获取当前用户名
 		$id = $adminUsersModel->where($condition)->getField('id');//获取当前用户id
 
 		$adminUsers = $adminUsersModel->find($id);
