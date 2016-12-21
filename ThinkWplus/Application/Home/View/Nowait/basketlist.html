@@ -46,17 +46,15 @@
                           <h3 class="basketH3">我</h3>
                           <p class="basketTitle">的菜篮</p>
                         </div>
-                        <div class="col-60 itemTitleBoder" id="dataUseLevel"> 
-                         
-                        <?php
-                                                for($j=0;$j<3;$j++){
-                                                    echo  "<div class='row'>".
-                                                      "<div class='col-50'>".$data1['ingredients'][$j]."</div>".
-                                                            "<div class='col-50 useLevel'>".$data1['amount'][$j]."</div>".
-                                                        "</div>";
-                                                }
-                                            ?>
-                          
+                        <div class="col-60 itemTitleBoder" id="dataUseLevel">    
+                          <?php
+                            for($j=0;$j<3;$j++){
+                                echo  "<div class='row'>".
+                                  "<div class='col-50'>".$data1['ingredients'][$j]."</div>".
+                                        "<div class='col-50 useLevel'>".$data1['amount'][$j]."</div>".
+                                    "</div>";
+                            }
+                          ?>                         
                         </div>
                       </div>
                     </div>
@@ -64,17 +62,15 @@
                     <div class="row accordion-item-content swipeout-content">
                       <div class="col-40"></div>
                       <div class="col-60 itemTitleBoder itemContentText">
-                        
-                      
                         <?php
-                                                for($i=3;$i<count($data1['ingredients']);$i++){
-                                                    echo  "<div class='row'>".
-                                                      "<div class='col-50'>".$data1['ingredients'][$i]."</div>".
-                                                            "<div class='col-50 useLevel'>".$data1['amount'][$i]."</div>".
-                                                        "</div>";
-                                                }
-                                            ?>
-                        <div class="row">
+                          for($i=3;$i<count($data1['ingredients']);$i++){
+                              echo  "<div class='row'>".
+                                "<div class='col-50'>".$data1['ingredients'][$i]."</div>".
+                                      "<div class='col-50 useLevel'>".$data1['amount'][$i]."</div>".
+                                  "</div>";
+                          }
+                        ?>
+                        <div class="row" style="min-height:">
                           <div class="col-40"></div>
                           <div class="col-50" style="padding-bottom:10px">
                             <a href="#" class="button button-round color-red">
@@ -102,19 +98,15 @@
                           <h3 class="basketH3">{$data.username}</h3>
                           <p class="basketTitle">的菜篮</p>
                         </div>
-                        <div class="col-60 itemTitleBoder" id="dataUseLevel"> 
-                          
-                           
-                             <?php
-                                for($i=0;$i<3;$i++){
-                                    echo  "<div class='row'>".
-                                      "<div class='col-50'>".$data['ingredients'][$i]."</div>".
-                                            "<div class='col-50 useLevel'>".$data['amount'][$i]."</div>".
-                                        "</div>";
-                                }
-                            ?>
-                          
-                          
+                        <div class="col-60 itemTitleBoder" id="dataUseLevel">  
+                          <?php
+                            for($i=0;$i<3;$i++){
+                                echo  "<div class='row'>".
+                                  "<div class='col-50'>".$data['ingredients'][$i]."</div>".
+                                        "<div class='col-50 useLevel'>".$data['amount'][$i]."</div>".
+                                    "</div>";
+                            }
+                          ?> 
                         </div>
                       </div>
                     </div>
@@ -131,26 +123,26 @@
                         <div class="row contactWay">
                           <div class="col-10"></div>
                           <div class="col-15">
-                          <!-- 实现电话拨打功能 -->
-                          <a href="tel:{$data.phonenum}" class="external" >
-                            <i class="fa fa-phone" aria-hidden="true" style="color:gray;"></i>
-                          </a>
+                            <!-- 实现电话拨打功能 -->
+                            <a href="tel:{$data.phonenum}" class="external">
+                              <i class="fa fa-phone" aria-hidden="true" style="color:gray;"></i>
+                            </a>
                           </div>
-                           <a href="tel:{$data.phonenum}" class="external">
-                          <div class="col-75" style="color:gray;">{$data.phonenum}</div>
-                          </a>
+                          <div class="col-75">
+                            <a href="tel:{$data.phonenum}" class="external phoneLink">{$data.phonenum}</a>
+                          </div>
                         </div>
                       </div>
                       <div class="col-60 itemTitleBoder itemContentText">
-                          <?php
-                            for($i=3;$i<count($data['ingredients']);$i++){
-                                echo  "<div class='row'>".
-                                  "<div class='col-50'>".$data['ingredients'][$i]."</div>".
-                                        "<div class='col-50 useLevel'>".$data['amount'][$i]."</div>".
-                                    "</div>";
-                            }
+                        <?php
+                          for($i=3;$i<count($data['ingredients']);$i++){
+                              echo  "<div class='row'>".
+                                "<div class='col-50'>".$data['ingredients'][$i]."</div>".
+                                      "<div class='col-50 useLevel'>".$data['amount'][$i]."</div>".
+                                  "</div>";
+                          }
                         ?>
-                        <div class="row">
+                        <div class="row" style="min-height:70px;">
                           <div class="col-40"></div>
                           <div class="col-50" style="padding-bottom:10px">
                             <a href="#" class="button button-round color-red">

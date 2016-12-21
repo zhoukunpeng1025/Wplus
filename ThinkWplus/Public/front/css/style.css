@@ -374,6 +374,7 @@ padding: 0 10px;
 	padding-top: 5px;
 	padding-left: 12px;
 	padding-bottom: 2px;
+	min-height: 30px;/*解决只有一条数据时，边框长度不够的问题*/
 }
 /*手风琴内容文本*/
 .itemContentText{
@@ -384,7 +385,7 @@ padding: 0 10px;
 }
 /*联系方式样式：住址、电话*/
 .contactWay{
-	padding-top: 20px;
+	padding-top: 15%;
 	color: #959595;
 }
 
@@ -694,7 +695,12 @@ padding: 0 10px;
 .redLeft:visited{
 	color: #212121;
 }
-
+.phoneLink:link{
+	color: #959595;
+}
+.phoneLink:visited{
+	color: #959595;
+}
 /*
 * @description: 附近页 nearby.html
 * @author: 周锟鹏

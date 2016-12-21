@@ -47,7 +47,6 @@
                       <div class="col-30">
                         <h3 class="requestH3">￥{$data.reward}.00</h3>
                         <p class="requestTime">{$data.deadline}之前</p>
-                        <!-- <p class="requestTime">17:00之前</p> -->
                         <div class="row contactWay fourteenFont">
                           <div class="col-10"></div>
                           <div class="col-20">
@@ -64,20 +63,15 @@
                         </div>
                       </div>
                       <div class="col-70 itemTitleBoder" id="dataUseLevel"> 
-                        <h3 id="building">{$data.address}</h3>
-                       
+                        <h3 id="building">{$data.address}</h3>                  
                           <?php
-                                                for($j=0;$j<count($data['ingredients']);$j++){
-                                                    echo  "<div class='row'>".
-                                                      "<div class='col-60'>".$data['ingredients'][$j]."</div>".
-                                                            "<div class='col-40 useLevel'>".$data['amount'][$j]."</div>".
-                                                        "</div>";
-                                                }
-                                            ?>
-                          <!-- <div class="col-60">虾仁</div>
-                          <div class="col-40 useLevel">350g</div> -->
-                        
-                      
+                            for($j=0;$j<count($data['ingredients']);$j++){
+                                echo  "<div class='row'>".
+                                  "<div class='col-60'>".$data['ingredients'][$j]."</div>".
+                                        "<div class='col-40 useLevel'>".$data['amount'][$j]."</div>".
+                                    "</div>";
+                            }
+                          ?>
                         <div class="row">
                           <div class="col-40"></div>
                           <div class="col-50" style="padding-bottom:10px">
@@ -92,117 +86,7 @@
                   </li>
                   <li class="item-divider"></li><!--分割-->
                   </volist>
-                  <!-- <li class="itemBorder2">
-                    <div class="row item-title">
-                      <div class="col-30">
-                        <h3 class="requestH3">￥1.00</h3>
-                        <p class="requestTime">2016/11/18</p>
-                        <p class="requestTime">17:00之前</p>
-                        <div class="row contactWay fourteenFont">
-                          <div class="col-10"></div>
-                          <div class="col-20">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                          </div>
-                          <div class="col-70">李四女士</div>
-                        </div>
-                        <div class="row contactWay fourteenFont">
-                          <div class="col-10"></div>
-                          <div class="col-20">
-                            <i class="fa fa-building" aria-hidden="true"></i>
-                          </div>
-                          <div class="col-70">5 栋 302</div>
-                        </div>
-                      </div>
-                      <div class="col-70 itemTitleBoder" id="dataUseLevel"> 
-                        <h3 id="building">5栋302号</h3>
-                        <div class="row">
-                          <div class="col-60">虾仁</div>
-                          <div class="col-40 useLevel">350g</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-60">鸡精</div>
-                          <div class="col-40 useLevel">1袋</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-60">虾仁</div>
-                          <div class="col-40 useLevel">350g</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-60">鸡精</div>
-                          <div class="col-40 useLevel">1袋</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-60">鸡精</div>
-                          <div class="col-40 useLevel">1袋</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-40"></div>
-                          <div class="col-50" style="padding-bottom:10px">
-                            <a href="basket-list.html" class="external button button-round color-red">
-                              领取
-                            </a>
-                          </div>
-                          <div class="col-10"></div>
-                        </div>
-                      </div>
-                    </div>  
-                  </li>
-                  <li class="item-divider"></li>
-                  <li class="itemBorder3">
-                    <div class="row item-title">
-                      <div class="col-30">
-                        <h3 class="requestH3">￥1.00</h3>
-                        <p class="requestTime">2016/11/18</p>
-                        <p class="requestTime">17:00之前</p>
-                        <div class="row contactWay fourteenFont">
-                          <div class="col-10"></div>
-                          <div class="col-20">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                          </div>
-                          <div class="col-70">李四女士</div>
-                        </div>
-                        <div class="row contactWay fourteenFont">
-                          <div class="col-10"></div>
-                          <div class="col-20">
-                            <i class="fa fa-building" aria-hidden="true"></i>
-                          </div>
-                          <div class="col-70">5 栋 302</div>
-                        </div>
-                      </div>
-                      <div class="col-70 itemTitleBoder" id="dataUseLevel"> 
-                        <h3 id="building">5栋302号</h3>
-                        <div class="row">
-                          <div class="col-60">虾仁</div>
-                          <div class="col-40 useLevel">350g</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-60">鸡精</div>
-                          <div class="col-40 useLevel">1袋</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-60">虾仁</div>
-                          <div class="col-40 useLevel">350g</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-60">鸡精</div>
-                          <div class="col-40 useLevel">1袋</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-60">鸡精</div>
-                          <div class="col-40 useLevel">1袋</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-40"></div>
-                          <div class="col-50" style="padding-bottom:10px">
-                            <a href="basket-list.html" class="external button button-round color-red">
-                              领取
-                            </a>
-                          </div>
-                          <div class="col-10"></div>
-                        </div>
-                      </div>
-                    </div>  
-                  </li>   -->               
+              
                 </ul>
               </div>
               <!-- end -->
