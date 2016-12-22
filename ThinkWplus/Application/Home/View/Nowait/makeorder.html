@@ -87,7 +87,7 @@
                                 <div class="item-inner">
                                   <div class="item-title label">订单截止</div>
                                   <div class="item-input">
-                                    <input type="text" name="deadline" placeholder="输入该订单的截止时间" value="">
+                                    <input type="text" name="deadline" placeholder="选择该订单的截止时间" readonly id="picker-time">
                                   </div>
                                 </div>
                               </div>
@@ -97,8 +97,7 @@
                                 <div class="item-inner">
                                   <div class="item-title label">送菜地址</div>
                                   <div class="item-input">
-                                    <input type="text" name="address" placeholder="请选择收货地址" value="{$address.address}"
-                                    class="fourteenFont"> 
+                                    <input type="text" name="address" placeholder="请选择收货地址" value="{$address.address}" class="fourteenFont"> 
                                   </div>
                                   <a href="__MODULE__/Me/address" class="external grayLeft">
                                       <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
@@ -173,6 +172,51 @@
           $('form').attr('action',"{:U('Home/Menu/ownbuy')}");
         });
       });
+
+      // 时间选择器
+      var pickerInline = myApp.picker({
+          input: '#picker-time',
+          rotateEffect: true,      
+          toolbarTemplate: 
+            '<div class="toolbar">' +
+                '<div class="toolbar-inner">' +
+                    '<div class="left">' +
+                    '</div>' +
+                    '<div class="right">' +
+                        '<a href="#" class="link close-picker">完成</a>' +
+                    '</div>' +
+                '</div>' +
+            '</div>',
+
+          formatValue: function (p, values, displayValues) {
+              return values[0] + ':' + values[1];
+          },
+       
+          cols: [
+              // Hours
+              {
+                  textAlign: 'left',
+                  values: (function () {
+                      var arr = [];
+                      for (var i = 0; i <= 23; i++) { arr.push(i); }
+                      return arr;
+                  })(),
+              },
+              // Divider
+              {
+                  divider: true,
+                  content: ':'
+              },
+              // Minutes
+              {
+                  values: (function () {
+                      var arr = [];
+                      for (var i = 0; i <= 59; i++) { arr.push(i < 10 ? '0' + i : i); }
+                      return arr;
+                  })(),
+              }
+          ]
+      }); 
     </script>
   </body>
 </html> 
