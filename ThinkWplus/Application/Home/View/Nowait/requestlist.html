@@ -12,6 +12,13 @@
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
     <link rel="stylesheet" href="__PUBLIC__/front/css/style.css">
+    <style type="text/css">
+    /*分割线上边框不显示，必须写在此文件中，武*/
+    html.pixel-ratio-2 .list-block ul:before {
+      -webkit-transform: scaleY(.0);
+      transform: scaleY(.0);
+    }
+    </style>
   </head>
   <body>
     <!-- Views-->
@@ -34,11 +41,12 @@
         <div class="pages navbar-through toolbar-through">
           <!-- Page, "data-page" contains page name -->
           <div data-page="index" class="page">
-            <div class="page-content" style="padding-top:8%">
+            <div class="page-content" style="padding-top:6%">
               <!-- 可折叠列表 -->
               <div class="list-block">
                 <ul>
                 <volist name="orders" id="data">
+                <li class="divider"></li><!--分割-->
                   <if condition="$i%3 eq 0"><li class="itemBorder1">
                   <elseif condition="$i%3 eq 1"/><li class="itemBorder2">
                   <else/><li class="itemBorder3">
@@ -72,7 +80,7 @@
                                     "</div>";
                             }
                           ?>
-                        <div class="row">
+                        <div class="row" style="min-height:70px;">
                           <div class="col-40"></div>
                           <div class="col-50" style="padding-bottom:10px">
                             <a href="__MODULE__/Nowait/get/id/{$data.oid}" class="external button button-round color-red">
@@ -84,9 +92,7 @@
                       </div>
                     </div>                    
                   </li>
-                  <li class="item-divider"></li><!--分割-->
                   </volist>
-              
                 </ul>
               </div>
               <!-- end -->

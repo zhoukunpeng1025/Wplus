@@ -388,6 +388,11 @@ padding: 0 10px;
 	padding-top: 15%;
 	color: #959595;
 }
+/*分割线样式*/
+.divider{
+	height: 10px;
+	background-color: #efeff4;
+}
 
 /*
 * @description: 菜谱分类页 menu-Assortment.html
