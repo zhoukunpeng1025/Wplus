@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.colors.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="__PUBLIC__/front/css/my-app.css"> -->
-    <link rel="stylesheet" href="__PUBLIC__/front/css/jialin.css">
+    <link rel="stylesheet" href="__PUBLIC__/front/css/style.css">
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -45,96 +44,54 @@
                   <div class="level">13</div>
                 </a>
               
-               <div class="textCerten">
+               <div class="textCenter">
                  <p class="nikep1"><?php echo I("session.username")?></p>
                  <p class="nikep2"><a href="myFollow.html" class="whiteColor external">关注：0</a> &nbsp; &nbsp; &nbsp;<a href="fans.html" class="whiteColor external">粉丝：0</a></p>
                </div>
                </div>
                <div class="toolbar tabbar bW noBorder">
-                <div class="toolbar-inner ">
+                <div class="toolbar-inner">
                    <a href="#" class="tab-link blackColor active redBorder">订单</a>
                    <a href="meIndex.html" class="tab-link blackColor">作品</a>
                    <a href="#" class="tab-link blackColor">收藏</a>
                 </div>
               </div>
-             <!-- 订单列表 -->
-              <div class="orderlist list-block accordion-list">
-                <ul>
-                  <li class="accordion-item"><a href="#" class="item-content item-link">
-                      <div class="item-inner">
-                        <div class="item-title">我的订单</div>
-                      </div></a>
-                    <div class="accordion-item-content">
-                      <?php
-                        if(empty($make)){
-                          echo '<div class="content-block">'.
-                                  '<ul>'.
-                                    '<li>'.
-                                      '您还没有发布过订单'.
-                                    '</li>'.
-                                  '</ul>'.
-                                '</div>';
-                        }
-                      ?>
-                      <div class="content-block">
-                        <!-- <ul>
-                          <volist name="make" id="ma" >
-                          <li style="line-height:30px;font-size:19px;border-bottom:solid 1px #959595;margin-left:20px;width:260px;">&nbsp;&nbsp;&nbsp;您让 <a href="#" class="redColor">{$ma.username}</a> 帮忙带</li>
-                          </volist>
-                        </ul>  -->
-                        <div class="list-block">
-					      <ul>
-					      <volist name="make" id="ma" >
-					        <li class="item-content">
-					          <div class="item-inner">
-					            <div class="item-title">您让 <a href="#" class="redColor">{$ma.username}</a> 帮忙带</div>
-					          </div>
-					        </li>
-					        </volist>
-					      </ul>
-					    </div>
-                      </div>  
+              
+              <!-- 订单列表 -->
+              <div class="orderList">
+                <div class="orderCard">
+                  <div class="orderContent">
+                    <div class="orderDetail floatLeft font16">
+                      <p>代买食材：<span class="redColor">牛奶、香蕉、橙子、西红柿、芹菜</span></p>
+                      <p>截止时间：13:00</p>
                     </div>
-                  </li>
-                  <li class="accordion-item"><a href="#" class="item-content item-link">
-                      <div class="item-inner">
-                        <div class="item-title">我的接单</div>
-                      </div></a>
-                    <div class="accordion-item-content">
-                      <?php
-                        if(empty($pur)){
-                          echo '<div class="content-block">'.
-                                  '<ul>'.
-                                    '<li>'.
-                                      '您还没有接单'.
-                                    '</li>'.
-                                  '</ul>'.
-                                '</div>';
-                        }
-                      ?>
-                      <div class="content-block">
-                        <!-- <ul class="orderList">
-                        <volist name="pur" id="pu">
-                          <li><a href="#" class="redColor">{$pu.username}</a> 让您帮忙带</li>
-                        </volist>
-                        </ul>  -->
-                        <div class="list-block">
-                        <ul>
-					      <volist name="pur" id="pu">
-					        <li class="item-content">
-					          <div class="item-inner">
-					            <div class="item-title"><a href="#" class="redColor">{$pu.username}</a> 让您帮忙带</div>
-					          </div>
-					        </li>
-					        </volist>
-					      </ul>
-					      </div>
-                      </div>
+                    <div class="orderStatus floatRight textCenter">
+                      <i class="fa fa-clock-o font20 greyColor"></i>
+                      <div class="statusFont">待服务</div>
                     </div>
-                  </li>
-                </ul>
+                  </div>
+                  <div class="orderBottom">
+                    <div class="floatLeft font16 oNumber greyColor">订单号：00000000000</div>
+                    <a href="#" class="button floatRight orderButton" style="width: 80px;">取消</a>
+                  </div>
+                </div>
+                <div class="orderCard">
+                  <div class="orderContent">
+                    <div class="orderDetail floatLeft font16">
+                      <p>代买食材：<span class="redColor">牛奶、香蕉、橙子babbababbababab</span></p>
+                      <p>截止时间：13:00</p>
+                    </div>
+                    <div class="orderStatus floatRight textCenter">
+                      <i class="fa fa-clock-o font20 greyColor"></i>
+                      <div class="statusFont">待服务</div>
+                    </div>
+                  </div>
+                  <div class="orderBottom">
+                    <div class="floatLeft font16 oNumber greyColor">订单号：00000000000</div>
+                    <a href="#" class="button floatRight orderButton" style="width: 80px;">取消</a>
+                  </div>
+                </div>
               </div>
-
           </div>
         </div>
         

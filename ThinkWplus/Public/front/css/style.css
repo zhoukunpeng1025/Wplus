@@ -627,9 +627,6 @@ padding: 0 10px;
 .stepsKeepTime{
 	opacity:0.6;
 }
-.textCenter{
-	text-align: center;
-}
 .twentyFont{
 	font-size: 1.5em;
 	font-weight: bold;
@@ -799,6 +796,172 @@ padding: 0 10px;
 }
 
 /*
+* @description: 我页 meIndex.html
+* @author: 贾琳
+* @update: 2016-12-24 鲁晓佳 整合css
+*/
+.imgCircle{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%; /* IE 9 */
+	-webkit-border-radius:50%; /* Safari and Chrome */
+	-o-border-radius:50%;/* Opera */
+	/*overflow: hidden;*/
+	background: url('../images/user.jpg');
+	background-size: 100%;
+}
+.wH{
+	width: 100%;
+	height:100%;
+}
+.wHdiv{
+	height: 110px;
+}
+.wHimg{
+	width: 100%;
+	height: 100%;
+	background-repeat:no-repeat;
+	background-image: url('../images/1.jpg');
+	background-size:cover;
+	background-position: center;
+	border:1px solid white;
+}
+.redBorder{
+	border-bottom: 2px solid #ea4027;
+}
+.noBorder{
+	border: none !important;
+}
+.noBorder::before{
+	background: transparent;
+}
+.noBorder::after{
+	background: transparent;
+}
+.allWritings{
+	background: #efeff4;
+	height: 50px;
+	padding-top: 10px;
+}
+.tag{
+	display: block;
+	width: 40px;
+	height: 25px;
+	background: url(../images/tag.png) no-repeat center;
+	background-size: contain;
+	transform: rotate(40deg);
+	-ms-transform:rotate(40deg);
+	-moz-transform:rotate(40deg);
+	-webkit-transform:rotate(40deg);
+	-o-transform:rotate(40deg);
+	position: absolute;
+	top: 125px;
+	left: 53%;
+}
+.level{
+	font-size: 15px;
+	color: black;
+	position: relative;
+	top: 2px;
+	left: 20px;
+}
+.redBack{
+	background-color: #ea4027;
+	color: white;
+}
+.user{
+	margin-top: 10px;
+}
+.tuoYuan{
+	padding-top: 10px;
+	background:url('../images/tuoYuan.png') no-repeat;
+	background-size: 100%;
+}
+.imgCerten{
+	margin:0 auto;
+}
+.nikep1{
+	padding-top: 1%;
+	margin-top: 5px;
+	margin: 0px;
+	color: white;
+}
+.nikep2{
+	padding-top: 10px;
+	padding-bottom: 20px;
+	margin: 0px;
+	color: white;
+}
+.bW{
+	background-color: white;
+}
+.whiteColor{
+	color: white;
+} 
+.nump{
+	margin-left: 13px;
+	font-size: 13px;
+    color: #8e8e93;
+}
+.tab-link{
+	line-height: 15px;
+	padding: 0 10px;
+}
+
+/*
+* @description: 我页（修改版） meIndex.html
+* @author: 鲁晓佳
+* @update: 2016-12-24 鲁晓佳 添加修改样式
+*/
+.orderList{
+	background-color: #efeff4;
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.orderCard{
+	height: 160px;
+	background: #fff;
+	margin-top: 10px;
+}
+.orderContent{
+	height: 80px;
+	padding: 10px;
+}
+.orderDetail{
+	width: 80%;
+}
+.orderDetail p{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.orderStatus{
+	width: 20%;
+	padding-top: 25px;
+}
+.statusFont{
+	padding-top: 5px;
+	color: #FF7F00;
+}
+.orderBottom{
+	height: 30px;
+	padding: 10px 0;
+	margin: 10px;
+	border-top: 1px solid #eee;
+}
+.oNumber{
+	padding-top: 4px;
+	/*color: #eee;*/
+}
+.orderButton{
+	color: #000;
+	border-color: #959595;
+}
+
+/*
 * @description: 其他公用样式
 * @author: 鲁晓佳、刘林会
 * @update: 2016-12-12 鲁晓佳 整合css
@@ -816,7 +979,7 @@ padding: 0 10px;
 *字体颜色
 *********/
 .redColor{
-	color: #ea4027;
+	color: #ea4027 !important;
 }
 .greyColor{
 	color: #959595;
@@ -825,7 +988,7 @@ padding: 0 10px;
 	color: #ffffff;
 }
 .blackColor{
-	color: #000;
+	color: #000 !important;
 }
 /*********
 *字体大小
