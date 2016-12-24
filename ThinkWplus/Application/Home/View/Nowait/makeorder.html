@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="__PUBLIC__/front/css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/front/css/style.css">
+    <style type="text/css">
+      /*ul中p标签边框不显示，必须写在此文件中，武*/
+      html.pixel-ratio-2 .list-block ul:before {
+          transform: scaleY(.0);
+      }
+      html.pixel-ratio-2 .list-block ul:after {
+          transform: scaleY(.0);
+      }
+    </style>
   </head>
   <body>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
@@ -42,9 +51,11 @@
               <!-- 用料用量 -->
               <form enctype="multipart/form-data" action="" method="post">
                 <div class="list-block">
+                  <img src="__PUBLIC__/front/images/up.png" width="100%" />
                   <ul id="selectedMenu">
-
+                  <p style="margin:20px 0;text-align:center;background-color:#efeff4;color:#757575;">这里什么都没有，快去添加食材吧！</p>
                   </ul>
+                  <img src="__PUBLIC__/front/images/down.png" width="100%" />
                   <ul>
                     <li class="item-content">
                       <div class="item-inner">
@@ -146,6 +157,9 @@
 
           if (plusNum=='' || plusName=='') {alert('食材及数量不能为空哦！')}
           else{
+            if($("#selectedMenu p")){
+              $("#selectedMenu p").remove();
+            }
             var one = $('<li class="item-content menuData"></li>');
             var two = $('<div class="item-inner"></div>');
             var three1 = $('<input type="text" name="ingredients[]" placeholder="" value="'+plusName+'">');
