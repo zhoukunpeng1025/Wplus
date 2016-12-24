@@ -187,6 +187,56 @@ padding: 15px 10px;
 }
 
 /*
+* @description: 主页（修改） index.html
+* @author: 鲁晓佳
+* @update: 2016-12-25 鲁晓佳 修改页面结构
+*/
+.Recommend{
+	margin-top: 15px;
+	background: #fff;
+}
+.rcmdTitle{
+	padding: 20px;
+	font-size: 18px;
+	color: #959595;
+}
+.rcmdUser{
+	text-align: center;
+	padding-bottom: 20px;
+}
+.rcmdAvatar{
+	width: 90px;
+	height: 90px;
+	margin: 0 auto;
+}
+.rcmdAvatar img{
+	width: 100%;
+	border-radius: 50%;
+}
+.rcmdUsername{
+	padding-top: 5px;
+}
+.rcmdMore{
+	border-top: 1px solid #eee;
+	padding: 15px 0;
+	text-align: center;
+	color: #ea4027;
+	font-size: 17px;
+}
+.rcmdImg{
+	/*width: 100%;
+	height: calc(width);*/
+	overflow: hidden;
+}
+.rcmdImg img{
+	margin: 0 3px;
+	width: 100%;
+}
+.marBot{
+	margin-bottom: 15px;
+}
+
+/*
 * @description: 添加菜谱页 menu-add.html
 * @author: 鲁晓佳
 * @update: 2016-12-12 鲁晓佳 整合css

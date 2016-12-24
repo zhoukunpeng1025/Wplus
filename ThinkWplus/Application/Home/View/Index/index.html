@@ -55,33 +55,52 @@
                   </ul>
                 </div>
               </div><!-- 图片轮播end -->
-              <volist name="article" id="vo">
-              <!-- 文章卡片 -->
-              <div class="card facebook-card">
-                  <div class="card-header">
-                    <div class="fb">
-                      <div class="facebook-avatar">
-                        <img src="__PUBLIC__/front/images/avatar.jpg">
-                      </div>
-                      <div class="facebook-name">{$vo.username}</div>
-                      <div class="facebook-date">{$vo.time}</div>
-                    </div>
-                    <a href="#" class="button followBtn">关注</a>
+              <!-- 达人推荐 -->
+              <div class="Recommend">
+                <div class="rcmdTitle">达人推荐</div>
+                <div class="rcmdContent row">
+                  <div class="col-33 rcmdUser">
+                    <div class="rcmdAvatar"><img src="__PUBLIC__/front/images/avatar.jpg" /></div>
+                    <div class="rcmdUsername">王子豪</div>
                   </div>
-                  <div class="card-content">
-                      <div class="card-content-inner">
-                        <img src="__PUBLIC__/front/images/2.jpg">
-                        <h3>{$vo.title}</h3>
-                        <p>{$vo.content}</p>
-                      </div>
+                  <div class="col-33 rcmdUser">
+                    <div class="rcmdAvatar"><img src="__PUBLIC__/front/images/avatar.jpg" /></div>
+                    <div class="rcmdUsername">孙哲</div>
                   </div>
-                  <div class="card-footer">
-                    <a href="#" class="link"><i class="icon fa fa-heart-o"> 112</i></a>
-                    <a href="#" class="link"><i class="icon fa fa-commenting-o"> 24</i></a>
-                    <a href="#" class="link"><i class="icon fa fa-share-square-o"> 10</i></a>
+                  <div class="col-33 rcmdUser">
+                    <div class="rcmdAvatar"><img src="__PUBLIC__/front/images/avatar.jpg" /></div>
+                    <div class="rcmdUsername">赵海</div>
                   </div>
-              </div><!-- 文章卡片end -->
-              </volist>
+                  <div class="col-33 rcmdUser">
+                    <div class="rcmdAvatar"><img src="__PUBLIC__/front/images/avatar.jpg" /></div>
+                    <div class="rcmdUsername">王子豪</div>
+                  </div>
+                  <div class="col-33 rcmdUser">
+                    <div class="rcmdAvatar"><img src="__PUBLIC__/front/images/avatar.jpg" /></div>
+                    <div class="rcmdUsername">孙哲</div>
+                  </div>
+                  <div class="col-33 rcmdUser">
+                    <div class="rcmdAvatar"><img src="__PUBLIC__/front/images/avatar.jpg" /></div>
+                    <div class="rcmdUsername">赵海</div>
+                  </div>
+                </div>
+                <div class="rcmdMore">查看更多达人&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></div>
+              </div><!--达人推荐 end-->
+              <!-- 文章推荐 -->
+              <div class="Recommend">
+                <div class="rcmdTitle">文章推荐</div>
+                <div class="rcmdContent row no-gutter marBot">
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/001_70.jpg" /></div>
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/002_70.jpg" /></div>
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/003_70.jpg" /></div>
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/004_70.jpg" /></div>
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/005_70.jpg" /></div>
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/006_70.jpg" /></div>
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/007_70.jpg" /></div>
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/008_70.jpg" /></div>
+                  <div class="col-33 rcmdImg"><img src="__PUBLIC__/front/images/009_70.jpg" /></div>
+                </div>
+              </div><!--文章推荐 end-->
             </div>
           </div>
         </div>
