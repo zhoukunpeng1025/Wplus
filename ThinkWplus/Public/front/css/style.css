@@ -973,6 +973,10 @@ padding: 0 10px;
 * @author: 鲁晓佳
 * @update: 2016-12-24 鲁晓佳 添加修改样式
 */
+.noOrderTip{
+	height: 520px;
+	text-align: center;
+}
 .orderList{
 	background-color: #efeff4;
 	height: auto;

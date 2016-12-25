@@ -56,14 +56,37 @@
                    <a href="#" class="tab-link blackColor">收藏</a>
                 </div>
               </div>
-              
               <!-- 订单列表 -->
               <div class="orderList">
+                <?php
+                if(empty($unclaimed) && empty($inProgress)){
+                  echo '<p class="noOrderTip font20">您还没有下过订单哦~</p>';
+                }
+                ?>
+                <volist name="inProgress" id="in">
                 <div class="orderCard">
                   <div class="orderContent">
                     <div class="orderDetail floatLeft font16">
-                      <p>代买食材：<span class="redColor">牛奶、香蕉、橙子、西红柿、芹菜</span></p>
-                      <p>截止时间：13:00</p>
+                      <p>代买食材：<span class="redColor">{$in.ingredients}</span></p>
+                      <p>截止时间：{$in.deadline}</p>
+                    </div>
+                    <div class="orderStatus floatRight textCenter">
+                      <i class="fa fa-clock-o font20 greyColor"></i>
+                      <div class="statusFont">进行中</div>
+                    </div>
+                  </div>
+                  <div class="orderBottom">
+                    <div class="floatLeft font16 oNumber greyColor">订单号：00000000000</div>
+                    <a href="#" class="button floatRight orderButton" style="width: 80px;">查看</a>
+                  </div>
+                </div>
+                </volist>
+                <volist name="unclaimed" id="un">
+                <div class="orderCard">
+                  <div class="orderContent">
+                    <div class="orderDetail floatLeft font16">
+                      <p>代买食材：<span class="redColor">{$un.ingredients}</span></p>
+                      <p>截止时间：{$un.deadline}</p>
                     </div>
                     <div class="orderStatus floatRight textCenter">
                       <i class="fa fa-clock-o font20 greyColor"></i>
@@ -75,23 +98,8 @@
                     <a href="#" class="button floatRight orderButton" style="width: 80px;">取消</a>
                   </div>
                 </div>
-                <div class="orderCard">
-                  <div class="orderContent">
-                    <div class="orderDetail floatLeft font16">
-                      <p>代买食材：<span class="redColor">牛奶、香蕉、橙子babbababbababab</span></p>
-                      <p>截止时间：13:00</p>
-                    </div>
-                    <div class="orderStatus floatRight textCenter">
-                      <i class="fa fa-clock-o font20 greyColor"></i>
-                      <div class="statusFont">待服务</div>
-                    </div>
-                  </div>
-                  <div class="orderBottom">
-                    <div class="floatLeft font16 oNumber greyColor">订单号：00000000000</div>
-                    <a href="#" class="button floatRight orderButton" style="width: 80px;">取消</a>
-                  </div>
-                </div>
-              </div>
+                </volist>
+              </div> <!--订单列表 end-->
           </div>
         </div>
         

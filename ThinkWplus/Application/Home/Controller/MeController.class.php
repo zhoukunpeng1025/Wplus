@@ -8,15 +8,19 @@ class MeController extends Controller {
         $id = I("session.id");
 
         // 当前用户发布的订单
-        $make = $Model->table("orderform a, user b, user c")->where("a.makerid = b.id and a.purchaserid = c.id and b.id = $id and a.purchaserid is not null")->limit(10)->select();
-        // dump($make);
-
-        // 当前用户代买的订单
-        $pur = $Model->table("orderform a, user b, user c")->where("a.makerid = c.id and a.purchaserid = b.id and b.id = $id")->limit(10)->select();
-        // dump($pur);
+        // 待领取的订单
+        $unclaimed = $Model->table("orderform a, user b")->where("a.makerid = b.id and a.makerid = $id and a.purchaserid is null")->limit(10)->select();
+        for ($i=0; $i < count($unclaimed) ; $i++) { 
+           $unclaimed[$i]["ingredients"] = str_replace("&", "、", $unclaimed[$i]["ingredients"]);
+        }
+        // 已领取的订单
+        $inProgress = $Model->table("orderform a, user b")->where("a.makerid = b.id and a.makerid = $id and a.purchaserid <> $id")->limit(10)->select();
+        for ($i=0; $i < count($inProgress) ; $i++) { 
+           $inProgress[$i]["ingredients"] = str_replace("&", "、", $inProgress[$i]["ingredients"]);
+        }
         
-        $this->assign("make", $make);
-        $this->assign("pur", $pur);
+        $this->assign("unclaimed", $unclaimed);
+        $this->assign("inProgress", $inProgress);
         $this->display();
     }
 
