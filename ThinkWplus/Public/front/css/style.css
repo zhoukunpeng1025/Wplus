@@ -390,8 +390,14 @@ padding: 0 10px;
 /*
 * @description: 菜篮 basket-list.html
 * @author: 武亦文
-* @update: 2016-12-12 鲁晓佳 整合css
+* @update: 2016-12-25 鲁晓佳 添加提示信息
 */
+.nonePurchaseTip{
+	text-align: center;
+	position: relative;
+	top: 40%;
+}
+
 /*菜篮列表边框颜色*/
 .itemBorder1{
 	border-left-style: solid;
@@ -885,10 +891,12 @@ padding: 0 10px;
 	border: none !important;
 }
 .noBorder::before{
-	background: transparent;
+	/*background: transparent;*/
+	background-color: transparent !important;
 }
 .noBorder::after{
-	background: transparent;
+	/*background: transparent;*/
+	background-color: transparent !important;
 }
 .allWritings{
 	background: #efeff4;
