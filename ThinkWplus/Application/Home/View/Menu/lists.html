@@ -15,6 +15,13 @@
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="__PUBLIC__/front/css/font-awesome.min.css">
     <link rel="stylesheet" href="__PUBLIC__/front/css/style.css">
+    <style type="text/css">
+    /*分割线上边框不显示，必须写在此文件中，武*/
+    html.pixel-ratio-2 .list-block ul:before {
+      -webkit-transform: scaleY(.0);
+      transform: scaleY(.0);
+    }
+    </style>
   </head>
   <body>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
@@ -45,8 +52,7 @@
             <div class="page-content" style="margin-top:10px">
               
               <!-- 早餐分类可折叠列表 -->
-              <div class="accordion-item" id="accordItem" style="background-color:white;">
-                
+              <div class="accordion-item" id="accordItem" style="background-color:white;">  
                 <div class="row hotTags">
                     <div class="col-33">
                       <a href="#" class="button color-gray">家常菜</a>
@@ -126,9 +132,10 @@
                 </div>
               </div>
               <!-- 早餐推荐列表 -->
-              <div class="list-block">
+              <div class="list-block" style="margin-top:6%;">
                 <ul>
                   <volist name="recipe" id="re">
+                  <li class="divider"></li><!--分割-->
                   <li class="list-content">
                     <a href="__MODULE__/Menu/content/id/{$re.id}" class="external">
                       <div class="row">
@@ -149,7 +156,6 @@
                       <div class="col-10"></div>
                     </div>
                   </li>
-                  <li class="item-divider"></li><!--分割-->
                   </volist>
                 </ul>
               </div><!--end-->
