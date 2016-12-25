@@ -65,12 +65,7 @@ class RecipeController extends Controller {
 			}
 			$recipeModel->add($data);
 			$this->redirect("lists");
-			// else {
-			// 	$this->error("添加失败！");
-			// }
-		}
-
-		
+		}	
     }
 
     // 显示需要编辑的菜谱的信息
@@ -87,7 +82,6 @@ class RecipeController extends Controller {
 		$recipe[0]["clocknum"] = explode("&", $recipe[0]["clocknum"]);
 		$recipe[0]["img"] = explode("&", $recipe[0]["img"]);
 
-		// dump($recipe);
 		$this->assign('recipe', $recipe);
 		$this->display();
     }
@@ -103,7 +97,6 @@ class RecipeController extends Controller {
 		$data["step"] = implode("&", $data["step"]);
 		$data["clocknum"] = implode("&", $data["clocknum"]);
 		$data["clocktime"] = implode("&", $data["clocktime"]);
-		// dump($data);
 
 		$recipeModel = M("recipe");
 		if (!$recipeModel->create()) {

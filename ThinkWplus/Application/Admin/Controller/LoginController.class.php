@@ -11,7 +11,7 @@ class LoginController extends Controller {
 			);
 			$result = $adminUsersModel->where($condition)->count();
 			$id = $adminUsersModel->field('id')->where($condition)->select();
-			// var_dump($result);
+			
 			if ($result > 0) {
 				$_SESSION['adminname'] = I("post.adminname");
 				$_SESSION['adminid'] = $id[0]["id"];
