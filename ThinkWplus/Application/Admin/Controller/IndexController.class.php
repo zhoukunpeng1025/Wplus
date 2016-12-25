@@ -6,7 +6,7 @@ class IndexController extends Controller {
 		public function __construct() {
 			parent::__construct();
 			if (!isAdminLogin()) {
-				$this->error("请先登录", U("Login/login"));
+				$this->redirect("Login/login");
 			}
 		}
 

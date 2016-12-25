@@ -57,39 +57,35 @@ class FeedbackController extends Controller {
         $Model=M('feedback');
         $data = $Model->create();
         $data['backstate']=$_POST['backstate'];
-        if($Model->save($data)){
-            $this->success("回复成功",'index');
-         }else{
-             $this->error("回复失败");
-         }
+        $Model->save($data);
+        $this->redirect("index");
+         // else{
+         //     $this->error("回复失败");
+         // }
       }
 
      //删除数据
      public function destroy(){
-        	$id=I('id');
-        	$Model=M('feedback');
-        	if($Model->where("id=$id")->delete()){
-        		$this->success('删除成功');
-        	}else{
-        		$this->showError('删除失败');
-        	}
-                  
-        }
+    	$id=I('id');
+    	$Model=M('feedback');
+    	$Model->where("id=$id")->delete();          
+    }
     public function alldestroy(){
-       $id = I('POST.id');
-                    if(is_array($id))
-                    {
-                        foreach($id as $value)
-                        {
-                            M("feedback")->delete($value);
-                        }
-                        $this->success("删除成功！","index");
-                    } 
-                    else{
-                        if(M("feedback")->delete($id)){
-                            $this->success("删除成功！","index");
-                        }
-                    }
+        $id = I('POST.id');
+        if(is_array($id))
+        {
+            foreach($id as $value)
+            {
+                M("feedback")->delete($value);
+            }
+            $this->redirect("index");
+            
+        } 
+        else{
+            if(M("feedback")->delete($id)){
+                $this->redirect("index");
+            }
+        }
     }
     
 }

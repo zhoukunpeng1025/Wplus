@@ -49,12 +49,11 @@ class AdminController extends Controller {
 		}
     	//设置headimg属性值
     	$data['headimg'] = $info['headimg']['savepath'].$info['headimg']['savename'];
-		if ($adminUsersModel->add($data)) {
-			$this->success("添加成功！", U("lists"));
-		}
-		else {
-			$this->error("添加失败！");
-		}
+		$adminUsersModel->add($data);
+		$this->redirect("lists");
+		// else {
+		// 	$this->error("添加失败！");
+		// }
 		// }
 	}
 
@@ -80,24 +79,17 @@ class AdminController extends Controller {
 		$adminUsersModel = D("adminuser");
 		$data = $adminUsersModel->create();
 		$data['headimg'] = $info['headimg']['savepath'].$info['headimg']['savename'];
-		if($data && $adminUsersModel->save($data)){
-			$this->success("修改成功！",U("lists"));
-		}
-		else{
-			$this->error($adminUsersModel->getError());
-		}
+		$adminUsersModel->save($data);
+		$this->redirect("lists");
+		// else{
+		// 	$this->error($adminUsersModel->getError());
+		// }
 		// }
 	}
 
 	public function delete($id){
 		$adminUsersModel = D("adminuser");
-		
-		if($adminUsersModel->where("id = $id")->delete()){
-			$this->success("删除成功！");
-		}
-		else{
-			$this->error("删除失败！");
-		}
+		$adminUsersModel->where("id = $id")->delete();
 	}
 
 	//修改个人信息

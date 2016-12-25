@@ -10,9 +10,6 @@ class WorkController extends Controller{
       $article = $article->select();
       $this->assign("article", $article);
       $this->display();
-
-     
-
    }
    public function page(){
         $User = M('article'); 
@@ -34,29 +31,20 @@ class WorkController extends Controller{
 
         $this->display(); // 输出模板
    }
-     //单条删除数据
-     public function articleDelete(){
-          $id=I('id');
-          $Model=M('Article');
-          if($Model->where("id=$id")->delete()){
-            $this->success('删除成功');
-          }else{
-            $this->showError('删除失败');
-          }
-                  
-        }
+   //单条删除数据
+   public function articleDelete(){
+      $id=I('id');
+      $Model=M('Article');
+      $Model->where("id=$id")->delete();            
+    }
 
     // 批量删除数据
     public function articleBatchDelete() {
       $articleModel = M("Article");
       $id = I("id");
       $getId = implode(',', $id);
-      if ($articleModel->delete($getId)) {
-        $this->success("批量删除成功！", U("articleLists"));
-      }
-      else {
-        $this->error("批量删除失败！");
-      }
+      $articleModel->delete($getId);
+      $this->redirect("articleLists");
     }
 
     public function imageLists(){
@@ -90,29 +78,18 @@ class WorkController extends Controller{
       $id = I("id");
       // dump($id);
       $image = $imageModel->delete($id);
-      if ($image) {
-        $this->success("删除成功！", U("imageLists"));
-      }
-      else {
-        $this->error("删除失败！");
-      }
+      $this->redirect("imageLists");
     }
     // 批量删除数据
     public function imageBatchDelete(){
       $imageModel = M("Image");
       $id = I("id");
       $getId = implode(',', $id);
-      dump($id);
-      if ($imageModel->delete($getId)) {
-        $this->success("批量删除成功！", U("imageLists"));
-      }
-      else {
-        $this->error("批量删除失败！");
-      }
+      $imageModel->delete($getId);
+      $this->redirect("imageLists");
     }
 
     public function videoLists(){
-
       $User = M('Video'); 
         $count      = $User->count();// 查询满足要求的总记录数
         $Page       = new \Think\Page($count,8);// 实例化分页类 传入总记录数和每页显示的记录数
@@ -138,24 +115,15 @@ class WorkController extends Controller{
       $id = I("id");
       // dump($id);
       $video = $videoModel->delete($id);
-      if ($video) {
-        $this->success("删除成功！", U("videoLists"));
-      }
-      else {
-        $this->error("删除失败！");
-      }
+      $this->redirect("videoLists");
     }
     // 批量删除数据
     public function videoBatchDelete() {
       $videoModel = M("Video");
       $id = I("id");
       $getId = implode(',', $id);
-      if ($videoModel->delete($getId)) {
-        $this->success("批量删除成功！", U("videoLists"));
-      }
-      else {
-        $this->error("批量删除失败！");
-      }
+      $videoModel->delete($getId);
+      $this->redirect("videoLists");
     }
     public function article(){
       $id = I("id");

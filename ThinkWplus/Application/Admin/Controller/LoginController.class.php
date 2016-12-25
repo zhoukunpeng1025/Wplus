@@ -16,7 +16,7 @@ class LoginController extends Controller {
 				$_SESSION['adminname'] = I("post.adminname");
 				$_SESSION['adminid'] = $id[0]["id"];
 
-				$this->success("登录成功", U("Index/index"));
+				$this->redirect("Index/index");
 			}
 			else{
 				$this->error("用户名或密码不正确");

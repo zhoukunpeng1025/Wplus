@@ -18,8 +18,6 @@ class RecipeController extends Controller {
 			$recipe[$i]["img"] = explode("&", $recipe[$i]["img"]);
 		}
 
-		// dump($recipe);
-
 		$this->assign('recipe', $recipe);
 		$this->display();
     }
@@ -65,12 +63,11 @@ class RecipeController extends Controller {
 			if (!$recipeModel->create()) {
 				$this->error($recipeModel->getError());
 			}
-			if ($recipeModel->add($data)) {
-				$this->success("添加成功！", U("lists"));
-			}
-			else {
-				$this->error("添加失败！");
-			}
+			$recipeModel->add($data);
+			$this->redirect("lists");
+			// else {
+			// 	$this->error("添加失败！");
+			// }
 		}
 
 		
@@ -112,12 +109,8 @@ class RecipeController extends Controller {
 		if (!$recipeModel->create()) {
 			$this->error($recipeModel->getError());
 		}
-		if ($recipeModel->where("id=$id")->save($data)) {
-			$this->success("修改成功！", U("lists"));
-		}
-		else {
-			$this->error("修改失败！");
-		}
+		$recipeModel->where("id=$id")->save($data);
+		$this->redirect("lists");
 		
     }
 
@@ -128,12 +121,12 @@ class RecipeController extends Controller {
     	// 删recipe表数据
 		$recipeModel = M("recipe");
 		$recipe = $recipeModel->delete($id);
-
-		if ($recipe) {
-			$this->success("删除成功！", U("lists"));
-		}
-		else {
-			$this->error("删除失败！");
-		}
+		$this->redirect("lists");
+		// if ($recipe) {
+		// 	$this->success("删除成功！", U("lists"));
+		// }
+		// else {
+		// 	$this->error("删除失败！");
+		// }
     }
 }
