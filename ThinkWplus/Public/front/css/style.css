@@ -181,7 +181,7 @@ padding: 15px 10px;
 }
 /*设置超出隐藏*/
 .card-content-inner p{
-	height: 40px;
+	height: 38px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
