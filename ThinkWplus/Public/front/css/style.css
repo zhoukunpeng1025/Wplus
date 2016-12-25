@@ -424,7 +424,7 @@ padding: 0 10px;
 .itemTitleBoder{
 	border-left-style: solid;
 	border-left-width: 1px;
-	border-left-color: #959595
+	border-left-color: #eee;
 }
 .itemTitleBoder div{
 	padding-top: 5px;
