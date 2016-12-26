@@ -31,7 +31,7 @@ $(document).ready(function(){
                                       '<a href=""><i class="icon-upload"></i><span class="js_uploadText">上传</span>图片</a>'+
                                       '<input class="js_upFile" type="file" name="img[]">'+
                                     '</div>'+
-                                    '<div class="js_showBox"><img class="js_logoBox" src="../../../Public/back/img/a2.jpg" width="100px" ></div>'+
+                                    '<div class="js_showBox"><img class="js_logoBox" src="../../../Public/back/img/add.png" width="100px" ></div>'+
                                 '</div>'+
                             "</div>"+
                             "<div class='addAndRemove remove'>"+
