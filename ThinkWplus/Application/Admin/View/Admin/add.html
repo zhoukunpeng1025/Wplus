@@ -23,7 +23,7 @@
 <body>
 	<div class="container" style="border:solid 1px #E0E0E0;margin-top:1%;">
 		<h2 style="padding:1% 0;border-bottom:solid 1px #E0E0E0;">添加管理员</h2>
-		<form action="{:U('Admin/Admin/doAdd')}" method="post" id="myform" name="myform" enctype="multipart/form-data">
+		<form action="{:U('Admin/Admin/doAdd')}" method="post" id="myform" name="myform" enctype="multipart/form-data" onsubmit="return mySubmit(true)">
 		  <div class="col-md-12" style="padding-top:1%">
 		    <div class="form-group">
 		        <label class="col-sm-3 control-label">用户名：</label>
@@ -114,33 +114,25 @@
     <!-- layerDate plugin javascript -->
     <script src="__PUBLIC__/back/js/lobibox.min.js"></script>
     <script>
+	function mySubmit(flag){
+		return flag;
+	}
+
 	$(function(){
 		$('#basicError').click(function () {
 			if ($("#username").val() == "") {
 				Lobibox.notify('error', {
 					msg: '用户名不能为空'
 				});
-
-				$("#myform").submit(function(){
-					return false;
-				});
 			}
 			if ($("#pwd").val() == "") {
 				Lobibox.notify('error', {
 					msg: '密码不能为空'
 				});
-
-				$("#myform").submit(function(){
-					return false;
-				});
 			}
 			else if ($("#repwd").val() != $("#pwd").val()){
 				Lobibox.notify('error', {
 					msg: '确认密码不正确'
-				});
-
-				$("#myform").submit(function(){
-					return false;
 				});
 			}
 			if ($("input[type='file']").val() == "") {
@@ -148,10 +140,21 @@
 					msg: '请上传头像'
 				});
 
-				$("#myform").submit(function(){
-					return false;
+			}
+			if ($(".layer-date").val() == "") {
+				Lobibox.notify('error', {
+					msg: '出生日期不能为空'
 				});
 			}
+
+			$("#myform").submit(function(){
+				if ($("#username").val() == "" || $("#pwd").val() == "" || $("#repwd").val() != $("#pwd").val() || $("input[type='file']").val() == "" || $(".layer-date").val() == "") {
+					return mySubmit(false);
+				}
+				else{
+					return mySubmit(true);
+				}
+			});
 		});
 	});
     </script>

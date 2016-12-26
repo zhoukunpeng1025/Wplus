@@ -32,7 +32,7 @@
                         <h5>添加菜谱</h5>
                     </div>
                     <div class="ibox-content">
-                        <form method="post" class="form-horizontal" action="__MODULE__/Recipe/doAdd" enctype="multipart/form-data" id="myform">
+                        <form method="post" class="form-horizontal" action="__MODULE__/Recipe/doAdd" enctype="multipart/form-data" id="myform" onsubmit="return mySubmit(true)">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">菜名</label>
 
@@ -126,6 +126,10 @@
     <script src="__PUBLIC__/back/js/jquery.uploadView.js"></script>
     <script src="__PUBLIC__/back/js/lobibox.min.js"></script>
     <script>
+    function mySubmit(flag){
+        return flag;
+    }
+
     $(function(){
         $('#basicError').click(function () {
             if ($("#recipename").val() == "") {
@@ -133,19 +137,21 @@
                     msg: '菜名不能为空'
                 });
 
-                $("#myform").submit(function(){
-                    return false;
-                });
             }
             if ($("input[type='file']").val() == "") {
                 Lobibox.notify('error', {
                     msg: '请上传步骤图'
                 });
-
-                $("#myform").submit(function(){
-                    return false;
-                });
             }
+
+            $("#myform").submit(function(){
+                if ($("#recipename").val() == "" || $("input[type = 'file']").val() == "") {
+                    return mySubmit(false);
+                }
+                else{
+                    return mySubmit(true);
+                }
+            });
         });
     });
     </script>
