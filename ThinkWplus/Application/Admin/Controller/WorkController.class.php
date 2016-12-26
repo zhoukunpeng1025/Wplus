@@ -35,7 +35,8 @@ class WorkController extends Controller{
    public function articleDelete(){
       $id=I('id');
       $Model=M('Article');
-      $Model->where("id=$id")->delete();            
+      $Model->where("id=$id")->delete();
+      $this->redirect("articleLists");
     }
 
     // 批量删除数据

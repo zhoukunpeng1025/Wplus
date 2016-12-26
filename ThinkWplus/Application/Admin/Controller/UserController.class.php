@@ -21,6 +21,7 @@ class UserController extends Controller {
 		$id = I("id");
 		$getId = implode(',', $id);
 		$userModel->delete($getId);
+		$this->redirect("lists");
 		// 	$this->success("批量删除成功！", U("lists"));
 		// }
 		// else {

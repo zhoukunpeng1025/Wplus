@@ -90,6 +90,7 @@ class AdminController extends Controller {
 	public function delete($id){
 		$adminUsersModel = D("adminuser");
 		$adminUsersModel->where("id = $id")->delete();
+		$this->redirect("lists");
 	}
 
 	//修改个人信息
