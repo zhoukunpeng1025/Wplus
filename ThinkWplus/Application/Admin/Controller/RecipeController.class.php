@@ -40,10 +40,10 @@ class RecipeController extends Controller {
 		$upload->savePath ='../Public/uploads/'; // 设置附件上传（子）目录
 		// 上传文件 
 		$info = $upload->upload();
-		if(!$info) {// 上传错误提示错误信息
-			$this->error($upload->getError());
-		}
-		else{
+		// if(!$info) {// 上传错误提示错误信息
+		// 	$this->error($upload->getError());
+		// }
+		// else{
 			// 设置存储路径
 			for($i = 0; $i<count($info); $i++){
 				$savepath[$i] = "../../".$info[$i]["savepath"].$info[$i]["savename"];
@@ -60,12 +60,12 @@ class RecipeController extends Controller {
 			// dump($data);
 
 			$recipeModel = M("recipe");
-			if (!$recipeModel->create()) {
-				$this->error($recipeModel->getError());
-			}
+			// if (!$recipeModel->create()) {
+			// 	$this->error($recipeModel->getError());
+			// }
 			$recipeModel->add($data);
 			$this->redirect("lists");
-		}	
+		// }	
     }
 
     // 显示需要编辑的菜谱的信息
