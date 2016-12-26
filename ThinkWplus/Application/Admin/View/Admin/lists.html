@@ -30,7 +30,7 @@
         <div class="tab-content">
           <div class="row tab-pane active" id="tab-4">
             <volist name="adminUsers" id="d">
-                <div class="col-sm-4">
+                <div class="col-sm-4 adminLists">
                     <div class="contact-box">
                         <div class="col-sm-4">
                             <div class="text-center">
@@ -77,6 +77,10 @@
     <script src="__PUBLIC__/back/js/content.js?v=1.0.0"></script>
     <script>
         $(document).ready(function () {
+            if (screen.width<=1024) {
+                $(".adminLists").attr("class","col-sm-6 adminLists");
+            };
+            
             $('.contact-box').each(function () {
                 animationHover(this, 'pulse');
             });
