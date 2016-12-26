@@ -44,9 +44,9 @@ class AdminController extends Controller {
 		// else{
 		$adminUsersModel = D('adminuser');
 		$data = $adminUsersModel->create();
-		if (!$data) {
-			$this->error($adminUsersModel->getError());
-		}
+		// if (!$data) {
+		// 	$this->error($adminUsersModel->getError());
+		// }
     	//设置headimg属性值
     	$data['headimg'] = $info['headimg']['savepath'].$info['headimg']['savename'];
 		$adminUsersModel->add($data);

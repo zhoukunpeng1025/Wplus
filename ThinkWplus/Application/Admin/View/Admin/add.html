@@ -9,9 +9,10 @@
 
     <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/back/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="__PUBLIC__/back/css/font-awesome.css?v=4.4.0" rel="stylesheet">
-
     <link href="__PUBLIC__/back/css/animate.css" rel="stylesheet">
     <link href="__PUBLIC__/back/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/default.css" rel="stylesheet">
+    <link href="__PUBLIC__/back/css/Lobibox.min.css" rel="stylesheet">
     <style type="text/css">
     .form-group label{
     	font-size: 18px;
@@ -27,7 +28,7 @@
 		    <div class="form-group">
 		        <label class="col-sm-3 control-label">用户名：</label>
 		        <div class="col-sm-8">
-		            <input type="text" name="username" class="form-control" placeholder="请输入用户名"> <span class="help-block m-b-none"></span>
+		            <input type="text" name="username" class="form-control" placeholder="请输入用户名" id="username"> <span class="help-block m-b-none"></span>
 		        </div>
 		    </div>
 		    <div class="form-group">
@@ -40,14 +41,14 @@
 		    <div class="form-group">
 		        <label class="col-sm-3 control-label">密码：</label>
 		        <div class="col-sm-8">
-		            <input type="password" class="form-control" name="password" placeholder="请输入密码">
+		            <input type="password" class="form-control" name="password" placeholder="请输入密码" id="pwd">
 		            <span class="help-block m-b-none"></span>
 		        </div>
 		    </div>
 		    <div class="form-group">
 		        <label class="col-sm-3 control-label">确认密码：</label>
 		        <div class="col-sm-8">
-		            <input type="password" class="form-control" name="repassword" placeholder="请输入密码">
+		            <input type="password" class="form-control" name="repassword" placeholder="请输入密码" id="repwd">
 		            <span class="help-block m-b-none"></span>
 		        </div>
 		    </div>
@@ -100,7 +101,7 @@
 		  <div class="row" style="padding:1% 0">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
-				<input type="submit" class="btn  btn-primary btn-lg" style="width:100%;" value="保存"> 
+				<input type="submit" id="basicError" class="btn  btn-primary btn-lg" style="width:100%;" value="保存"> 
 			</div>
 			<div class="col-sm-4"></div>
 		  </div>
@@ -111,6 +112,49 @@
     <script src="__PUBLIC__/back/js/jquery.min.js?v=2.1.4"></script>
     <script src="__PUBLIC__/back/js/bootstrap.min.js?v=3.3.6"></script>
     <!-- layerDate plugin javascript -->
+    <script src="__PUBLIC__/back/js/lobibox.min.js"></script>
+    <script>
+	$(function(){
+		$('#basicError').click(function () {
+			if ($("#username").val() == "") {
+				Lobibox.notify('error', {
+					msg: '用户名不能为空'
+				});
+
+				$("#myform").submit(function(){
+					return false;
+				});
+			}
+			if ($("#pwd").val() == "") {
+				Lobibox.notify('error', {
+					msg: '密码不能为空'
+				});
+
+				$("#myform").submit(function(){
+					return false;
+				});
+			}
+			else if ($("#repwd").val() != $("#pwd").val()){
+				Lobibox.notify('error', {
+					msg: '确认密码不正确'
+				});
+
+				$("#myform").submit(function(){
+					return false;
+				});
+			}
+			if ($("input[type='file']").val() == "") {
+				Lobibox.notify('error', {
+					msg: '请上传头像'
+				});
+
+				$("#myform").submit(function(){
+					return false;
+				});
+			}
+		});
+	});
+    </script>
     <script src="__PUBLIC__/back/js/plugins/layer/laydate/laydate.js"></script>
     <script>
         //外部js调用
