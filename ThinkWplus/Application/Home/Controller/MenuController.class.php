@@ -95,8 +95,8 @@ class MenuController extends Controller {
 		
 		$condition['username'] = I("session.username");//获取当前用户名
 		$userid = $userModel->where($condition)->getField('id');//获取当前用户id
-		$adCondition['address'] = $_POST['address'];
-		$addressId = $addressModel->where($adCondition)->getField('id');//获取当前地址id
+		// $adCondition['address'] = $_POST['address'];
+		// $addressId = $addressModel->where($adCondition)->getField('id');//获取当前地址id
 
 		$data = $_POST;
 		// 将数组转成字符串
@@ -104,7 +104,8 @@ class MenuController extends Controller {
 		$data["amount"] = implode("&", $data["amount"]);
 		$data["makerid"] = $userid;
 		$data["purchaserid"] = null;
-		$data["addressid"] = $addressId;
+		// $data["addressid"] = $addressId;
+		// dump($data);
 
 		$orderModel = M('orderform');
 		if ($orderModel->create() && $orderModel->add($data)) {

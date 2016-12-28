@@ -110,7 +110,8 @@
                                 <div class="item-inner">
                                   <div class="item-title label">送菜地址</div>
                                   <div class="item-input">
-                                    <input type="text" name="address" placeholder="请选择收货地址" value="{$address.province}{$address.city}{$address.area}{$address.community}{$address.address}" class="fourteenFont"> 
+                                    <input type="text" name="" placeholder="请选择收货地址" value="{$address.province}{$address.city}{$address.area}{$address.community}{$address.address}" class="fourteenFont">
+                                    <input type="hidden" name="addressid" value="{$address.id}">
                                   </div>
                                   <a href="__MODULE__/Me/address" class="external grayLeft">
                                       <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>

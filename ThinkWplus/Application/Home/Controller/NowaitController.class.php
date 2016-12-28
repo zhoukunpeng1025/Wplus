@@ -10,13 +10,13 @@ class NowaitController extends Controller {
         // $where =$Model['purchaserid']=array('EQ','NULL'); 
         //添加购买者id为空，表示不等待订单
         $order=$order->where('purchaserid is null');
-        $order=$order->select();
-        // var_dump($order);
-
+        $order=$order->order("oid desc")->select();
+        
         for($i = 0; $i < count($order); $i++) {
             $order[$i]["ingredients"] = explode("&", $order[$i]["ingredients"]);
             $order[$i]["amount"] = explode("&", $order[$i]["amount"]);
         }
+        // var_dump($order);
 
         //2分配数据
     	$this->assign("orders",$order);
@@ -102,7 +102,6 @@ class NowaitController extends Controller {
         $condition['username'] = I("session.username");//获取当前用户名
         $userid = $userModel->where($condition)->getField('id');//获取当前用户id
         $address = $addressModel->where("userid=$userid")->find();//获取当前用户的地址信息
-
         $this->assign("address",$address);
         $this->display();
     }
