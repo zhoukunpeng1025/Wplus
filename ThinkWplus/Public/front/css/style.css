@@ -971,7 +971,7 @@ padding: 0 10px;
 /*
 * @description: 我页（修改版） meIndex.html
 * @author: 鲁晓佳
-* @update: 2016-12-24 鲁晓佳 添加修改样式
+* @update: 2016-12-28 鲁晓佳 添加“进行中”的样式
 */
 .noOrderTip{
 	height: 520px;
@@ -988,8 +988,17 @@ padding: 0 10px;
 	background: #fff;
 	margin-top: 10px;
 }
+.orderCardInpro{
+	height: 240px;
+	background: #fff;
+	margin-top: 10px;
+}
 .orderContent{
 	height: 80px;
+	padding: 10px;
+}
+.orderContentInpro{
+	height: 150px;
 	padding: 10px;
 }
 .orderDetail{

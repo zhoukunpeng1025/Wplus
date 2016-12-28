@@ -64,11 +64,13 @@
                 }
                 ?>
                 <volist name="inProgress" id="in">
-                <div class="orderCard">
-                  <div class="orderContent">
+                <div class="orderCardInpro">
+                  <div class="orderContentInpro">
                     <div class="orderDetail floatLeft font16">
                       <p>代买食材：<span class="redColor">{$in.ingredients}</span></p>
                       <p>截止时间：{$in.deadline}</p>
+                      <p>领取人：{$in.username}</p>
+                      <p>联系方式：{$in.phonenum}</p>
                     </div>
                     <div class="orderStatus floatRight textCenter">
                       <i class="fa fa-clock-o font20 greyColor"></i>

@@ -14,10 +14,14 @@ class MeController extends Controller {
            $unclaimed[$i]["ingredients"] = str_replace("&", "、", $unclaimed[$i]["ingredients"]);
         }
         // 已领取的订单
-        $inProgress = $Model->table("orderform a, user b")->where("a.makerid = b.id and a.makerid = $id and a.purchaserid <> $id")->limit(10)->select();
+        // 不显示自己发布领取的订单
+        // $inProgress = $Model->table("orderform a, user b, user c")->where("a.makerid = b.id and a.makerid = $id and a.purchaserid <> $id and a.purchaserid = c.id")->limit(10)->select();
+        // 显示自己发布领取的订单
+        $inProgress = $Model->table("orderform a, user b, user c")->where("a.makerid = b.id and a.makerid = $id and a.purchaserid = c.id")->limit(10)->select();
         for ($i=0; $i < count($inProgress) ; $i++) { 
            $inProgress[$i]["ingredients"] = str_replace("&", "、", $inProgress[$i]["ingredients"]);
         }
+        // dump($inProgress);
         
         $this->assign("unclaimed", $unclaimed);
         $this->assign("inProgress", $inProgress);
