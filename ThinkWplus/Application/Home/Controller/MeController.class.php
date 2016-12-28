@@ -48,21 +48,18 @@ class MeController extends Controller {
     public function getCity($id){
         $cityModel = M("city");
         $city = $cityModel->where("provinceid = $id")->select();
-        dump($city);
+        json_encode($city);
     }
 
     // 功能未实现
     public function addAddress(){
-        // $provinceModel = M("province");
-        // $province = $provinceModel->select();
-        // $this->assign("province", $province);
+        $provinceModel = M("province");
+        $province = $provinceModel->select();
+        $this->assign("province", $province);
 
-        // $provName = I("post.province");
-        // dump($provName);
-        // $provId = $provinceModel->where("province = $provName")->getField("provinceid");
-        // $cityModel = M("city");
-        // $city = $cityModel->where("provinceid = $provId")->select();
-        // $this->assign("city", $city);
+        $cityModel = M("city");
+        $city = $cityModel->where("provinceid = 130000")->select();
+        $this->assign("city", $city);
 
         $this->display();
     }
