@@ -62,16 +62,18 @@
                           </div>
                           <div class="col-70">{$data.username}</div>
                         </div>
-                        <div class="row contactWay fourteenFont">
+                        <div class="row contactWay">
                           <div class="col-10"></div>
                           <div class="col-20">
                             <i class="fa fa-building" aria-hidden="true"></i>
                           </div>
-                          <div class="col-70">{$data.address}</div>
+                          <div class="col-70 mainAddress" style="font-size:10px;">
+                            {$data.province}{$data.city}<br/>{$data.area}
+                          </div>
                         </div>
                       </div>
                       <div class="col-70 itemTitleBoder" id="dataUseLevel"> 
-                        <h3 id="building">{$data.address}</h3>                  
+                        <h3 id="building">{$data.community}{$data.address}</h3>                  
                           <?php
                             for($j=0;$j<count($data['ingredients']);$j++){
                                 echo  "<div class='row'>".
